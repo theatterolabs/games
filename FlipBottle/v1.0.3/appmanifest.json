@@ -1,7 +1,7 @@
 {
-	"name": "DD Bottle Flip",
-	"short_name": "DD Bottle Flip",
-	"description": "DD Bottle Flip",
+	"name": "Flip Bottle",
+	"short_name": "Flip Bottle",
+	"description": "Flip Bottle",
 	"start_url": "index.html",
 	"display": "fullscreen",
 	"orientation": "portrait",
