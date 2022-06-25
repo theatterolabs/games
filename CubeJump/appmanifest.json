@@ -1,6 +1,6 @@
 {
-	"name": "DD Cube Jump",
-	"short_name": "DD Cube Jump",
+	"name": "Jumping Cube",
+	"short_name": "Jumping Cube",
 	"start_url": "index.html",
 	"display": "fullscreen",
 	"orientation": "portrait",
