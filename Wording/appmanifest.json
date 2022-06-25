@@ -1,6 +1,6 @@
 {
-	"name": "DD Wording",
-	"short_name": "DD Wording",
+	"name": "Wordle",
+	"short_name": "Wordle",
 	"start_url": "index.html",
 	"display": "fullscreen",
 	"orientation": "portrait",
