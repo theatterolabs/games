@@ -1,7 +1,7 @@
 {
-	"name": "Sorting Balls",
-	"short_name": "Sorting Balls",
-	"description": "Sorting Balls",
+	"name": "Ball Sort",
+	"short_name": "Ball Sort",
+	"description": "Ball Sort",
 	"start_url": "index.html",
 	"display": "fullscreen",
 	"orientation": "portrait",
