@@ -1,6 +1,6 @@
 {
-	"name": "Yummy Word",
-	"short_name": "Yummy Word",
+	"name": "Word Chef",
+	"short_name": "Word Chef",
 	"start_url": "index.html",
 	"display": "fullscreen",
 	"orientation": "any",
