@@ -1,7 +1,7 @@
 {
-	"name": "DD Knots",
-	"short_name": "DD Knots",
-	"description": "DD Knots",
+	"name": "Hexa Knots",
+	"short_name": "Hexa Knots",
+	"description": "Hexa Knots",
 	"start_url": "index.html",
 	"display": "fullscreen",
 	"orientation": "any",
