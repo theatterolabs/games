@@ -2212,7 +2212,7 @@ function CCreditsPanel() {
 		c.x = CANVAS_WIDTH / 2;
 		c.y = 470;
 		h.addChild(c);
-		a = new createjs.Text("www.atterolabs.com.com", "42px " + FONT2, "#ffffff");
+		a = new createjs.Text("www.atterolabs.com", "42px " + FONT2, "#ffffff");
 		a.x = CANVAS_WIDTH / 2;
 		a.y = 530;
 		a.textAlign = "center";
