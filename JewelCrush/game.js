@@ -1806,7 +1806,7 @@ Z999.t8o = "img";
 Y999.r4U = "125";
 t999.o7o = "landscape";
 f999.m7t = ".";
-var _STRINGS, fontReady, fonts, hiddenCanvases, canvasId, _t, curState, csound, stringToFunction, jsonCache, imgCache, passSplash, LZString, FontDetect, _SETTINGS, MobileAdInGamePreroll, MobileAdInGameHeader, MobileAdInGameFooter, MobileAdInGameEnd, ie;
+var _STRINGS, fontReady, fonts, hiddenCanvases, canvasId, _t, curState, csound, stringToFunction, jsonCache, imgCache, passSplash, LZString, FontDetect, _SETTINGS, ie;
 
 function getInternetExplorerVersion() {
 	var S4j = E6DD;
@@ -3014,66 +3014,6 @@ _SETTINGS = {
 			}
 		}
 	},
-	Ad: {
-		Mobile: {
-			Preroll: {
-				Enabled: !E6DD.e82,
-				Duration: f999.S6t * E6DD.e82,
-				Width: f999.g22,
-				Height: f999.C5t | E6DD.V82,
-				Rotation: {
-					Enabled: !+f999.f9t,
-					Weight: {
-						MobileAdInGamePreroll: +f999.P5t,
-						MobileAdInGamePreroll2: f999.P5t - E6DD.V82,
-						MobileAdInGamePreroll3: +G999.g5t
-					}
-				}
-			},
-			Header: {
-				Enabled: !+f999.f9t,
-				Duration: +f999.S6t,
-				Width: f999.u22,
-				Height: E6DD.w52,
-				Rotation: {
-					Enabled: !+f999.f9t,
-					Weight: {
-						MobileAdInGameHeader: +f999.P5t,
-						MobileAdInGameHeader2: f999.P5t | E6DD.V82,
-						MobileAdInGameHeader3: +G999.g5t
-					}
-				}
-			},
-			Footer: {
-				Enabled: !E6DD.e82,
-				Duration: +f999.S6t,
-				Width: +G999.u5t,
-				Height: G999.m5t * E6DD.e82,
-				Rotation: {
-					Enabled: !(f999.f9t | E6DD.V82),
-					Weight: {
-						MobileAdInGameFooter: +f999.P5t,
-						MobileAdInGameFooter2: E6DD.C52,
-						MobileAdInGameFooter3: G999.g5t * E6DD.e82
-					}
-				}
-			},
-			End: {
-				Enabled: !(f999.f9t * E6DD.e82),
-				Duration: E6DD.e82,
-				Width: +G999.b5t,
-				Height: +f999.C5t,
-				Rotation: {
-					Enabled: !+f999.f9t,
-					Weight: {
-						MobileAdInGameEnd: E6DD.C52,
-						MobileAdInGameEnd2: +f999.P5t,
-						MobileAdInGameEnd3: +G999.g5t
-					}
-				}
-			}
-		}
-	},
 	Language: {
 		Default: G999.J5t
 	},
@@ -3109,200 +3049,7 @@ _SETTINGS = {
 		NewWindow: !(f999.n7t - E6DD.V82)
 	}
 };
-MobileAdInGamePreroll = {
-	ad_duration: _SETTINGS.Ad.Mobile.Preroll.Duration,
-	ad_width: _SETTINGS.Ad.Mobile.Preroll.Width,
-	ad_height: _SETTINGS.Ad.Mobile.Preroll.Height,
-	ready_in: _STRINGS.Ad.Mobile.Preroll.ReadyIn,
-	loading: _STRINGS.Ad.Mobile.Preroll.Loading,
-	close: _STRINGS.Ad.Mobile.Preroll.Close + G999.A5t,
-	Initialize: function() {
-		var R4j = G999;
-		var v0t = "Ad rotating preroll disabled";
-		var n0t = "Ad rotating preroll enabled";
-		var E0t = "MobileAdInGamePreroll3";
-		var D0t = "MobileAdInGamePreroll2";
-		var e5t = "MobileAdInGamePreroll";
-		var I7, R7, p7, M7;
-		if (_SETTINGS.Ad.Mobile.Preroll.Rotation.Enabled) {
-			I7 = _SETTINGS.Ad.Mobile.Preroll.Rotation.Weight;
-			R7 = I7.MobileAdInGamePreroll;
-			p7 = R7 + I7.MobileAdInGamePreroll2;
-			I7 = p7 + I7.MobileAdInGamePreroll3;
-			M7 = Math.floor(+f999.t5t * Math.random());
-			console.log(R4j.V5t, M7);
-			M7 <= R7 ? this.selectedOverlayName = e5t : M7 <= p7 ? this.selectedOverlayName = D0t : M7 <= I7 && (this.selectedOverlayName = E0t);
-			console.log(n0t);
-		} else {
-			this.selectedOverlayName = e5t, console.log(v0t);
-		}
-		console.log(R4j.i0t, this.selectedOverlayName);
-		this.overlay = $(R4j.H0t + this.selectedOverlayName);
-		this.box = $(R4j.H0t + this.selectedOverlayName + R4j.z0t);
-		this.game = $(R4j.a0t);
-		this.boxContents = {
-			footer: $(R4j.H0t + this.selectedOverlayName + R4j.Q0t),
-			header: $(R4j.H0t + this.selectedOverlayName + R4j.N0t),
-			close: $(R4j.H0t + this.selectedOverlayName + R4j.y0t),
-			body: $(R4j.H0t + this.selectedOverlayName + R4j.d0t)
-		};
-		this.box.width(this.ad_width);
-		this.box.height(this.ad_height);
-		this.box.css(R4j.W0t, (this.overlay.width() - this.box.width()) / +f999.r4t);
-		this.box.css(R4j.x0t, (this.overlay.height() - this.box.height() - this.boxContents.header.height() - this.boxContents.footer.height()) / (f999.r4t | E6DD.V82));
-		this.overlay.show(this.Timer(this.ad_duration));
-	},
-	Timer: function(f7) {
-		var A7, w7;
-		A7 = f7;
-		w7 = setInterval(function() {
-			MobileAdInGamePreroll.boxContents.header.text(MobileAdInGamePreroll.ready_in + A7 + G999.F0t);
-			MobileAdInGamePreroll.boxContents.footer.text(MobileAdInGamePreroll.loading);
-			A7--;
-			(f999.n7t | E6DD.V82) > A7 && (clearInterval(w7), MobileAdInGamePreroll.boxContents.close.css(G999.W0t, MobileAdInGamePreroll.boxContents.body.width() - E6DD.l52), MobileAdInGamePreroll.boxContents.close.show(), MobileAdInGamePreroll.boxContents.header.html(MobileAdInGamePreroll.close), MobileAdInGamePreroll.boxContents.footer.text(f999.S7t));
-		}, G999.O0t - E6DD.V82);
-	},
-	Close: function() {
-		this.boxContents.close.hide();
-		this.overlay.hide();
-	}
-};
-MobileAdInGameHeader = {
-	ad_duration: _SETTINGS.Ad.Mobile.Header.Duration,
-	ad_width: _SETTINGS.Ad.Mobile.Header.Width,
-	ad_height: _SETTINGS.Ad.Mobile.Header.Height,
-	Initialize: function() {
-		var v1j = G999;
-		var q0t = "Ad rotating header disabled";
-		var I0t = "Ad rotating header enabled";
-		var K0t = "MobileAdInGameHeader3";
-		var h0t = "MobileAdInGameHeader2";
-		var c0t = "MobileAdInGameHeader";
-		var J7, D7, Z7, Y7;
-		if (_SETTINGS.Ad.Mobile.Header.Rotation.Enabled) {
-			J7 = _SETTINGS.Ad.Mobile.Header.Rotation.Weight;
-			D7 = J7.MobileAdInGameHeader;
-			Z7 = D7 + J7.MobileAdInGameHeader2;
-			J7 = Z7 + J7.MobileAdInGameHeader3;
-			Y7 = Math.floor(+f999.t5t * Math.random());
-			console.log(v1j.V5t, Y7);
-			Y7 <= D7 ? this.selectedOverlayName = c0t : Y7 <= Z7 ? this.selectedOverlayName = h0t : Y7 <= J7 && (this.selectedOverlayName = K0t);
-			console.log(I0t);
-		} else {
-			this.selectedOverlayName = c0t, console.log(q0t);
-		}
-		this.div = $(v1j.H0t + this.selectedOverlayName);
-		this.game = $(v1j.a0t);
-		this.div.width(this.ad_width);
-		this.div.height(this.ad_height);
-		this.div.css(v1j.W0t, this.game.position().left + (this.game.width() - this.div.width()) / (f999.r4t | E6DD.V82));
-		this.div.css(v1j.x0t, +f999.n7t);
-		this.div.show(this.Timer(this.ad_duration));
-	},
-	Timer: function(i7) {
-		var v7;
-		v7 = setInterval(function() {
-			i7--; + f999.n7t > i7 && (MobileAdInGameHeader.div.hide(), clearInterval(v7));
-		}, G999.O0t | E6DD.V82);
-	}
-};
-MobileAdInGameFooter = {
-	ad_duration: _SETTINGS.Ad.Mobile.Footer.Duration,
-	ad_width: _SETTINGS.Ad.Mobile.Footer.Width,
-	ad_height: _SETTINGS.Ad.Mobile.Footer.Height,
-	Initialize: function() {
-		var N1j = G999;
-		var X0t = "Ad rotating footer disabled";
-		var s0t = "Ad rotating footer enabled";
-		var S0t = "MobileAdInGameFooter3";
-		var M0t = "MobileAdInGameFooter2";
-		var l0t = "MobileAdInGameFooter";
-		var T7, X7, P7, t7;
-		if (_SETTINGS.Ad.Mobile.Footer.Rotation.Enabled) {
-			T7 = _SETTINGS.Ad.Mobile.Footer.Rotation.Weight;
-			X7 = T7.MobileAdInGameFooter;
-			P7 = X7 + T7.MobileAdInGameFooter2;
-			T7 = P7 + T7.MobileAdInGameFooter3;
-			t7 = Math.floor((f999.t5t | E6DD.V82) * Math.random());
-			console.log(N1j.V5t, t7);
-			t7 <= X7 ? this.selectedOverlayName = l0t : t7 <= P7 ? this.selectedOverlayName = M0t : t7 <= T7 && (this.selectedOverlayName = S0t);
-			console.log(s0t);
-		} else {
-			this.selectedOverlayName = l0t, console.log(X0t);
-		}
-		this.div = $(N1j.H0t + this.selectedOverlayName);
-		this.game = $(N1j.a0t);
-		this.div.width(this.ad_width);
-		this.div.height(this.ad_height);
-		this.div.css(N1j.W0t, this.game.position().left + (this.game.width() - this.div.width()) / +f999.r4t);
-		this.div.css(N1j.x0t, this.game.height() - this.div.height() - f999.S6t * E6DD.e82);
-		this.div.show(this.Timer(this.ad_duration));
-	},
-	Timer: function(U7) {
-		var d7;
-		d7 = setInterval(function() {
-			U7--;
-			E6DD.V82 > U7 && (MobileAdInGameFooter.div.hide(), clearInterval(d7));
-		}, G999.O0t * E6DD.e82);
-	}
-};
-MobileAdInGameEnd = {
-	ad_duration: _SETTINGS.Ad.Mobile.End.Duration,
-	ad_width: _SETTINGS.Ad.Mobile.End.Width,
-	ad_height: _SETTINGS.Ad.Mobile.End.Height,
-	ready_in: _STRINGS.Ad.Mobile.End.ReadyIn,
-	loading: _STRINGS.Ad.Mobile.End.Loading,
-	close: _STRINGS.Ad.Mobile.End.Close + G999.A5t,
-	Initialize: function() {
-		var t1j = G999;
-		var t0t = "Ad rotating end disabled";
-		var p0t = "Ad rotating end enabled";
-		var G0t = "MobileAdInGameEnd3";
-		var f0t = "MobileAdInGameEnd2";
-		var j0t = "MobileAdInGameEnd";
-		var k7, y7, L7, O7;
-		if (_SETTINGS.Ad.Mobile.End.Rotation.Enabled) {
-			k7 = _SETTINGS.Ad.Mobile.End.Rotation.Weight;
-			y7 = k7.MobileAdInGameEnd;
-			L7 = y7 + k7.MobileAdInGameEnd2;
-			k7 = L7 + k7.MobileAdInGameEnd3;
-			O7 = Math.floor(f999.r02 * Math.random());
-			console.log(t1j.V5t, O7);
-			O7 <= y7 ? this.selectedOverlayName = j0t : O7 <= L7 ? this.selectedOverlayName = f0t : O7 <= k7 && (this.selectedOverlayName = G0t);
-			console.log(p0t);
-		} else {
-			this.selectedOverlayName = j0t, console.log(t0t);
-		}
-		console.log(t1j.i0t, this.selectedOverlayName);
-		this.overlay = $(t1j.H0t + this.selectedOverlayName);
-		this.box = $(t1j.H0t + this.selectedOverlayName + t1j.z0t);
-		this.game = $(t1j.a0t);
-		this.boxContents = {
-			footer: $(t1j.H0t + this.selectedOverlayName + t1j.Q0t),
-			header: $(t1j.H0t + this.selectedOverlayName + t1j.N0t),
-			close: $(t1j.H0t + this.selectedOverlayName + t1j.y0t),
-			body: $(t1j.H0t + this.selectedOverlayName + t1j.d0t)
-		};
-		this.box.width(this.ad_width);
-		this.box.height(this.ad_height);
-		this.box.css(t1j.W0t, (this.overlay.width() - this.box.width()) / +f999.r4t);
-		this.box.css(t1j.x0t, (this.overlay.height() - this.box.height() - this.boxContents.header.height() - this.boxContents.footer.height()) / +f999.r4t);
-		this.overlay.show(this.Timer(this.ad_duration));
-	},
-	Timer: function(W7) {
-		var m7, o7;
-		m7 = W7;
-		o7 = setInterval(function() {
-			MobileAdInGameEnd.boxContents.header.text(MobileAdInGameEnd.ready_in + m7 + G999.F0t);
-			MobileAdInGameEnd.boxContents.footer.text(MobileAdInGameEnd.loading);
-			m7--; + f999.n7t > m7 && (clearInterval(o7), MobileAdInGameEnd.boxContents.close.css(G999.W0t, MobileAdInGameEnd.boxContents.body.width() - E6DD.l52), MobileAdInGameEnd.boxContents.close.show(), MobileAdInGameEnd.boxContents.header.html(MobileAdInGameEnd.close), MobileAdInGameEnd.boxContents.footer.text(f999.S7t));
-		}, G999.Z0t);
-	},
-	Close: function() {
-		this.boxContents.close.hide();
-		this.overlay.hide();
-	}
-};
+
 ! function(n7, g7) {
 	G999.Y0t == typeof module && G999.Y0t == typeof module.exports ? module.exports = n7.document ? g7(n7, !E6DD.V82) : function(V7) {
 		var B0t = "jQuery requires a window with a document";
@@ -12230,32 +11977,6 @@ ig.module(t999.P7o).requires(t999.T7o).defines(function() {
 		domHandler: S5j.p9t,
 		dynamicClickableEntityDivs: {},
 		coreDivsToResize: [t999.m7o, t999.b7o, J7o],
-		adsToResize: {
-			MobileAdInGamePreroll: {
-				"box-width": _SETTINGS.Ad.Mobile.Preroll.Width + S5j.r4t * s5j.e82,
-				"box-height": _SETTINGS.Ad.Mobile.Preroll.Height + (j5j.g5t - s5j.V82)
-			},
-			MobileAdInGameEnd: {
-				"box-width": _SETTINGS.Ad.Mobile.End.Width + (S5j.r4t - s5j.V82),
-				"box-height": _SETTINGS.Ad.Mobile.End.Height + (j5j.g5t - s5j.V82)
-			},
-			MobileAdInGamePreroll2: {
-				"box-width": _SETTINGS.Ad.Mobile.Preroll.Width + +S5j.r4t,
-				"box-height": _SETTINGS.Ad.Mobile.Preroll.Height + +j5j.g5t
-			},
-			MobileAdInGameEnd2: {
-				"box-width": _SETTINGS.Ad.Mobile.End.Width + s5j.D52,
-				"box-height": _SETTINGS.Ad.Mobile.End.Height + s5j.K52
-			},
-			MobileAdInGamePreroll3: {
-				"box-width": _SETTINGS.Ad.Mobile.Preroll.Width + S5j.r4t * s5j.e82,
-				"box-height": _SETTINGS.Ad.Mobile.Preroll.Height + s5j.K52
-			},
-			MobileAdInGameEnd3: {
-				"box-width": _SETTINGS.Ad.Mobile.End.Width + (S5j.r4t | s5j.V82),
-				"box-height": _SETTINGS.Ad.Mobile.End.Height + +j5j.g5t
-			}
-		},
 		init: function(G5A) {
 			var U7o = "undefined Dom Handler for Size Handler";
 			this.domHandler = G5A;
@@ -12528,30 +12249,7 @@ ig.module(t999.P7o).requires(t999.T7o).defines(function() {
 		}
 	});
 });
-ig.baked = !E6DD.V82;
-ig.module(t999.K4o).defines(function() {
-	ig.ApiHandler = ig.Class.extend({
-		apiAvailable: {
-			MJSPreroll: function() {
-				ig.ua.mobile && ig.domHandler.JQUERYAVAILABLE && _SETTINGS && _SETTINGS.Ad.Mobile.Preroll.Enabled && MobileAdInGamePreroll.Initialize();
-			},
-			MJSHeader: function() {
-				ig.ua.mobile && ig.domHandler.JQUERYAVAILABLE && _SETTINGS.Ad.Mobile.Header.Enabled && MobileAdInGameHeader.Initialize();
-			},
-			MJSFooter: function() {
-				ig.ua.mobile && ig.domHandler.JQUERYAVAILABLE && _SETTINGS.Ad.Mobile.Footer.Enabled && MobileAdInGameFooter.Initialize();
-			},
-			MJSEnd: function() {
-				ig.ua.mobile && ig.domHandler.JQUERYAVAILABLE && _SETTINGS.Ad.Mobile.End.Enabled && MobileAdInGameEnd.Initialize();
-			}
-		},
-		run: function(e5A, r5A) {
-			if (this.apiAvailable[e5A]) {
-				this.apiAvailable[e5A](r5A);
-			}
-		}
-	});
-});
+
 ig.baked = !E6DD.V82;
 ig.module(t999.I4o).defines(function() {
 	var q4o = "SoundPlayer";
