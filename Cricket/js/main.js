@@ -1316,7 +1316,7 @@ function CMain(p) {
 			(DISABLE_SOUND_MOBILE = !0);
 		s_oSpriteLibrary = new CSpriteLibrary;
 		this.setLoadedArray();
-		seekAndDestroy() ? d = new CPreloader : window.location.href = "http://www.codethislab.com/contact-us.html"
+		seekAndDestroy() ? d = new CPreloader : window.location.href = "https://www.theatterolabs.github.io/games/Cricket/"
 	};
 	this.preloaderReady = function() {
 		this._loadImages();
@@ -2212,7 +2212,7 @@ function CCreditsPanel() {
 		c.x = CANVAS_WIDTH / 2;
 		c.y = 470;
 		h.addChild(c);
-		a = new createjs.Text("www.codethislab.com", "42px " + FONT2, "#ffffff");
+		a = new createjs.Text("www.atterolabs.com.com", "42px " + FONT2, "#ffffff");
 		a.x = CANVAS_WIDTH / 2;
 		a.y = 530;
 		a.textAlign = "center";
@@ -2225,7 +2225,7 @@ function CCreditsPanel() {
 		s_oStage.removeChild(h)
 	};
 	this._onLogoButRelease = function() {
-		window.open("http://www.codethislab.com/index.php?&l=en")
+		window.open("http://www.atterolabs.com")
 	};
 	this._init()
 }
