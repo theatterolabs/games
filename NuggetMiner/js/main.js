@@ -5078,14 +5078,14 @@ function CCreditsPanel() {
 		m.x = CANVAS_WIDTH / 2;
 		m.y = 850;
 		k.addChild(m);
-		q = new createjs.Text("www.atterolabs.com.com", "40px " + PRIMARY_FONT, "#000");
+		q = new createjs.Text("www.atterolabs.com", "40px " + PRIMARY_FONT, "#000");
 		q.textAlign = "center";
 		q.textBaseline = "alphabetic";
 		q.x = CANVAS_WIDTH / 2;
 		q.y = 980;
 		q.outline = OUTLINE_TEXT;
 		k.addChild(q);
-		c = new createjs.Text("www.atterolabs.com.com", "40px " + PRIMARY_FONT, "#ffd100");
+		c = new createjs.Text("www.atterolabs.com", "40px " + PRIMARY_FONT, "#ffd100");
 		c.textAlign = "center";
 		c.textBaseline = "alphabetic";
 		c.x = CANVAS_WIDTH / 2;
