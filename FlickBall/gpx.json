@@ -1,0 +1,61 @@
+{
+  "name": "flip-goal",
+  "version": "5",
+  "symbols": "5",
+  "origin": "unity",
+  "runtimes": {
+    "web": {
+      "debug": {
+        "aspect": [
+          0.5,
+          0.9
+        ],
+        "orientation": "portrait",
+        "mountjs": [
+          "gamepix-loader.js",
+          "ngame.js"
+        ],
+        "res": [
+          {
+            "glob": "emscripten/debug/**",
+            "root": "emscripten/debug/"
+          }
+        ]
+      },
+      "release": {
+        "aspect": [
+          0.5,
+          0.9
+        ],
+        "orientation": "portrait",
+        "mountjs": [
+          "gamepix-loader.js",
+          "ngame.js"
+        ],
+        "res": [
+          {
+            "glob": "emscripten/release/**",
+            "root": "emscripten/release/"
+          }
+        ]
+      },
+      "profile": {
+        "aspect": [
+          0.5,
+          0.9
+        ],
+        "orientation": "portrait",
+        "mountjs": [
+          "gamepix-loader.js",
+          "ngame.js"
+        ],
+        "res": [
+          {
+            "glob": "emscripten/profile/**",
+            "root": "emscripten/profile/"
+          }
+        ]
+      }
+    }
+  }
+}
