@@ -1321,14 +1321,6 @@
 	"sourceSize": {"w":132,"h":132}
 },
 {
-	"filename": "logo-ravalmatic.png",
-	"frame": {"x":1476,"y":432,"w":277,"h":157},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":2,"y":62,"w":277,"h":157},
-	"sourceSize": {"w":279,"h":279}
-},
-{
 	"filename": "minijuegos-logo.png",
 	"frame": {"x":1755,"y":454,"w":256,"h":256},
 	"rotated": false,
