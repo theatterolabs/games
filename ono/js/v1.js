@@ -1,0 +1,1 @@
+!function(o,n,e,i,c){(function(e,i,c){for(e=/[?&]?([^=]+)=([^&]*)/g,i=o.location&&o.location.search?o.location.search.split("+").join(" "):"";c=e.exec(i);)n[decodeURIComponent(c[1])]=decodeURIComponent(c[2])})(),"function"==typeof fg_api&&"undefined"!=typeof famobi&&(famobi,fg_api)}(document,{});
