@@ -1,0 +1,1 @@
+{"type":"Scene","props":{"width":750,"runtime":"script/MainUI.js","positionVariance_0":100,"maxPartices":100,"height":1134},"compId":1,"child":[{"type":"Sprite","props":{"visible":false,"name":"runtime"},"compId":3,"child":[{"type":"Sprite","props":{"y":0,"x":0,"name":"ColorFilterSetter"},"compId":2}]}],"loadList":[],"loadList3D":[]}

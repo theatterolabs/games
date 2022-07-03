@@ -1,0 +1,190 @@
+<html>
+
+<head><meta http-equiv="Content-Security-Policy" content="child-src 'self' blob: mc.yandex.ru; connect-src 'self' *.candygrill.com *.eponesh.com *.strm.yandex.net *.verify.yandex.ru amc.yandex.ru an.yandex.ru avatars.mds.yandex.net csp.yandex.net favicon.yandex.net games-sdk.yandex.az games-sdk.yandex.by games-sdk.yandex.co.il games-sdk.yandex.com games-sdk.yandex.com.am games-sdk.yandex.com.ge games-sdk.yandex.com.tr games-sdk.yandex.ee games-sdk.yandex.fr games-sdk.yandex.kg games-sdk.yandex.kz games-sdk.yandex.lt games-sdk.yandex.lv games-sdk.yandex.md games-sdk.yandex.ru games-sdk.yandex.tj games-sdk.yandex.tm games-sdk.yandex.ua games-sdk.yandex.uz jstracer.yandex.ru localhost.msup.yandex.ru mc.yandex.ru strm.yandex.net strm.yandex.ru verify.yandex.ru www.google-analytics.com www.googletagmanager.com yandex.ru yandexmetrica.com; default-src 'self'; font-src 'self' an.yandex.ru fonts.gstatic.com yastat.net yastatic.net; frame-src 'self' localhost yastatic.net; img-src 'self' *.eponesh.com *.verify.yandex.ru amc.yandex.ru an.yandex.ru avatars.mds.yandex.net blob: data: favicon.yandex.net games-sdk.yandex.az games-sdk.yandex.by games-sdk.yandex.co.il games-sdk.yandex.com games-sdk.yandex.com.am games-sdk.yandex.com.ge games-sdk.yandex.com.tr games-sdk.yandex.ee games-sdk.yandex.fr games-sdk.yandex.kg games-sdk.yandex.kz games-sdk.yandex.lt games-sdk.yandex.lv games-sdk.yandex.md games-sdk.yandex.ru games-sdk.yandex.tj games-sdk.yandex.tm games-sdk.yandex.ua games-sdk.yandex.uz games.games-test.yandex.ru mc.yandex.ru verify.yandex.ru; media-src 'self' *.strm.yandex.net blob: data: strm.yandex.ru; script-src 'self' 'unsafe-eval' 'unsafe-inline' *.eponesh.com *.yandex.ru blob: www.google-analytics.com www.googletagmanager.com yandex.ru yastatic.net; style-src 'self' 'unsafe-eval' 'unsafe-inline' fonts.googleapis.com">
+    <title>Helix</title>
+    <meta charset='utf-8' />
+    <meta name='renderer' content='webkit' />
+    <meta name='viewport' content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
+    />
+    <meta name='apple-mobile-web-app-capable' content='yes' />
+    <meta name='full-screen' content='true' />
+    <meta name='x5-fullscreen' content='true' />
+    <meta name='360-fullscreen' content='true' />
+    <meta name='laya' screenorientation='landscape' />
+    <meta http-equiv='expires' content='0' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+    <meta http-equiv='expires' content='0' />
+    <meta http-equiv='Cache-Control' content='no-siteapp' />
+
+    <link rel="deprecated-manifest" href="yandex-manifest.json">
+
+    <!-- Yandex Games SDK -->
+    <script src="https://yandex.ru/games/sdk/v2"></script>
+    
+</head>
+
+<body>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        
+        ym(70986439, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/70986439" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+    
+    <script type="text/javascript">
+		//var userToken = '';
+		
+        window.isYandex = true;
+
+		function IsWebGLSupported() {
+            if (window._IsWebGLSupported === undefined) {
+                var canvas;
+                var ctx;
+                try {
+                    canvas = document.createElement('canvas');
+                    if (canvas == null) return false;
+                    var gc = function(name) { return canvas.getContext(name); };
+                    ctx = gc('webgl2') || gc('webgl') || gc('experimental-webgl') || gc('experimental-webgl') || gc('webkit-3d') || gc('moz-webgl');
+                    window._IsWebGLSupported = (ctx != null);
+                }
+                catch (e) { window._IsWebGLSupported = false; }
+            }
+            return window._IsWebGLSupported;
+		}
+        
+        window.loadingIndicator = new function() {
+            this.showProgress = function() { }
+            this.hide = function() { }
+        }
+        
+        function loadLib(url, weight, onComplete) {
+            //console.log('loadLib ' + url);
+            weight = weight || 10;
+            if (!window.loadLibCtx) {
+                window.loadLibCtx = {progress:0,total:0,queue:[],allUrls:[]};
+                if (window.loadingIndicator)
+                    window.loadingIndicator.showProgress(0);
+            }
+            if (loadLibCtx.allUrls.indexOf(url) >= 0)
+                return;
+            loadLibCtx.allUrls.push(url);
+            loadLibCtx.queue.push({url:url, weight:weight, onComplete:onComplete});
+            loadLibCtx.total += weight;
+            if (loadLibCtx.queue[0].processing)
+                return;
+            loadLibCtx.queue[0].processing = true;
+            var loadNext = function() {
+                var script = document.createElement("script");
+                script.async = true;
+                script.src = loadLibCtx.queue[0].url;
+                loadLibCtx.queue[0].processing = true;
+                script.onload = function() {
+                    loadLibCtx.progress += loadLibCtx.queue[0].weight;
+                    let onComplete = loadLibCtx.queue[0].onComplete;
+                    loadLibCtx.queue.splice(0, 1);
+                    if (onComplete)
+                        onComplete();
+                    console.log('Lib loaded (' + loadLibCtx.progress + '/' + loadLibCtx.total + '): ' + this.src);
+                    var pgrs = loadLibCtx.progress / loadLibCtx.total * 0.5;
+                    if (window.loadingIndicator)
+                        window.loadingIndicator.showProgress(pgrs);
+                    if (loadLibCtx.queue.length)
+                        loadNext();
+                }.bind(script);
+                document.body.appendChild(script);
+            };
+            loadNext();
+        }
+        
+        function getAndroidVersion(ua) {
+            ua = (ua || navigator.userAgent).toLowerCase(); 
+            var match = ua.match(/android\s([0-9\.]*)/);
+            return match ? match[1] : false;
+        };
+        
+        function onContentLoad() {
+            if (!IsWebGLSupported()) {
+                //loadingIndicator.showProgress(0);
+                //alert("WebGL не поодерживается");
+                return;
+            }
+            var av = getAndroidVersion();
+            if (av && parseFloat(av) < 5) {
+                //loadingIndicator.showProgress(0);
+                alert('Устройство не поодерживается: необходима версия Android 5.0 или выше');
+                return;
+            }
+            loadLib('js/jquery.min.js');
+            loadLib('js/progress-indicator.js', 10, function() { window.loadingIndicator = new ProgressIndicator() });
+            loadLib('index.js');
+        }
+		
+		function initServiceWorker() {
+            if (/\s(TA|SA)\//.test(navigator && navigator.userAgent)) {
+                if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.getRegistrations()
+                    .then(function (registrations) {
+                        registrations.forEach(function (registration) {
+                        registration.unregister()
+                            .then(function (isUnregistered) {
+                            console.info('[SW] Unregister', isUnregistered);
+                            })
+                        })
+                    })
+                }
+            } else {
+                if ('serviceWorker' in navigator && !(ysdk && ysdk.yandexApp && ysdk.yandexApp.enabled)) {
+                    navigator.serviceWorker
+                        .register('sw.js')
+                        .then(function (reg) {
+                            console.log('Registration succeeded. Scope is ' + reg.scope);
+                        })
+                        .catch(function (error) {
+                            console.error('Trouble with sw: ', error);
+                        });
+                }
+            }
+		}
+
+        // api v1
+        //document.addEventListener('DOMContentLoaded', function() {
+        //    window.ysdk = new YaGames({screen:{orientation:{value:'portrait'}}});
+        //    onContentLoad();
+        //});
+
+        // api v2
+        YaGames.init().then(function(ysdk) {
+            window.ysdk = ysdk;
+            return ysdk.getPlayer({signed: true});
+        }).then(function(player) {
+            window.ysdk_player = player;
+            return player.getData();
+        }).then(function(data) {
+            window.ysdk_data = data;
+			initServiceWorker();
+            onContentLoad();
+        }).catch(function(reason) {
+			initServiceWorker();
+            onContentLoad();
+        });
+
+        window.onerror = function(errorMsg, url, lineNumber) {
+            return true;
+        };
+
+        //window.GET = (location.href.split('?')[1] || "").split('&').reduce(function(s, c) { var arr=c.split('='); s[arr[0]]=arr[1]; return s; }, {});
+        window.GET = (location.href.split('?')[1] || "").replace('#','&').split('&').reduce(function(s, c) { var arr=c.split('='); s[arr[0]]=arr[1]; return s; }, {})
+    </script>
+    <a href="www.google.com" id="groupLink" style="position: absolute;z-index: 1;width: 25%;height: 18%;right: 0px;bottom: 0px;" target="_blank"></a>
+    <a href="www.google.com" id="raccoonLink" style="position: absolute;z-index: 1; left:5%; right:5%; top:12%; bottom: 6px; display: none" target="_blank"></a>
+</body>
+
+</html>
