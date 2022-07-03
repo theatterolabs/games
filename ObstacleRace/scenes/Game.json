@@ -1,0 +1,68 @@
+{
+    "type": "Scene",
+    "props": {
+        "width": 750,
+        "runtime": "script/Gamescene.js",
+        "height": 1334,
+        "autoDestroyAtClosed": true
+    },
+    "compId": 2,
+    "child": [
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 1000,
+                "x": 175,
+                "width": 400,
+                "var": "runtips",
+                "height": 80
+            },
+            "compId": 30,
+            "child": [
+                {
+                    "type": "Text",
+                    "props": {
+                        "y": 0,
+                        "x": 0,
+                        "width": 400,
+                        "valign": "middle",
+                        "text": "Long press to run",
+                        "runtime": "laya.display.Text",
+                        "height": 80,
+                        "fontSize": 40,
+                        "color": "#fff",
+                        "align": "center"
+                    },
+                    "compId": 31
+                }
+            ]
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 70,
+                "x": 110,
+                "var": "progress",
+                "texture": "img/distance.png"
+            },
+            "compId": 36
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 80,
+                "x": 15,
+                "width": 60,
+                "var": "pause",
+                "texture": "img/home.png",
+                "height": 60
+            },
+            "compId": 41
+        }
+    ],
+    "loadList": [
+        "img/distance.png",
+        "img/home.png"
+    ],
+    "loadList3D": []
+}

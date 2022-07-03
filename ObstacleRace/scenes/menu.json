@@ -1,0 +1,400 @@
+{
+    "type": "Scene",
+    "props": {
+        "width": 750,
+        "runtime": "script/Menu.js",
+        "height": 1334,
+        "autoDestroyAtClosed": true
+    },
+    "compId": 2,
+    "child": [
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 878,
+                "x": 375,
+                "width": 400,
+                "var": "btn",
+                "pivotY": 50,
+                "pivotX": 200,
+                "height": 100
+            },
+            "compId": 30,
+            "child": [
+                {
+                    "type": "Text",
+                    "props": {
+                        "y": 0,
+                        "x": 0,
+                        "width": 400,
+                        "valign": "middle",
+                        "text": "Click to start",
+                        "runtime": "laya.display.Text",
+                        "height": 100,
+                        "fontSize": 60,
+                        "color": "#fff",
+                        "bold": true,
+                        "align": "center"
+                    },
+                    "compId": 31
+                }
+            ]
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "var": "cachesp"
+            },
+            "compId": 32,
+            "child": [
+                {
+                    "type": "Sprite",
+                    "props": {
+                        "y": 516,
+                        "x": 607,
+                        "var": "skin",
+                        "texture": "images/skin.png"
+                    },
+                    "compId": 24,
+                    "child": [
+                        {
+                            "type": "Text",
+                            "props": {
+                                "y": 132,
+                                "x": 36,
+                                "text": "SKIN",
+                                "runtime": "laya.display.Text",
+                                "fontSize": 28,
+                                "color": "#000"
+                            },
+                            "compId": 25
+                        },
+                        {
+                            "type": "Sprite",
+                            "props": {
+                                "y": 21,
+                                "x": 126,
+                                "width": 6,
+                                "pivotY": 7,
+                                "pivotX": 14,
+                                "name": "reddot",
+                                "height": 18
+                            },
+                            "compId": 50,
+                            "child": [
+                                {
+                                    "type": "Circle",
+                                    "props": {
+                                        "radius": 16,
+                                        "lineWidth": 1,
+                                        "fillColor": "#ff0000"
+                                    },
+                                    "compId": 51
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Sprite",
+                    "props": {
+                        "y": 986,
+                        "x": 562,
+                        "width": 90,
+                        "visible": false,
+                        "var": "fight",
+                        "texture": "images/fight.png",
+                        "height": 90
+                    },
+                    "compId": 16,
+                    "child": [
+                        {
+                            "type": "Text",
+                            "props": {
+                                "y": 95,
+                                "x": 4,
+                                "runtime": "laya.display.Text",
+                                "fontSize": 24,
+                                "color": "#000"
+                            },
+                            "compId": 21
+                        },
+                        {
+                            "type": "Sprite",
+                            "props": {
+                                "y": 15,
+                                "x": 90,
+                                "width": 14,
+                                "pivotY": 7,
+                                "pivotX": 14,
+                                "name": "reddot",
+                                "height": 14
+                            },
+                            "compId": 48,
+                            "child": [
+                                {
+                                    "type": "Circle",
+                                    "props": {
+                                        "radius": 14,
+                                        "lineWidth": 1,
+                                        "fillColor": "#ff0000"
+                                    },
+                                    "compId": 49
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Sprite",
+                    "props": {
+                        "y": 200,
+                        "x": 69,
+                        "var": "title",
+                        "texture": "images/title.png",
+                        "scaleY": 2,
+                        "scaleX": 2
+                    },
+                    "compId": 5
+                },
+                {
+                    "type": "Sprite",
+                    "props": {
+                        "y": 700,
+                        "x": 607,
+                        "visible": false,
+                        "var": "sort",
+                        "texture": "images/paihang.png"
+                    },
+                    "compId": 11,
+                    "child": [
+                        {
+                            "type": "Text",
+                            "props": {
+                                "y": 132,
+                                "x": 22,
+                                "runtime": "laya.display.Text",
+                                "fontSize": 28,
+                                "color": "#000"
+                            },
+                            "compId": 18
+                        }
+                    ]
+                },
+                {
+                    "type": "Sprite",
+                    "props": {
+                        "y": 100,
+                        "x": 20,
+                        "width": 140,
+                        "var": "coink",
+                        "height": 44
+                    },
+                    "compId": 26,
+                    "child": [
+                        {
+                            "type": "Sprite",
+                            "props": {
+                                "y": 2,
+                                "x": 94,
+                                "texture": "images/coin.png"
+                            },
+                            "compId": 27
+                        },
+                        {
+                            "type": "Text",
+                            "props": {
+                                "y": 0,
+                                "x": 0,
+                                "width": 100,
+                                "var": "coin",
+                                "valign": "middle",
+                                "text": "0",
+                                "runtime": "laya.display.Text",
+                                "height": 44,
+                                "fontSize": 36,
+                                "color": "#fff",
+                                "align": "center"
+                            },
+                            "compId": 28
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 996,
+                "x": 194,
+                "width": 362,
+                "var": "marathon",
+                "height": 80
+            },
+            "compId": 35,
+            "child": [
+                {
+                    "type": "Sprite",
+                    "props": {
+                        "y": 10,
+                        "x": 287,
+                        "width": 70,
+                        "texture": "images/marathon.png",
+                        "height": 60
+                    },
+                    "compId": 41
+                },
+                {
+                    "type": "Sprite",
+                    "props": {
+                        "y": 60,
+                        "x": 135,
+                        "width": 150,
+                        "var": "ticket",
+                        "height": 40
+                    },
+                    "compId": 37,
+                    "child": [
+                        {
+                            "type": "Rect",
+                            "props": {
+                                "y": 0,
+                                "x": 0,
+                                "width": 150,
+                                "lineWidth": 2,
+                                "lineColor": "#000000",
+                                "height": 40,
+                                "fillColor": "#ffffff"
+                            },
+                            "compId": 40
+                        },
+                        {
+                            "type": "Text",
+                            "props": {
+                                "x": 32,
+                                "width": 110,
+                                "valign": "middle",
+                                "text": "Get ticket",
+                                "runtime": "laya.display.Text",
+                                "name": "text",
+                                "height": 40,
+                                "fontSize": 26,
+                                "color": "#F85437",
+                                "align": "center"
+                            },
+                            "compId": 38
+                        },
+                        {
+                            "type": "Sprite",
+                            "props": {
+                                "name": "shipin"
+                            },
+                            "compId": 47,
+                            "child": [
+                                {
+                                    "type": "Poly",
+                                    "props": {
+                                        "y": 7,
+                                        "x": 12,
+                                        "points": "0,0,0,26,20,13",
+                                        "lineWidth": 0,
+                                        "lineColor": "#ff0000",
+                                        "fillColor": "#F85437"
+                                    },
+                                    "compId": 39
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Sprite",
+                    "props": {
+                        "y": 25,
+                        "x": 12,
+                        "texture": "images/marathontxt.png"
+                    },
+                    "compId": 42
+                },
+                {
+                    "type": "Sprite",
+                    "props": {
+                        "y": 60,
+                        "x": 192,
+                        "width": 150,
+                        "visible": false,
+                        "var": "timekk",
+                        "height": 40
+                    },
+                    "compId": 43,
+                    "child": [
+                        {
+                            "type": "Rect",
+                            "props": {
+                                "y": 0,
+                                "x": 0,
+                                "width": 150,
+                                "lineWidth": 2,
+                                "lineColor": "#000000",
+                                "height": 40,
+                                "fillColor": "#ffffff"
+                            },
+                            "compId": 44
+                        },
+                        {
+                            "type": "Text",
+                            "props": {
+                                "width": 150,
+                                "var": "timetxt",
+                                "valign": "middle",
+                                "text": "0",
+                                "runtime": "laya.display.Text",
+                                "height": 40,
+                                "fontSize": 26,
+                                "color": "#F85437",
+                                "align": "center"
+                            },
+                            "compId": 45
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 700,
+                "x": 20,
+                "visible": false,
+                "var": "rili",
+                "texture": "images/rili.png"
+            },
+            "compId": 54,
+            "child": [
+                {
+                    "type": "Text",
+                    "props": {
+                        "y": 132,
+                        "x": 10,
+                        "text": "SIGN IN",
+                        "runtime": "laya.display.Text",
+                        "fontSize": 28,
+                        "color": "#000"
+                    },
+                    "compId": 55
+                }
+            ]
+        }
+    ],
+    "loadList": [
+        "images/skin.png",
+        "images/fight.png",
+        "images/title.png",
+        "images/paihang.png",
+        "images/coin.png",
+        "images/marathon.png",
+        "images/marathontxt.png",
+        "images/rili.png"
+    ],
+    "loadList3D": []
+}

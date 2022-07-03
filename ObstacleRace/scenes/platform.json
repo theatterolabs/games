@@ -1,0 +1,70 @@
+{
+    "type": "Scene",
+    "props": {
+        "width": 750,
+        "runtime": "script/platform.js",
+        "height": 1344,
+        "autoDestroyAtClosed": true
+    },
+    "compId": 2,
+    "child": [
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 150,
+                "x": 125,
+                "width": 500,
+                "var": "tips",
+                "height": 80
+            },
+            "compId": 3,
+            "child": [
+                {
+                    "type": "Text",
+                    "props": {
+                        "y": 0,
+                        "x": 0,
+                        "width": 500,
+                        "valign": "middle",
+                        "text": "The last one will lose!",
+                        "runtime": "laya.display.Text",
+                        "height": 80,
+                        "fontSize": 46,
+                        "font": "Helvetica",
+                        "color": "#fff",
+                        "bold": true,
+                        "align": "center"
+                    },
+                    "compId": 4
+                }
+            ]
+        },
+        {
+            "type": "Text",
+            "props": {
+                "y": 920,
+                "x": 104,
+                "text": "Looking for other players...",
+                "runtime": "laya.display.Text",
+                "fontSize": 42,
+                "font": "Helvetica",
+                "color": "#fff",
+                "bold": true
+            },
+            "compId": 5
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 980,
+                "x": 125,
+                "width": 500,
+                "var": "loading",
+                "height": 50
+            },
+            "compId": 6
+        }
+    ],
+    "loadList": [],
+    "loadList3D": []
+}

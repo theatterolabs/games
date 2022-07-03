@@ -1,0 +1,115 @@
+{
+    "type": "Dialog",
+    "props": {
+        "width": 690,
+        "runtime": "script/Signin.js",
+        "height": 965,
+        "autoDestroyAtClosed": true
+    },
+    "compId": 2,
+    "child": [
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 855,
+                "x": 335,
+                "width": 300,
+                "var": "btn1",
+                "texture": "img/btn1.png",
+                "pivotY": 40,
+                "pivotX": 140,
+                "height": 80
+            },
+            "compId": 4,
+            "child": [
+                {
+                    "type": "Text",
+                    "props": {
+                        "y": 2,
+                        "x": 65,
+                        "width": 200,
+                        "valign": "middle",
+                        "text": " CLAIM X2",
+                        "runtime": "laya.display.Text",
+                        "height": 76,
+                        "fontSize": 40,
+                        "color": "#fff",
+                        "align": "center"
+                    },
+                    "compId": 6
+                },
+                {
+                    "type": "Sprite",
+                    "props": {
+                        "y": 13,
+                        "x": 27,
+                        "width": 50,
+                        "texture": "img/shipin.png",
+                        "height": 50
+                    },
+                    "compId": 7
+                }
+            ]
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 0,
+                "x": 54,
+                "texture": "img/signkk.png"
+            },
+            "compId": 11,
+            "child": [
+                {
+                    "type": "Text",
+                    "props": {
+                        "y": 14,
+                        "x": 210,
+                        "text": "Daily Sign In",
+                        "runtime": "laya.display.Text",
+                        "fontSize": 40,
+                        "color": "#fff"
+                    },
+                    "compId": 3
+                }
+            ]
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 9.5,
+                "x": 119,
+                "width": 50,
+                "visible": true,
+                "var": "back",
+                "texture": "img/close.png",
+                "height": 50
+            },
+            "compId": 10
+        },
+        {
+            "type": "Text",
+            "props": {
+                "y": 910,
+                "x": 270,
+                "width": 150,
+                "var": "btn2",
+                "valign": "middle",
+                "text": " CLAIM",
+                "runtime": "laya.display.Text",
+                "height": 40,
+                "fontSize": 32,
+                "color": "#fff",
+                "align": "center"
+            },
+            "compId": 14
+        }
+    ],
+    "loadList": [
+        "img/btn1.png",
+        "img/shipin.png",
+        "img/signkk.png",
+        "img/close.png"
+    ],
+    "loadList3D": []
+}
