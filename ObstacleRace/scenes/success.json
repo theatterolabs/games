@@ -1,0 +1,189 @@
+{
+    "type": "Scene",
+    "props": {
+        "width": 750,
+        "runtime": "script/Success.js",
+        "height": 1334,
+        "autoDestroyAtClosed": true
+    },
+    "compId": 2,
+    "child": [
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 80,
+                "x": 145,
+                "width": 460,
+                "texture": "img/success.png",
+                "height": 200
+            },
+            "compId": 4
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 23,
+                "x": 265,
+                "width": 220,
+                "texture": "img/star_active.png",
+                "height": 210
+            },
+            "compId": 5
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 80,
+                "x": 60,
+                "width": 191,
+                "texture": "img/star_active.png",
+                "rotation": -15,
+                "height": 187
+            },
+            "compId": 7
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 34,
+                "x": 510,
+                "width": 191,
+                "texture": "img/star_active.png",
+                "rotation": 15,
+                "height": 187
+            },
+            "compId": 8
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 246,
+                "x": 10,
+                "width": 730,
+                "var": "content",
+                "height": 640
+            },
+            "compId": 6,
+            "child": [
+                {
+                    "type": "Text",
+                    "props": {
+                        "y": 3,
+                        "x": 154,
+                        "width": 140,
+                        "var": "txt1",
+                        "valign": "middle",
+                        "text": "Level",
+                        "runtime": "laya.display.Text",
+                        "height": 130,
+                        "fontSize": 60,
+                        "font": "Helvetica",
+                        "color": "#fff",
+                        "align": "left"
+                    },
+                    "compId": 11
+                },
+                {
+                    "type": "Text",
+                    "props": {
+                        "y": 0,
+                        "x": 408,
+                        "width": 220,
+                        "var": "txt2",
+                        "valign": "middle",
+                        "text": ",pass!",
+                        "runtime": "laya.display.Text",
+                        "height": 130,
+                        "fontSize": 60,
+                        "font": "Helvetica",
+                        "color": "#fff",
+                        "align": "left"
+                    },
+                    "compId": 13
+                }
+            ]
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 920,
+                "x": 140,
+                "width": 470,
+                "var": "btn",
+                "texture": "img/btn1.png",
+                "height": 150
+            },
+            "compId": 3,
+            "child": [
+                {
+                    "type": "Sprite",
+                    "props": {
+                        "y": 40,
+                        "x": 375,
+                        "width": 40,
+                        "texture": "img/next.png",
+                        "height": 60
+                    },
+                    "compId": 9
+                },
+                {
+                    "type": "Text",
+                    "props": {
+                        "y": 0,
+                        "x": 7,
+                        "width": 400,
+                        "valign": "middle",
+                        "text": "Next Level",
+                        "runtime": "laya.display.Text",
+                        "height": 140,
+                        "fontSize": 60,
+                        "color": "#fff",
+                        "bold": true,
+                        "align": "center"
+                    },
+                    "compId": 10
+                }
+            ]
+        },
+        {
+            "type": "List",
+            "props": {
+                "y": 386,
+                "x": 60,
+                "width": 642,
+                "var": "list_ad",
+                "spaceY": 20,
+                "spaceX": 20,
+                "height": 496
+            },
+            "compId": 14,
+            "child": [
+                {
+                    "type": "Box",
+                    "props": {
+                        "renderType": "render"
+                    },
+                    "compId": 17,
+                    "child": [
+                        {
+                            "type": "Image",
+                            "props": {
+                                "width": 200,
+                                "name": "thumb",
+                                "height": 150
+                            },
+                            "compId": 18
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "loadList": [
+        "img/success.png",
+        "img/star_active.png",
+        "img/btn1.png",
+        "img/next.png"
+    ],
+    "loadList3D": []
+}
