@@ -1,0 +1,318 @@
+{
+    "type": "Scene",
+    "props": {
+        "width": 750,
+        "runtime": "script/Skin.js",
+        "height": 1344,
+        "autoDestroyAtClosed": true
+    },
+    "compId": 2,
+    "child": [
+        {
+            "type": "Rect",
+            "props": {
+                "y": 780,
+                "centerX": 0,
+                "width": 750,
+                "lineWidth": 1,
+                "height": 1000,
+                "fillColor": "rgba(0,0,0,0.8)"
+            },
+            "compId": 3
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 46,
+                "x": 0,
+                "width": 750,
+                "var": "carea",
+                "height": 671
+            },
+            "compId": 10
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 805,
+                "x": 0,
+                "var": "skin1"
+            },
+            "compId": 4
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 720,
+                "x": 160,
+                "width": 200,
+                "var": "btn1",
+                "height": 60
+            },
+            "compId": 5,
+            "child": [
+                {
+                    "type": "Text",
+                    "props": {
+                        "width": 200,
+                        "valign": "middle",
+                        "text": "SKIN",
+                        "runtime": "laya.display.Text",
+                        "height": 60,
+                        "fontSize": 36,
+                        "color": "#fff",
+                        "bold": true,
+                        "align": "center"
+                    },
+                    "compId": 7
+                }
+            ]
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 720,
+                "x": 390,
+                "width": 200,
+                "var": "btn2",
+                "height": 60
+            },
+            "compId": 6,
+            "child": [
+                {
+                    "type": "Text",
+                    "props": {
+                        "width": 200,
+                        "valign": "middle",
+                        "text": "Action",
+                        "runtime": "laya.display.Text",
+                        "height": 60,
+                        "fontSize": 36,
+                        "color": "#fff",
+                        "bold": true,
+                        "align": "center"
+                    },
+                    "compId": 8
+                }
+            ]
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 28,
+                "x": 16,
+                "var": "back",
+                "texture": "img/back.png"
+            },
+            "compId": 9
+        },
+        {
+            "type": "Text",
+            "props": {
+                "y": 66,
+                "x": 178,
+                "text": "Slide to rotate the character",
+                "runtime": "laya.display.Text",
+                "fontSize": 32,
+                "color": "#fff"
+            },
+            "compId": 11
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 76,
+                "x": 590,
+                "texture": "img/goldk.png"
+            },
+            "compId": 12,
+            "child": [
+                {
+                    "type": "Sprite",
+                    "props": {
+                        "y": 2,
+                        "x": 94,
+                        "texture": "img/coin.png"
+                    },
+                    "compId": 13
+                },
+                {
+                    "type": "Text",
+                    "props": {
+                        "y": 0,
+                        "x": 0,
+                        "width": 100,
+                        "var": "coin",
+                        "valign": "middle",
+                        "text": "0",
+                        "runtime": "laya.display.Text",
+                        "height": 44,
+                        "fontSize": 36,
+                        "color": "#fff",
+                        "align": "center"
+                    },
+                    "compId": 14
+                }
+            ]
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 640,
+                "x": 125,
+                "width": 445,
+                "visible": false,
+                "var": "tipsk",
+                "height": 60
+            },
+            "compId": 15,
+            "child": [
+                {
+                    "type": "Rect",
+                    "props": {
+                        "y": 0,
+                        "x": -51,
+                        "width": 602,
+                        "lineWidth": 1,
+                        "height": 60,
+                        "fillColor": "rgba(0,0,0,0.6)"
+                    },
+                    "compId": 16
+                },
+                {
+                    "type": "Text",
+                    "props": {
+                        "y": 0,
+                        "x": -51,
+                        "wordWrap": true,
+                        "width": 603,
+                        "var": "tips",
+                        "valign": "middle",
+                        "text": "LOCK",
+                        "runtime": "laya.display.Text",
+                        "height": 60,
+                        "fontSize": 36,
+                        "color": "#fff",
+                        "align": "center"
+                    },
+                    "compId": 17
+                }
+            ]
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 450,
+                "x": 570,
+                "width": 150,
+                "visible": false,
+                "var": "goldbtn",
+                "height": 70
+            },
+            "compId": 18,
+            "child": [
+                {
+                    "type": "Rect",
+                    "props": {
+                        "y": 0,
+                        "x": 0,
+                        "width": 150,
+                        "lineWidth": 2,
+                        "lineColor": "#fff",
+                        "height": 70,
+                        "fillColor": "#FB9738"
+                    },
+                    "compId": 19
+                },
+                {
+                    "type": "Text",
+                    "props": {
+                        "y": 0,
+                        "x": 0,
+                        "width": 100,
+                        "var": "price",
+                        "valign": "middle",
+                        "text": "0",
+                        "runtime": "laya.display.Text",
+                        "height": 70,
+                        "fontSize": 36,
+                        "color": "#fff",
+                        "align": "center"
+                    },
+                    "compId": 20
+                },
+                {
+                    "type": "Sprite",
+                    "props": {
+                        "y": 15,
+                        "x": 103,
+                        "texture": "img/coin.png"
+                    },
+                    "compId": 21
+                }
+            ]
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 450,
+                "x": 30,
+                "width": 150,
+                "visible": false,
+                "var": "vodbtn",
+                "height": 70
+            },
+            "compId": 26,
+            "child": [
+                {
+                    "type": "Rect",
+                    "props": {
+                        "y": 0,
+                        "x": 0,
+                        "width": 150,
+                        "lineWidth": 2,
+                        "lineColor": "#fff",
+                        "height": 70,
+                        "fillColor": "#FB9738"
+                    },
+                    "compId": 27
+                },
+                {
+                    "type": "Text",
+                    "props": {
+                        "y": 0,
+                        "x": 70,
+                        "width": 80,
+                        "var": "vodtimes",
+                        "valign": "middle",
+                        "text": "0",
+                        "runtime": "laya.display.Text",
+                        "height": 70,
+                        "fontSize": 36,
+                        "color": "#fff",
+                        "align": "center"
+                    },
+                    "compId": 28
+                },
+                {
+                    "type": "Sprite",
+                    "props": {
+                        "y": 10,
+                        "x": 10,
+                        "width": 50,
+                        "texture": "img/shipin.png",
+                        "height": 50
+                    },
+                    "compId": 29
+                }
+            ]
+        }
+    ],
+    "loadList": [
+        "img/back.png",
+        "img/goldk.png",
+        "img/coin.png",
+        "img/shipin.png"
+    ],
+    "loadList3D": []
+}
