@@ -1,0 +1,88 @@
+{
+    "type": "Scene",
+    "props": {
+        "width": 750,
+        "runtime": "script/Lockms.js",
+        "height": 1334,
+        "autoDestroyAtClosed": true
+    },
+    "compId": 2,
+    "child": [
+        {
+            "type": "Text",
+            "props": {
+                "y": 400,
+                "x": 74,
+                "text": "Unlock new level",
+                "runtime": "laya.display.Text",
+                "fontSize": 80,
+                "font": "Arial",
+                "color": "#fff"
+            },
+            "compId": 3
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 700,
+                "x": 150,
+                "width": 470,
+                "var": "btn",
+                "texture": "img/btn1.png",
+                "height": 150
+            },
+            "compId": 4,
+            "child": [
+                {
+                    "type": "Sprite",
+                    "props": {
+                        "y": 40,
+                        "x": 50,
+                        "width": 60,
+                        "texture": "img/shipin.png",
+                        "height": 60
+                    },
+                    "compId": 5
+                },
+                {
+                    "type": "Text",
+                    "props": {
+                        "x": 50,
+                        "width": 400,
+                        "valign": "middle",
+                        "text": "FREE",
+                        "runtime": "laya.display.Text",
+                        "height": 140,
+                        "fontSize": 60,
+                        "color": "#fff",
+                        "bold": true,
+                        "align": "center"
+                    },
+                    "compId": 6
+                }
+            ]
+        },
+        {
+            "type": "Text",
+            "props": {
+                "y": 900,
+                "x": 225,
+                "width": 300,
+                "var": "notxt",
+                "valign": "middle",
+                "text": "No,Thanks",
+                "runtime": "laya.display.Text",
+                "height": 50,
+                "fontSize": 40,
+                "color": "#fff",
+                "align": "center"
+            },
+            "compId": 7
+        }
+    ],
+    "loadList": [
+        "img/btn1.png",
+        "img/shipin.png"
+    ],
+    "loadList3D": []
+}
