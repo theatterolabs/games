@@ -206,7 +206,7 @@ function onAdsManagerLoaded(adsManagerLoadedEvent) {
 
   try {
     // Initialize the ads manager. Ad rules playlist will start at this time.
-    adsManager.init(640, 360, google.ima.ViewMode.FULLSCREEN);
+    adsManager.init(window.innerWidth, window.innerHeight, google.ima.ViewMode.NORMAL);
   } catch (adError) {
     // An error may be thrown if there was a problem with the VAST response.
     videoContent.play();
