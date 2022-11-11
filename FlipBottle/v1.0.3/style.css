@@ -196,6 +196,7 @@ html, body, canvas {
   top: 0px;
   left: 0px;
   height: 100vh;
+	width: 100vw;
 z-index: 10001;	
 }
 
