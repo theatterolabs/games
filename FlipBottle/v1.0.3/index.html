@@ -110,6 +110,7 @@ var playButton;
 var videoContent;
 var splashScreen;
 var mainContainer = document.getElementById('mainContainer');
+		
 
 function init() {
  
@@ -226,6 +227,11 @@ function onAdEvent(adEvent) {
         videoContent.play();
       }
       break;
+		   case google.ima.AdEvent.Type.COMPLETE:
+		  mainContainer.style.display = 'none';
+		  break;
+		  
+		  
   }
 }
 
@@ -264,7 +270,7 @@ function contentEnded() {
   // Our content video has ended, notify the AdsLoader so we can play
   // any post-rolls.
   adsLoader.contentComplete();
-	mainContainer.style.display = 'none';
+	
 }
 
 // Wire UI element references and UI event listeners.
