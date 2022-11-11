@@ -187,8 +187,8 @@ html, body, canvas {
 
 #mainContainer {
   position: relative;
- width: 100%;
-  min-height: 100%;
+  width: 640px;
+  height: 360px;
   z-index: 10000;
 }
 
@@ -196,8 +196,8 @@ html, body, canvas {
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 100%;
-  min-height: 100%;
+  width: 640px;
+  height: 360px;
 z-index: 10001;	
 }
 
