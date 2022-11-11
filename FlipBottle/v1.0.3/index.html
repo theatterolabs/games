@@ -157,11 +157,11 @@ function requestAds() {
 
   // Specify the linear and nonlinear slot sizes. This helps the SDK to
   // select the correct creative if multiple are returned.
-  adsRequest.linearAdSlotWidth = window.innerWidth;
-  adsRequest.linearAdSlotHeight = window.innerHeight;
+  adsRequest.linearAdSlotWidth = 480;
+  adsRequest.linearAdSlotHeight = 640;
 
-  adsRequest.nonLinearAdSlotWidth = window.innerWidth;
-  adsRequest.nonLinearAdSlotHeight = window.innerHeight;
+  adsRequest.nonLinearAdSlotWidth = 480;
+  adsRequest.nonLinearAdSlotHeight = 640;
 
   adsLoader.requestAds(adsRequest);
 }
