@@ -176,7 +176,7 @@ html, body, canvas {
   width: 100%;
   height: 100%;
   opacity: 1;
-  background-image: url("images/Splash_Bg.jpeg")
+  background-image: url("./images/Splash_Bg.jpeg")
     center center / cover no-repeat rgb(0, 0, 0);
 	z-index: 999999001;
 }
