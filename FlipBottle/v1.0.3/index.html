@@ -108,13 +108,16 @@ var adsLoader;
 var adDisplayContainer;
 var playButton;
 var videoContent;
-var splashScreen	
+var splashScreen
+var mainContainer
 
 function init() {
  
   playButton = document.getElementById('btn-play');
   playButton.addEventListener('click', requestAds);
-  splashScreen = document.getElementById('fg-click2play');	
+  splashScreen = document.getElementById('fg-click2play');
+  mainContainer = document.getElementById('mainContainer');
+	
 }
 
 function createAdDisplayContainer() {
@@ -261,6 +264,7 @@ function contentEnded() {
   // Our content video has ended, notify the AdsLoader so we can play
   // any post-rolls.
   adsLoader.contentComplete();
+	mainContainer.style.display = 'none';
 }
 
 // Wire UI element references and UI event listeners.
