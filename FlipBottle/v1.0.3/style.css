@@ -58,7 +58,7 @@ html, body, canvas {
   align-items: center;
   cursor: pointer;
   font-weight: 400;
-  z-index: 10001;	
+  z-index: 10002;	
 }
 
 .fg-click2play-stage {
@@ -72,6 +72,7 @@ html, body, canvas {
   margin: 0;
   z-index: 2;
   padding: 0;
+z-index: 10004;
 }
 
 .fg-gameDetails {
@@ -88,6 +89,7 @@ html, body, canvas {
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
+	z-index: 10005;
 }
 
 .fg-gameicon {
@@ -106,6 +108,7 @@ html, body, canvas {
   box-shadow: 0 0 10px 0 rgb(0 0 0 / 33%);
   width: 192px;
   height: 192px;
+	z-index: 10006;
 }
 
 .btn-play {
@@ -132,6 +135,7 @@ html, body, canvas {
   text-decoration: none;
   text-align: center;
   font-size: 16px;
+	z-index: 10006;
 }
 
 .btn-play:before {
@@ -164,7 +168,7 @@ html, body, canvas {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 10003;
   width: 100%;
   height: 100%;
   opacity: 1;
@@ -189,6 +193,7 @@ html, body, canvas {
   left: 0px;
   width: 640px;
   height: 360px;
+z-index: 10001;	
 }
 
 /* **********************************************  End Ads ********************************************** */
