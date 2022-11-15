@@ -151,6 +151,7 @@ var playButton;
 var videoContent;
 var splashScreen;
 var mainContainer = document.getElementById('mainContainer');
+var footerAD = document.getElementById('gamescreen-footer');	
 		
 
 function init() {
@@ -170,26 +171,27 @@ function createAdDisplayContainer() {
 }
 
 function requestAds() {
-  splashScreen.style.display = 'none';	
-  google.ima.settings.setPlayerType('google/codepen-demo-manual-ad-breaks');
-  google.ima.settings.setPlayerVersion('1.0.0');
-  // Create the ad display container.
-  createAdDisplayContainer();
-  // Initialize the container. Must be done via a user action on mobile devices.
-  adDisplayContainer.initialize();
+	splashScreen.style.display = 'none';
+	footerAD.style.display = 'none';	
+  	google.ima.settings.setPlayerType('google/codepen-demo-manual-ad-breaks');
+  	google.ima.settings.setPlayerVersion('1.0.0');
+  	// Create the ad display container.
+  	createAdDisplayContainer();
+  	// Initialize the container. Must be done via a user action on mobile devices.
+  	adDisplayContainer.initialize();
   
-  // Create ads loader.
-  adsLoader = new google.ima.AdsLoader(adDisplayContainer);
-  adsLoader.getSettings().setAutoPlayAdBreaks(false);
-  // Listen and respond to ads loaded and error events.
-  adsLoader.addEventListener(
-      google.ima.AdsManagerLoadedEvent.Type.ADS_MANAGER_LOADED,
-      onAdsManagerLoaded,
-      false);
-  adsLoader.addEventListener(
-      google.ima.AdErrorEvent.Type.AD_ERROR,
-      onAdError,
-      false);
+  	// Create ads loader.
+  	adsLoader = new google.ima.AdsLoader(adDisplayContainer);
+ 	 adsLoader.getSettings().setAutoPlayAdBreaks(false);
+  	// Listen and respond to ads loaded and error events.
+  	adsLoader.addEventListener(
+      		google.ima.AdsManagerLoadedEvent.Type.ADS_MANAGER_LOADED,
+      		onAdsManagerLoaded,
+      		false);
+  	adsLoader.addEventListener(
+      		google.ima.AdErrorEvent.Type.AD_ERROR,
+      		onAdError,
+      		false);
 
   // Request video ads.
   var adsRequest = new google.ima.AdsRequest();
@@ -255,31 +257,33 @@ function onAdsManagerLoaded(adsManagerLoadedEvent) {
 }
 
 function onAdEvent(adEvent) {
-  // Retrieve the ad from the event. Some events (e.g. ALL_ADS_COMPLETED)
-  // don't have ad object associated.
-  var ad = adEvent.getAd();
-  switch (adEvent.type) {
-    case google.ima.AdEvent.Type.LOADED:
-      // This is the first event sent for an ad - it is possible to
-      // determine whether the ad is a video ad or an overlay.
-      if (!ad.isLinear()) {
-        // Position AdDisplayContainer correctly for overlay.
-        // Use ad.width and ad.height.
-        videoContent.play();
-      }
-      break;
-		   case google.ima.AdEvent.Type.COMPLETE:
-		  mainContainer.style.display = 'none';
-		  break;
+	
+  	// Retrieve the ad from the event. Some events (e.g. ALL_ADS_COMPLETED)
+	// don't have ad object associated.
+	var ad = adEvent.getAd();
+	switch (adEvent.type) {
+		case google.ima.AdEvent.Type.LOADED:
+      		// This is the first event sent for an ad - it is possible to
+      		// determine whether the ad is a video ad or an overlay.
+			if (!ad.isLinear()) {
+        			// Position AdDisplayContainer correctly for overlay.
+        			// Use ad.width and ad.height.
+				videoContent.play();
+			}
+		break;
+		   
+		case google.ima.AdEvent.Type.COMPLETE:
+			mainContainer.style.display = 'none';
+		break;
 		  
-		  
-  }
+	}
 }
 
 function onAdError(adErrorEvent) {
   // Handle the error logging.
   console.log(adErrorEvent.getError());
   adsManager.destroy();
+mainContainer.style.display = 'none';	
 }
 
 function onContentPauseRequested() {
@@ -317,6 +321,9 @@ function contentEnded() {
 // Wire UI element references and UI event listeners.
 init();
 
+	
+	
+	
 </script>
 	
 <!--  ********************************************** End Google Video Ads  ********************************************** -->			
