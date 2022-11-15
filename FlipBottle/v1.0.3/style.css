@@ -211,10 +211,12 @@ html, body, canvas {
 
 /* **********************************************  Begin Game Screen Footer Ad ********************************************** */
 .gamescreen-footer {
-width: 400px;
+	position: absolute;
+	width: 400px;
 	height: 60px;
 	z-index: 999999010;
 	overflow: visible;
+	bottom: 0px;
 	
 }
 
