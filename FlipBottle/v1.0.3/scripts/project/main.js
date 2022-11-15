@@ -28,5 +28,5 @@ function Tick(runtime)
 
 function gameStart() {
 
-footerAD.style.display = 'block';
+console.log("selectstart");
 }
