@@ -190,7 +190,7 @@ html, body, canvas {
     max-height: -webkit-fit-content;
     max-height: -moz-fit-content;
     max-height: fit-content;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0);
 	overflow: visible;	
 }
 /* **********************************************  End Splash Screen ********************************************** */
