@@ -23,10 +23,6 @@ function Tick(runtime)
 {
 	// Code to run every tick
 	
-	runtime.addEventListener("selectstart", () => gameStart());
 }
 
-function gameStart() {
 
-console.log("selectstart");
-}
