@@ -191,6 +191,7 @@ html, body, canvas {
     max-height: -moz-fit-content;
     max-height: fit-content;
     background: rgba(0,0,0,0.3);
+	overflow: visible;	
 }
 /* **********************************************  End Splash Screen ********************************************** */
 
