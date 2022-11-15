@@ -22,6 +22,11 @@ async function OnBeforeProjectStart(runtime)
 function Tick(runtime)
 {
 	// Code to run every tick
+	
+	runtime.addEventListener("selectstart", () => gameStart());
 }
 
+function gameStart() {
 
+footerAD.style.display = 'block';
+}
