@@ -217,10 +217,13 @@ html, body, canvas {
 
 .div-gpt-ad-1668419977060-1 {
 	
-	display: block;
+	
     	margin-left: auto;
     	margin-right: auto;
 	padding-bottom: 50px;
+	position: absolute;
+        bottom: 0px;
+	z-index: 999999010; 
 }
 
 /* **********************************************  End Game Screen Footer Ad ********************************************** */
