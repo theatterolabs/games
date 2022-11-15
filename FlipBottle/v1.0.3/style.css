@@ -211,20 +211,14 @@ html, body, canvas {
 
 /* **********************************************  Begin Game Screen Footer Ad ********************************************** */
 .gamescreen-footer {
-
+max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+	z-index: 999999010;
 	
 }
 
-.div-gpt-ad-1668419977060-1 {
-	
-	
-    	margin-left: auto;
-    	margin-right: auto;
-	padding-bottom: 50px;
-	position: absolute;
-        bottom: 0px;
-	z-index: 999999010; 
-}
+
 
 /* **********************************************  End Game Screen Footer Ad ********************************************** */
 
