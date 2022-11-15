@@ -211,9 +211,8 @@ html, body, canvas {
 
 /* **********************************************  Begin Game Screen Footer Ad ********************************************** */
 .gamescreen-footer {
-max-height: -webkit-fit-content;
-    max-height: -moz-fit-content;
-    max-height: fit-content;
+width: 400px;
+	height: 60px;
 	z-index: 999999010;
 	overflow: visible;
 	
