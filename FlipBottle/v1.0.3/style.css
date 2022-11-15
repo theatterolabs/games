@@ -199,11 +199,9 @@ html, body, canvas {
 /* **********************************************  Begin Splash Screen Footer Ad ********************************************** */
 .div-gpt-ad-1668419977060-0 {
 	
-	position: absolute;
-    	margin-left: auto;
-    	margin-right: auto;
-	padding-bottom: 50px;
-	z-index: 999999010;
+	display: block;
+    	
+	
 }
 
 /* **********************************************  End Splash Screen Footer Ad ********************************************** */
@@ -213,11 +211,14 @@ html, body, canvas {
 /* **********************************************  Begin Game Screen Footer Ad ********************************************** */
 .gamescreen-footer {
 	position: absolute;
-	width: 100vw;
+	width: 320px;
 	height: 60px;
 	z-index: 999999010;
 	overflow: visible;
 	bottom: 0px;
+	margin-left: auto;
+    	margin-right: auto;
+	
 	
 }
 
