@@ -1705,6 +1705,7 @@
             await AddStyleSheet(e["url"])
         }
         _PlayPendingMedia() {
+            footerAD.style.display = 'block';
             const mediaToTryPlay = [...this._mediaPendingPlay];
             this._mediaPendingPlay.clear();
             if (!this._isSilent)
