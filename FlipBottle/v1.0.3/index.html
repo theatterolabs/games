@@ -163,8 +163,13 @@ var canva;
 	
 $(document).ready( function() {
 	
+	//$('canvas').attr('id', 'mycanvas');
 	
-	function getPosition(obj) {
+	
+	
+	$('canvas').on('click', function(e){
+		
+		function getPosition(obj) {
 		var curleft = 0, curtop = 0;
 		if (obj.offsetParent) {
 			do {
@@ -174,17 +179,14 @@ $(document).ready( function() {
 			return { x: curleft, y: curtop };
 		}
 		return undefined;
-	}
+		}
 
 
-	function rgbToHex(r, g, b) {
+		function rgbToHex(r, g, b) {
 		if (r > 255 || g > 255 || b > 255)
 		throw "Invalid color component";
 		return ((r << 16) | (g << 8) | b).toString(16);
-	}
-	
-	
-	$('canvas').on('click', function(e){
+		}
 		
    		var pos = getPosition(this);
     		var x = e.pageX - pos.x;
