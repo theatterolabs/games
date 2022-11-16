@@ -113,10 +113,11 @@
 
 	
 <!-- ********************************************** Zee5_Games_RewardedVideo ********************************************** -->
-	 <div id="mainContainer" style="display: block;">
+	<div id="mainContainer" style="display: block;">
+		<button id="skip" class="skip" style='display: none;'>Skip Ads ></button>
      
-      <div id="adContainer" style="display: block;"></div>
-    </div>
+		<div id="adContainer" style="display: block;"></div>
+	</div>
 
 <!-- ********************************************** Zee5_Games_RewardedVideo ********************************************** -->	
 	
@@ -151,7 +152,8 @@ var playButton;
 var videoContent;
 var splashScreen;
 var mainContainer = document.getElementById('mainContainer');
-var footerAD = document.getElementById('gamescreen-footer');	
+var footerAD = document.getElementById('gamescreen-footer');
+var skipBtn = document.getElementById('skip');	
 		
 
 function init() {
@@ -159,8 +161,18 @@ function init() {
   playButton = document.getElementById('btn-play');
   playButton.addEventListener('click', requestAds);
   splashScreen = document.getElementById('fg-click2play');
+skipBtn.addEventListener('click', closeAds);
 
 	
+}
+	
+function skipAds() {
+	setTimeout(function(){ skipBtn.style.display = 'block'; }, 5000);
+}
+	
+function closeAds() {
+	mainContainer.style.display = 'none';
+
 }
 
 function createAdDisplayContainer() {
@@ -172,7 +184,8 @@ function createAdDisplayContainer() {
 
 function requestAds() {
 	splashScreen.style.display = 'none';
-	footerAD.style.display = 'none';	
+	footerAD.style.display = 'none';
+	skipBtn.style.display = 'none';
   	google.ima.settings.setPlayerType('google/codepen-demo-manual-ad-breaks');
   	google.ima.settings.setPlayerVersion('1.0.0');
   	// Create the ad display container.
@@ -265,6 +278,7 @@ function onAdEvent(adEvent) {
 		case google.ima.AdEvent.Type.LOADED:
       		// This is the first event sent for an ad - it is possible to
       		// determine whether the ad is a video ad or an overlay.
+			skipAds();
 			if (!ad.isLinear()) {
         			// Position AdDisplayContainer correctly for overlay.
         			// Use ad.width and ad.height.
@@ -274,6 +288,7 @@ function onAdEvent(adEvent) {
 		   
 		case google.ima.AdEvent.Type.COMPLETE:
 			mainContainer.style.display = 'none';
+			skipBtn.style.display = 'none';
 		break;
 		  
 	}
@@ -283,7 +298,8 @@ function onAdError(adErrorEvent) {
   // Handle the error logging.
   console.log(adErrorEvent.getError());
   adsManager.destroy();
-mainContainer.style.display = 'none';	
+mainContainer.style.display = 'none';
+skipBtn.style.display = 'none';
 }
 
 function onContentPauseRequested() {
