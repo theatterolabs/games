@@ -215,9 +215,10 @@ html, body, canvas {
 	height: 50px;
 	z-index: 999999010;
 	overflow: visible;
-	bottom: 5px;
+	bottom: 0px;
 	left: 50%;
   	transform: translate(-50%, 0%);
+	background-color: #695766;
 	
 	
 	
