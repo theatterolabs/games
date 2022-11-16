@@ -161,13 +161,13 @@ var canva;
 	
 //  ********************************************** Begin Click Detection  ********************************************** -->
 
-function ThzhotspotPosition(evt, el, hotspotsize, percent) {
+function getPosition(evt, el, hotspotsize, percent) {
   var left = el.offset().left;
   var top = el.offset().top;
   var hotspot = hotspotsize ? hotspotsize : 0;
   if (percent) {
-    x = (evt.pageX - left - (hotspot / 2)) / el.outerWidth() * 100 + '%';
-    y = (evt.pageY - top - (hotspot / 2)) / el.outerHeight() * 100 + '%';
+    x = Math.round((evt.pageX - left - (hotspot / 2)) / el.outerWidth() * 100);
+    y = Math.round((evt.pageY - top - (hotspot / 2)) / el.outerHeight() * 100);
   } else {
     x = (evt.pageX - left - (hotspot / 2));
     y = (evt.pageY - top - (hotspot / 2));
@@ -177,6 +177,12 @@ function ThzhotspotPosition(evt, el, hotspotsize, percent) {
     x: x,
     y: y
   };
+}
+	
+function rgbToHex(r, g, b) {
+  if (r > 255 || g > 255 || b > 255)
+    throw "Invalid color component";
+  return ((r << 16) | (g << 8) | b).toString(16);
 }	
 	
 	
@@ -186,11 +192,17 @@ $(document).ready( function() {
 
 	$('canvas').on('click', function(e){
 		
-		var hp = ThzhotspotPosition(e, $(this), 20, true); // true = percent | false or no attr = px
-
-    		alert("X: " + hp.x + ", Y: " + hp.y);
+		var hp = getPosition(e, $(this), 20, true); // true = percent | false or no attr = px
+    		
 		
-		
+		var c = $(this).getContext('2d');
+		var p = c.getImageData(hp.x, hp.y, 1, 1).data;
+		if ((p[0] == 0) && (p[1] == 0) && (p[2] == 0) && (p[3] == 0)) {
+    			var hex = "#" + ("000000");
+			alert("X: " + hp.x + ", Y: " + hp.y + ", color: " + hex);
+  		}
+		var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
+		alert("X: " + hp.x + ", Y: " + hp.y + ", color: " + hex);
 	});
 	
 	
