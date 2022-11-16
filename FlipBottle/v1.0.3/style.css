@@ -247,5 +247,21 @@ height: 100%;
 z-index: 10001;	
 }
 
+.skip {
+  height: 35px;
+  width: 85px;
+  background-color: rgba(0,0,0,0.4);
+  border: 2px solid white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #ffffff;
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  z-index: 10002;
+  
+}
+
 /* **********************************************  End Video Ads ********************************************** */
 
