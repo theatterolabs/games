@@ -189,18 +189,19 @@ function rgbToHex(r, g, b) {
 	
 	
 $(document).ready( function() {
-
+	$('canvas').attr('id', 'mycanvas');
 	$('canvas').on('click', function(e){
 		
 		var hp = getPosition(e, $(this), 20, true); // true = percent | false or no attr = px
-    		
-		
-		var c = $(this)[0].getContext('2d');
+		var canvas = document.getElementById("mycanvas");
+		var c = canvas.getContext('2d');
 		var p = c.getImageData(hp.x, hp.y, 1, 1).data;
+		
 		if ((p[0] == 0) && (p[1] == 0) && (p[2] == 0) && (p[3] == 0)) {
     			var hex = "#" + ("000000");
 			alert("X: " + hp.x + ", Y: " + hp.y + ", color: " + hex);
   		}
+		
 		var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
 		alert("X: " + hp.x + ", Y: " + hp.y + ", color: " + hex);
 	});
