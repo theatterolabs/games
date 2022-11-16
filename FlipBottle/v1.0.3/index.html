@@ -163,7 +163,7 @@ function init() {
 	playButton.addEventListener('click', requestAds);
 	splashScreen = document.getElementById('fg-click2play');
 	skipBtn.addEventListener('click', closeAds);
-	canva.addEventListener('click', canvaClick);
+	
 
 	
 }
@@ -195,6 +195,7 @@ function createAdDisplayContainer() {
 
 function requestAds() {
 	canva = document.getElementsByTagName('canvas');
+	canva.addEventListener('click', canvaClick);
 	splashScreen.style.display = 'none';
 	footerAD.style.display = 'none';
 	skipBtn.style.display = 'none';
