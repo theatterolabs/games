@@ -15,7 +15,9 @@
 	<link rel="icon" type="image/png" href="icons/icon-512.png">
 
 <link rel="stylesheet" href="style.css">
-
+	
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <!--  ********************************************** Begin Google Interstitial Ads  ********************************************** -->
 	
 <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
@@ -154,6 +156,13 @@ var splashScreen;
 var mainContainer = document.getElementById('mainContainer');
 var footerAD = document.getElementById('gamescreen-footer');
 var skipBtn = document.getElementById('skip');
+var canva;
+	
+$(document).ready ( function() {
+   $('canvas"]').on('click', function(){
+    alert("canvas clicked");
+   });
+});	
 	
 		
 
@@ -164,16 +173,9 @@ function init() {
 	splashScreen = document.getElementById('fg-click2play');
 	skipBtn.addEventListener('click', closeAds);
 	
+}
 	
 
-	
-}
-	
-function canvaClick() {
-	
-	alert("Canvas Clicked");
-	
-}
 	
 function skipAds() {
 	setTimeout(function(){ skipBtn.style.display = 'block';}, 5000);
@@ -195,7 +197,6 @@ function createAdDisplayContainer() {
 }
 
 function requestAds() {
-	window.canva = document.getElementsByTagName('canvas').addEventListener('click', canvaClick);
 	splashScreen.style.display = 'none';
 	footerAD.style.display = 'none';
 	skipBtn.style.display = 'none';
