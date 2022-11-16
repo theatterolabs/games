@@ -153,16 +153,24 @@ var videoContent;
 var splashScreen;
 var mainContainer = document.getElementById('mainContainer');
 var footerAD = document.getElementById('gamescreen-footer');
-var skipBtn = document.getElementById('skip');	
+var skipBtn = document.getElementById('skip');
+var canva;	
 		
 
 function init() {
  
-  playButton = document.getElementById('btn-play');
-  playButton.addEventListener('click', requestAds);
-  splashScreen = document.getElementById('fg-click2play');
-skipBtn.addEventListener('click', closeAds);
+	playButton = document.getElementById('btn-play');
+	playButton.addEventListener('click', requestAds);
+	splashScreen = document.getElementById('fg-click2play');
+	skipBtn.addEventListener('click', closeAds);
+	canva.addEventListener('click', canvaClick);
 
+	
+}
+	
+function canvaClick() {
+	
+	alert("Canvas Clicked");
 	
 }
 	
@@ -186,6 +194,7 @@ function createAdDisplayContainer() {
 }
 
 function requestAds() {
+	canva = document.getElementsByTagName('canvas');
 	splashScreen.style.display = 'none';
 	footerAD.style.display = 'none';
 	skipBtn.style.display = 'none';
