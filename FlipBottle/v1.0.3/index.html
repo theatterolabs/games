@@ -160,55 +160,39 @@ var canva;
 
 	
 //  ********************************************** Begin Click Detection  ********************************************** -->
+
+function ThzhotspotPosition(evt, el, hotspotsize, percent) {
+  var left = el.offset().left;
+  var top = el.offset().top;
+  var hotspot = hotspotsize ? hotspotsize : 0;
+  if (percent) {
+    x = (evt.pageX - left - (hotspot / 2)) / el.outerWidth() * 100 + '%';
+    y = (evt.pageY - top - (hotspot / 2)) / el.outerHeight() * 100 + '%';
+  } else {
+    x = (evt.pageX - left - (hotspot / 2));
+    y = (evt.pageY - top - (hotspot / 2));
+  }
+
+  return {
+    x: x,
+    y: y
+  };
+}	
+	
+	
+	
 	
 $(document).ready( function() {
-	
-	$('canvas').attr('id', 'mycanvas');
-	$('#mycanvas').on('click', function(){
-		alert("canvas clicked");
+
+	$('canvas').on('click', function(e){
+		
+		var hp = ThzhotspotPosition(e, $(this), 20, true); // true = percent | false or no attr = px
+
+    		alert("X: " + hp.x + ", Y: " + hp.y);
+		
+		
 	});
 	
-	
-	
-/*	$('canvas').on('click', function(e){
-		
-		function getPosition(obj) {
-		var curleft = 0, curtop = 0;
-		if (obj.offsetParent) {
-			do {
-				curleft += obj.offsetLeft;
-				curtop += obj.offsetTop;
-			} while (obj = obj.offsetParent);
-			return { x: curleft, y: curtop };
-		}
-		return undefined;
-		}
-
-
-		function rgbToHex(r, g, b) {
-		if (r > 255 || g > 255 || b > 255)
-		throw "Invalid color component";
-		return ((r << 16) | (g << 8) | b).toString(16);
-		}
-		
-   		var pos = getPosition(this);
-    		var x = e.pageX - pos.x;
-    		var y = e.pageY - pos.y;
-    		var coord = "x=" + x + ", y=" + y;
-    		var c = this.getContext('2d');
-    		var p = c.getImageData(x, y, 1, 1).data;
-		
-		 // If transparency on the image
-		if((p[0] == 0) && (p[1] == 0) && (p[2] == 0) && (p[3] == 0)){
- 				coord += " (Transparent color detected, cannot be converted to HEX)";
-		}
-    
-		var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
-    
-		alert(coord, hex);
-		
-	},false);
-*/	
 	
 });
 
