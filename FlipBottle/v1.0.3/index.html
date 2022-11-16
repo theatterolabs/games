@@ -160,9 +160,12 @@ var canva;
 	
 $(document).ready( function() {
 	
-	$('canvas').on('click', function(){
-    		alert("canvas clicked");
-	});
+//	$('canvas').on('click', function(){
+//    		alert("canvas clicked");
+//	});
+	
+	canva = document.getElementsByTagName("canvas");
+	canva.addEventListener('click', function() { alert("canvas clicked"); });
 	
 });
 
