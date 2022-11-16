@@ -195,7 +195,7 @@ $(document).ready( function() {
 		var hp = getPosition(e, $(this), 20, true); // true = percent | false or no attr = px
     		
 		
-		var c = $(this).getContext('2d');
+		var c = $(this)[0].getContext('2d');
 		var p = c.getImageData(hp.x, hp.y, 1, 1).data;
 		if ((p[0] == 0) && (p[1] == 0) && (p[2] == 0) && (p[3] == 0)) {
     			var hex = "#" + ("000000");
