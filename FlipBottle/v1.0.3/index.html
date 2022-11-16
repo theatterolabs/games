@@ -154,7 +154,7 @@ var splashScreen;
 var mainContainer = document.getElementById('mainContainer');
 var footerAD = document.getElementById('gamescreen-footer');
 var skipBtn = document.getElementById('skip');
-var canva;	
+	
 		
 
 function init() {
@@ -163,8 +163,7 @@ function init() {
 	playButton.addEventListener('click', requestAds);
 	splashScreen = document.getElementById('fg-click2play');
 	skipBtn.addEventListener('click', closeAds);
-	canva = document.getElementsByTagName('canvas');
-	canva.addEventListener('click', canvaClick);
+	
 	
 
 	
@@ -196,7 +195,7 @@ function createAdDisplayContainer() {
 }
 
 function requestAds() {
-	
+	window.canva = document.getElementsByTagName('canvas').addEventListener('click', canvaClick);
 	splashScreen.style.display = 'none';
 	footerAD.style.display = 'none';
 	skipBtn.style.display = 'none';
