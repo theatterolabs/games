@@ -167,11 +167,13 @@ skipBtn.addEventListener('click', closeAds);
 }
 	
 function skipAds() {
-	setTimeout(function(){ skipBtn.style.display = 'block'; }, 5000);
+	setTimeout(function(){ skipBtn.style.display = 'block'; adsManager.destroy(); }, 5000);
 }
 	
 function closeAds() {
 	mainContainer.style.display = 'none';
+	adsManager.destroy();
+	
 
 }
 
