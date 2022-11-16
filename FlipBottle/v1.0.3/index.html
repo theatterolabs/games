@@ -163,11 +163,14 @@ var canva;
 	
 $(document).ready( function() {
 	
-	//$('canvas').attr('id', 'mycanvas');
+	$('canvas').attr('id', 'mycanvas');
+	$('#mycanvas').on('click', function(){
+		alert("canvas clicked");
+	});
 	
 	
 	
-	$('canvas').on('click', function(e){
+/*	$('canvas').on('click', function(e){
 		
 		function getPosition(obj) {
 		var curleft = 0, curtop = 0;
@@ -205,7 +208,7 @@ $(document).ready( function() {
 		alert(coord, hex);
 		
 	},false);
-	
+*/	
 	
 });
 
