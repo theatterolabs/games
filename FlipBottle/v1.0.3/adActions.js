@@ -9,7 +9,7 @@ canvas.addEventListener("click",function(event){
 	var pixels = new Uint8Array(4);
 	
 	requestAnimationFrame(function() {
-		gl.readPixels(eventLocation.x, eventLocation.y, 1, 1, context.RGBA, context.UNSIGNED_BYTE, pixels);
+		context.readPixels(eventLocation.x, eventLocation.y, 1, 1, context.RGBA, context.UNSIGNED_BYTE, pixels);
 		alert(pixels);
 		});
 		
