@@ -3,7 +3,7 @@ canvas.addEventListener("click",function(event){
 	var eventLocation = getEventLocation(this,event);
 	
 	// Get the data of the pixel according to the location generate by the getEventLocation function
-	var context = this.getContext('webgl2');
+	var context = this.getContext("webgl2", {preserveDrawingBuffer: true});
 	
 	// where we'll store our pixels info
 	var pixels = new Uint8Array(4);
