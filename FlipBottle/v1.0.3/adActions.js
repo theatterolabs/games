@@ -1,6 +1,6 @@
 var cnvs = document.querySelector('canvas');
 
-var context = cnvs.getContext('webgl2');
+var context = cnvs.getContext("webgl2", {preserveDrawingBuffer: true});
 	
 // where we'll store our pixels info
 var pixels = new Uint8Array(4);
