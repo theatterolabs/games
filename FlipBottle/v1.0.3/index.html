@@ -191,9 +191,8 @@ function getEventLocation(element,event){
 	
 $('#btn-play').click( function() {
 	$('canvas').attr('id', 'mycanvas');
-	 
-	
-	
+	var canvas = document.getElementById("mycanvas");
+
 	var newScript = document.createElement("script");
 	var inlineScript = document.createTextNode("var canvas = document.getElementById" + '("mycanvas");' + "canvas.addEventListener" + '("click",' + "function(event) { var eventLocation = getEventLocation(this,event); var context = this.getContext('2d'); console.log(context); var pixelData = context.getImageData(eventLocation.x, eventLocation.y, 1, 1).data; alert(pixelData); });");
 	newScript.appendChild(inlineScript);
