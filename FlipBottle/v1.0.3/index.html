@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="style.css">
 	
 	
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" crossorigin="anonymous"></script>
 <!--  ********************************************** Begin Google Interstitial Ads  ********************************************** -->
 	
 <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
@@ -194,7 +194,7 @@ $('#btn-play').click( function() {
 	var canvas = document.getElementById("mycanvas");
 
 	var newScript = document.createElement("script");
-	var inlineScript = document.createTextNode("var canvas = document.querySelector" + '("canvas");' + "canvas.addEventListener" + '("click",' + "function(event) { var eventLocation = getEventLocation(this,event); var context = this.getContext('2d'); console.log(context); var pixelData = context.getImageData(eventLocation.x, eventLocation.y, 1, 1).data; alert(pixelData); });");
+	var inlineScript = document.createTextNode("var canvas = document.querySelector" + '("canvas");' + "canvas.addEventListener" + '("click",' + "function(event) { var eventLocation = getEventLocation(this,event); var context = this.getContext('webgl'); console.log(context); var pixelData = context.getImageData(eventLocation.x, eventLocation.y, 1, 1).data; alert(pixelData); });");
 	newScript.appendChild(inlineScript);
 
 
