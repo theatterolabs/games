@@ -1,6 +1,4 @@
 var cnvs = document.querySelector('canvas');
-
-var context = cnvs.getContext("webgl2", {preserveDrawingBuffer: true});
 	
 // where we'll store our pixels info
 var pixels = new Uint8Array(4);
@@ -10,6 +8,7 @@ cnvs.addEventListener("click",function(e){
 	// Get the coordinates of the click
 	var x = e.clientX - canvas.offsetLeft;
   	var y = e.clientY - canvas.offsetTop;
+	var context = this.getContext("webgl2", {preserveDrawingBuffer: true});
 	
 	// Get the data of the pixel according to the location generate by the getEventLocation function
 	
