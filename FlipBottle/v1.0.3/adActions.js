@@ -10,7 +10,7 @@ canvas.addEventListener("click",function(event){
 	
 	requestAnimationFrame(function() {
 		context.readPixels(eventLocation.x, eventLocation.y, 1, 1, context.RGBA, context.UNSIGNED_BYTE, pixels);
-		alert(pixels);
+		console.log(pixels);
 		});
 		
     //var pixelData = context.getImageData(eventLocation.x, eventLocation.y, 1, 1).data; 
