@@ -159,61 +159,7 @@ var skipBtn = document.getElementById('skip');
 var canva;
 
 	
-//  ********************************************** Begin Click Detection  ********************************************** -->
 
-function getPosition(evt, el, hotspotsize, percent) {
-  var left = el.offset().left;
-  var top = el.offset().top;
-  var hotspot = hotspotsize ? hotspotsize : 0;
-  if (percent) {
-    x = Math.round((evt.pageX - left - (hotspot / 2)) / el.outerWidth() * 100);
-    y = Math.round((evt.pageY - top - (hotspot / 2)) / el.outerHeight() * 100);
-  } else {
-    x = (evt.pageX - left - (hotspot / 2));
-    y = (evt.pageY - top - (hotspot / 2));
-  }
-
-  return {
-    x: x,
-    y: y
-  };
-}
-	
-function rgbToHex(r, g, b) {
-  if (r > 255 || g > 255 || b > 255)
-    throw "Invalid color component";
-  return ((r << 16) | (g << 8) | b).toString(16);
-}	
-	
-	
-	
-	
-$(document).ready( function() {
-	$('canvas').attr('id', 'mycanvas');
-//	var canvas = document.getElementById("mycanvas");
-	$('#mycanvas').click(function(e){
-		
-		var hp = getPosition(e, $(this), 5, true); // true = percent | false or no attr = px
-		
-		var c = $(this).get(0).getContext('2d');
-		var p = c.getImageData(hp.x, hp.y, 1, 1).data;
-		
-		if ((p[0] == 0) && (p[1] == 0) && (p[2] == 0) && (p[3] == 0)) {
-    			var hex = "#" + ("000000");
-			alert("X: " + hp.x + ", Y: " + hp.y + ", color: " + hex);
-  		}
-		
-		var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
-		alert("X: " + hp.x + ", Y: " + hp.y + ", color: " + hex);
-	});
-	
-	
-});
-
-	
-
-	
-//  ********************************************** End Click Detection  ********************************************** -->
 		
 
 function init() {
@@ -418,6 +364,66 @@ init();
 	<script src="scripts/offlineclient.js" type="module"></script>
 	<script src="scripts/main.js" type="module"></script>
 	<script src="scripts/register-sw.js" type="module"></script>
+	
+<script>
+		
+//  ********************************************** Begin Click Detection  ********************************************** -->
+
+function getPosition(evt, el, hotspotsize, percent) {
+  var left = el.offset().left;
+  var top = el.offset().top;
+  var hotspot = hotspotsize ? hotspotsize : 0;
+  if (percent) {
+    x = Math.round((evt.pageX - left - (hotspot / 2)) / el.outerWidth() * 100);
+    y = Math.round((evt.pageY - top - (hotspot / 2)) / el.outerHeight() * 100);
+  } else {
+    x = (evt.pageX - left - (hotspot / 2));
+    y = (evt.pageY - top - (hotspot / 2));
+  }
+
+  return {
+    x: x,
+    y: y
+  };
+}
+	
+function rgbToHex(r, g, b) {
+  if (r > 255 || g > 255 || b > 255)
+    throw "Invalid color component";
+  return ((r << 16) | (g << 8) | b).toString(16);
+}	
+	
+	
+	
+	
+$(document).ready( function() {
+	$('canvas').attr('id', 'mycanvas');
+//	var canvas = document.getElementById("mycanvas");
+	$('#mycanvas').click(function(e){
+		
+		var hp = getPosition(e, $(this), 5, true); // true = percent | false or no attr = px
+		
+		var c = $(this).get(0).getContext('2d');
+		var p = c.getImageData(hp.x, hp.y, 1, 1).data;
+		
+		if ((p[0] == 0) && (p[1] == 0) && (p[2] == 0) && (p[3] == 0)) {
+    			var hex = "#" + ("000000");
+			alert("X: " + hp.x + ", Y: " + hp.y + ", color: " + hex);
+  		}
+		
+		var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
+		alert("X: " + hp.x + ", Y: " + hp.y + ", color: " + hex);
+	});
+	
+	
+});
+
+	
+
+	
+//  ********************************************** End Click Detection  ********************************************** -->
+		
+	</script>
 
 </body>
 </html>
