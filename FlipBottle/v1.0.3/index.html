@@ -191,7 +191,7 @@ function getEventLocation(element,event){
 	
 function setCanvas() {
 	$('canvas').attr('id', 'mycanvas');
-	var canvas = document.getElementById("mycanvas");
+	window.canvas = document.getElementById("mycanvas");
 	
 	var newScript = document.createElement("script");
 	newScript.src = "./adActions.js";
