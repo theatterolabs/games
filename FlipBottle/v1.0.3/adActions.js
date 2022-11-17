@@ -3,7 +3,7 @@ var target = document.querySelector('canvas');
 var reader = document.createElement('canvas');
 var ctx = reader.getContext('2d');
 
-cnvs.addEventListener("click",function(e){
+target.addEventListener("click",function(e){
 	// Get the coordinates of the click
 	 var x = e.clientX - target.offsetLeft;
   	var y = e.clientY - target.offsetTop;
