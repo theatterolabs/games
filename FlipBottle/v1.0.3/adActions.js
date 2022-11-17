@@ -7,7 +7,7 @@ target.addEventListener("click",function(e){
 	//var eventLocation = getEventLocation(this,e);
 	 var x = e.clientX - target.offsetLeft;
  	 var y = e.clientY - target.offsetTop;
-		ctx.flush();
+	
 	
 	requestAnimationFrame(function() {
 	 ctx.drawImage(target, -x, -y); 
