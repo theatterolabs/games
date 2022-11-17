@@ -1,14 +1,17 @@
 var target = document.querySelector('canvas');
 // the canvas we'll use to read the target on
-var pixels = new Uint8Array(4);
+var reader = document.createElement('canvas');
+var ctx = reader.getContext('2d');
 
 target.addEventListener("click",function(event){
 	var eventLocation = getEventLocation(this,event);
-	var c = this.getContext("webgl2");
-	c.flush();
+	 var x = e.clientX - target.offsetLeft;
+ 	 var y = e.clientY - target.offsetTop;
+		ctx.flush();
 	
 	requestAnimationFrame(function() {
-	c.readPixels(eventLocation.x, eventLocation.y, 1, 1, c.RGBA, c.UNSIGNED_BYTE, pixels);
+	 ctx.drawImage(target, -x, -y); 
+    	var pixels = ctx.getImageData(0, 0, 1, 1);
     	console.log(pixels);
 		});
 		
