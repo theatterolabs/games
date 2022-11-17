@@ -161,51 +161,52 @@ var canva;
 	
 //  ********************************************** Begin Click Detection  ********************************************** -->
 
-function getPosition(obj) {
-  var curleft = 0,
-    curtop = 0;
-  if (obj.offsetParent) {
-    do {
-      curleft += obj.offsetLeft;
-      curtop += obj.offsetTop;
-    } while (obj = obj.offsetParent);
+function getElementPosition(obj) {
+    var curleft = 0, curtop = 0;
+    if (obj.offsetParent) {
+        do {
+            curleft += obj.offsetLeft;
+            curtop += obj.offsetTop;
+        } while (obj = obj.offsetParent);
+        return { x: curleft, y: curtop };
+    }
+    return undefined;
+}
+	
+	
+function getEventLocation(element,event){
+    // Relies on the getElementPosition function.
+    var pos = getElementPosition(element);
+    
     return {
-      x: curleft,
-      y: curtop
+    	x: (event.pageX - pos.x),
+      	y: (event.pageY - pos.y)
     };
-  }
-  return undefined;
 }
-
-function rgbToHex(r, g, b) {
-  if (r > 255 || g > 255 || b > 255)
-    throw "Invalid color component";
-  return ((r << 16) | (g << 8) | b).toString(16);
-}
-
+	
+	
 	
 	
 function setCanvas() {
 	$('canvas').attr('id', 'mycanvas');
 	var canvas = document.getElementById("mycanvas");
-	var context = canvas.getContext('2d');
-	canvas.addEventListener("click", function(e) {
-  		var pos = getPosition(this);
-  		var x = e.pageX - pos.x;
-  		var y = e.pageY - pos.y;
-  		
-  		var c = this.getContext('2d');
-  		var p = c.getImageData(x, y, 1, 1).data;
+	
+	canvas.addEventListener("click", function(event) {
+  		  // Get the coordinates of the click
+    var eventLocation = getEventLocation(this,event);
+    // Get the data of the pixel according to the location generate by the getEventLocation function
+    var context = this.getContext('2d');
+    var pixelData = context.getImageData(eventLocation.x, eventLocation.y, 1, 1).data; 
+	alert(pixelData);	
 
-  		// If transparency on the image
-  		if ((p[0] == 0) && (p[1] == 0) && (p[2] == 0) && (p[3] == 0)) {
-   
-  		}
+    // If transparency on the pixel , array = [0,0,0,0]
+    //if((pixelData[0] == 0) && (pixelData[1] == 0) && (pixelData[2] == 0) && (pixelData[3] == 0)){
+        // Do something if the pixel is transparent
+    //}
 
-  		var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
-
-  		alert(x, y, hex);
-	}, false);
+    // Convert it to HEX if you want using the rgbToHex method.
+    // var hex = "#" + ("000000" + rgbToHex(pixelData[0], pixelData[1], pixelData[2])).slice(-6);
+},false);
 	
 	
 }
