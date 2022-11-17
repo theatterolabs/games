@@ -193,7 +193,7 @@ $(document).ready( function() {
 	var canvas = document.getElementById("mycanvas");
 	canvas.addEventListener('click', function(e){
 		
-		var hp = getPosition(e, this, 20, true); // true = percent | false or no attr = px
+		var hp = getPosition(e, canvas, 20, true); // true = percent | false or no attr = px
 		
 		var c = this.getContext('2d');
 		var p = c.getImageData(hp.x, hp.y, 1, 1).data;
