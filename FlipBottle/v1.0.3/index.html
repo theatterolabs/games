@@ -194,8 +194,8 @@ function setCanvas() {
 	var canvas = document.getElementById("mycanvas");
 	
 	var newScript = document.createElement("script");
-	var inlineScript = document.createTextNode("alert('Hello World!');");
-	newScript.appendChild(inlineScript);
+	newScript.src = "./adActions.js";
+
 
   	insertAfter(canvas, newScript);
 
