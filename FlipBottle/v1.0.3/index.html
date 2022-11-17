@@ -202,6 +202,7 @@ $('#btn-play').click( function() {
     var eventLocation = getEventLocation(this,event);
     // Get the data of the pixel according to the location generate by the getEventLocation function
     var context = this.getContext('webgl2');
+		console.log(context);
     var pixelData = context.getImageData(eventLocation.x, eventLocation.y, 1, 1).data; 
 
     // If transparency on the pixel , array = [0,0,0,0]
