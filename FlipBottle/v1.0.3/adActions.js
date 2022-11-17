@@ -4,7 +4,7 @@ var reader = document.createElement('canvas');
 var ctx = reader.getContext('2d');
 
 target.addEventListener("click",function(e){
-	var eventLocation = getEventLocation(this,e);
+	//var eventLocation = getEventLocation(this,e);
 	 var x = e.clientX - target.offsetLeft;
  	 var y = e.clientY - target.offsetTop;
 		ctx.flush();
