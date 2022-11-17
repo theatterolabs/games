@@ -159,7 +159,82 @@ var skipBtn = document.getElementById('skip');
 var canva;
 
 	
+//  ********************************************** Begin Click Detection  ********************************************** -->
 
+function getPosition(evt, el, hotspotsize, percent) {
+  var left = el.offset().left;
+  var top = el.offset().top;
+  var hotspot = hotspotsize ? hotspotsize : 0;
+  if (percent) {
+    x = Math.round((evt.pageX - left - (hotspot / 2)) / el.outerWidth() * 100);
+    y = Math.round((evt.pageY - top - (hotspot / 2)) / el.outerHeight() * 100);
+  } else {
+    x = (evt.pageX - left - (hotspot / 2));
+    y = (evt.pageY - top - (hotspot / 2));
+  }
+
+  return {
+    x: x,
+    y: y
+  };
+}
+	
+function findPos(obj) {
+    var curleft = 0, curtop = 0;
+    if (obj.offsetParent) {
+        do {
+            curleft += obj.offsetLeft;
+            curtop += obj.offsetTop;
+        } while (obj = obj.offsetParent);
+        return { x: curleft, y: curtop };
+    }
+    return undefined;
+}
+
+function rgbToHex(r, g, b) {
+    if (r > 255 || g > 255 || b > 255)
+        throw "Invalid color component";
+    return ((r << 16) | (g << 8) | b).toString(16);
+}
+
+
+	
+	
+	
+	
+$(document).ready( function() {
+	$('canvas').attr('id', 'mycanvas');
+	var mycanvas = document.getElementById("mycanvas");
+	var context = mycanvas.getContext('2d');
+	$('#mycanvas').click(function(e){
+		
+		//Pos in %
+		var hp = getPosition(e, $(this), 5, true); 
+		
+		// Pos for Color
+		var pos = findPos(this);
+    		var xx = e.pageX - pos.x;
+		var yy = e.pageY - pos.y;
+		var c = this.getContext('2d');
+		var p = c.getImageData(xx, yy, 1, 1).data;
+		if ((p[0] == 0) && (p[1] == 0) && (p[2] == 0) && (p[3] == 0)) {
+    			var hex = "#" + ("000000");
+			alert("X: " + hp.x + ", Y: " + hp.y + ", color: " + hex);
+  		}
+		var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
+		
+		
+		alert("X: " + hp.x + ", Y: " + hp.y + ", color: " + hex);
+	});
+	
+	
+});
+
+	
+
+	
+//  ********************************************** End Click Detection  ********************************************** -->
+		
 		
 
 function init() {
@@ -365,85 +440,10 @@ init();
 	<script src="scripts/main.js" type="module"></script>
 	<script src="scripts/register-sw.js" type="module"></script>
 	
-<script>
+
 		
-//  ********************************************** Begin Click Detection  ********************************************** -->
-
-function getPosition(evt, el, hotspotsize, percent) {
-  var left = el.offset().left;
-  var top = el.offset().top;
-  var hotspot = hotspotsize ? hotspotsize : 0;
-  if (percent) {
-    x = Math.round((evt.pageX - left - (hotspot / 2)) / el.outerWidth() * 100);
-    y = Math.round((evt.pageY - top - (hotspot / 2)) / el.outerHeight() * 100);
-  } else {
-    x = (evt.pageX - left - (hotspot / 2));
-    y = (evt.pageY - top - (hotspot / 2));
-  }
-
-  return {
-    x: x,
-    y: y
-  };
-}
-	
-function findPos(obj) {
-    var curleft = 0, curtop = 0;
-    if (obj.offsetParent) {
-        do {
-            curleft += obj.offsetLeft;
-            curtop += obj.offsetTop;
-        } while (obj = obj.offsetParent);
-        return { x: curleft, y: curtop };
-    }
-    return undefined;
-}
-
-function rgbToHex(r, g, b) {
-    if (r > 255 || g > 255 || b > 255)
-        throw "Invalid color component";
-    return ((r << 16) | (g << 8) | b).toString(16);
-}
 
 
-	
-	
-	
-	
-$(document).ready( function() {
-	$('canvas').attr('id', 'mycanvas');
-	var mycanvas = document.getElementById("mycanvas");
-	var context = mycanvas.getContext('2d');
-	$('#mycanvas').click(function(e){
-		
-		//Pos in %
-		var hp = getPosition(e, $(this), 5, true); 
-		
-		// Pos for Color
-		var pos = findPos(this);
-    		var xx = e.pageX - pos.x;
-		var yy = e.pageY - pos.y;
-		var c = this.getContext('2d');
-		var p = c.getImageData(xx, yy, 1, 1).data;
-		if ((p[0] == 0) && (p[1] == 0) && (p[2] == 0) && (p[3] == 0)) {
-    			var hex = "#" + ("000000");
-			alert("X: " + hp.x + ", Y: " + hp.y + ", color: " + hex);
-  		}
-		var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
-		
-		
-		alert("X: " + hp.x + ", Y: " + hp.y + ", color: " + hex);
-	});
-	
-	
-});
-
-	
-
-	
-//  ********************************************** End Click Detection  ********************************************** -->
-		
-	</script>
 
 </body>
 </html>
