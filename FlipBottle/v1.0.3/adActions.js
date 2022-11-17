@@ -3,13 +3,13 @@ canvas.addEventListener("click",function(event){
 	var eventLocation = getEventLocation(this,event);
 	
 	// Get the data of the pixel according to the location generate by the getEventLocation function
-	var context = this.getContext("webgl2", {preserveDrawingBuffer: true});
+	var context = this.getContext('webgl2');
 	
 	// where we'll store our pixels info
 	var pixels = new Uint8Array(4);
 	
 	requestAnimationFrame(function() {
-		context.readPixels(eventLocation.x, eventLocation.y, 1, 1, context.RGBA, context.UNSIGNED_BYTE, pixels);
+		context.readPixels(eventLocation.x, eventLocation.y, 1, 1, context.RGB, context.UNSIGNED_BYTE, pixels);
 		console.log(pixels);
 		});
 		
