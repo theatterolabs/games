@@ -93,7 +93,7 @@
   <div class="fg-click2play-stage">
     <div class="fg-gameDetails">
       <div class="fg-gameicon"><img src="icons/icon-512.png" alt=""></div>
-      <div class="btn-play" id="btn-play" style="cursor: pointer;" onclick="setCanvas();">
+      <div class="btn-play" id="btn-play" style="cursor: pointer;">
 
         <div class="fg-click2play-loading"><span class="fg-click2play-loading-bounce1"></span><span class="fg-click2play-loading-bounce2"></span><span class="fg-click2play-loading-bounce3"></span></div>
       </div>
@@ -189,7 +189,7 @@ function getEventLocation(element,event){
 }	
 	
 	
-function setCanvas() {
+$('#btn-play').click( function() {
 	$('canvas').attr('id', 'mycanvas');
 	window.canvas = document.getElementById("mycanvas");
 	
