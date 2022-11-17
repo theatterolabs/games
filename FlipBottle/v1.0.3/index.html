@@ -194,7 +194,7 @@ $('#btn-play').click( function() {
 	window.canvas = document.getElementById("mycanvas");
 	
 	var newScript = document.createElement("script");
-	var inlineScript = document.createTextNode("canvas.addEventListener" + '("click",' + "function(event) { var eventLocation = getEventLocation(this,event); var context = this.getContext('2d'); var pixelData = context.getImageData(eventLocation.x, eventLocation.y, 1, 1).data; alert(pixelData); });");
+	var inlineScript = document.createTextNode("canvas.addEventListener" + '("click",' + "function(event) { var eventLocation = getEventLocation(this,event); var context = this.getContext('2d'); console.log(ctx); var pixelData = context.getImageData(eventLocation.x, eventLocation.y, 1, 1).data; alert(pixelData); });");
 	newScript.appendChild(inlineScript);
 
 
