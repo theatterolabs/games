@@ -161,24 +161,6 @@ var canva;
 	
 //  ********************************************** Begin Click Detection  ********************************************** -->
 
-function getPosition(evt, el, hotspotsize, percent) {
-  var left = el.offset().left;
-  var top = el.offset().top;
-  var hotspot = hotspotsize ? hotspotsize : 0;
-  if (percent) {
-    x = Math.round((evt.pageX - left - (hotspot / 2)) / el.outerWidth() * 100);
-    y = Math.round((evt.pageY - top - (hotspot / 2)) / el.outerHeight() * 100);
-  } else {
-    x = (evt.pageX - left - (hotspot / 2));
-    y = (evt.pageY - top - (hotspot / 2));
-  }
-
-  return {
-    x: x,
-    y: y
-  };
-}
-	
 function findPos(obj) {
     var curleft = 0, curtop = 0;
     if (obj.offsetParent) {
@@ -197,9 +179,6 @@ function rgbToHex(r, g, b) {
     return ((r << 16) | (g << 8) | b).toString(16);
 }
 
-
-	
-	
 	
 	
 function setCanvas() {
