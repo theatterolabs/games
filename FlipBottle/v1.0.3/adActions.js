@@ -13,7 +13,7 @@ canvas.addEventListener("click",function(event){
 		alert(pixels);
 		});
 		
-    var pixelData = context.getImageData(eventLocation.x, eventLocation.y, 1, 1).data; 
+    //var pixelData = context.getImageData(eventLocation.x, eventLocation.y, 1, 1).data; 
 
     // If transparency on the pixel , array = [0,0,0,0]
     //if((pixelData[0] == 0) && (pixelData[1] == 0) && (pixelData[2] == 0) && (pixelData[3] == 0)){
