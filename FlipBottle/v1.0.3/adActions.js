@@ -8,9 +8,8 @@ var pixels = new Uint8Array(4);
 
 cnvs.addEventListener("click",function(e){
 	// Get the coordinates of the click
-	var pos = getPosition(this);
-  	var x = e.pageX - pos.x;
-  	var y = e.pageY - pos.y;
+	var x = e.clientX - canvas.offsetLeft;
+  	var y = e.clientY - canvas.offsetTop;
 	
 	// Get the data of the pixel according to the location generate by the getEventLocation function
 	
