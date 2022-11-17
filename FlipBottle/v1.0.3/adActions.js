@@ -1,4 +1,4 @@
-var = document.querySelector('canvas');
+var cnvs = document.querySelector('canvas');
 
 var context = cnvs.getContext('webgl2');
 	
