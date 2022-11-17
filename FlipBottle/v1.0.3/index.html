@@ -184,7 +184,9 @@ function getEventLocation(element,event){
     };
 }
 	
-	
+	function insertAfter(referenceNode, newNode) {
+  referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}	
 	
 	
 function setCanvas() {
@@ -192,24 +194,10 @@ function setCanvas() {
 	var canvas = document.getElementById("mycanvas");
 	
 	var newScript = document.createElement("script");
-	var inlineScript = document.createTextNode("canvas.addEventListener("click", function(event) {
-  		  // Get the coordinates of the click
-    var eventLocation = getEventLocation(this,event);
-    // Get the data of the pixel according to the location generate by the getEventLocation function
-    var context = this.getContext('2d');
-    var pixelData = context.getImageData(eventLocation.x, eventLocation.y, 1, 1).data; 
-	alert(pixelData);	
+	var inlineScript = document.createTextNode("alert('Hello World!');");
+	newScript.appendChild(inlineScript);
 
-    // If transparency on the pixel , array = [0,0,0,0]
-    //if((pixelData[0] == 0) && (pixelData[1] == 0) && (pixelData[2] == 0) && (pixelData[3] == 0)){
-        // Do something if the pixel is transparent
-    //}
-
-    // Convert it to HEX if you want using the rgbToHex method.
-    // var hex = "#" + ("000000" + rgbToHex(pixelData[0], pixelData[1], pixelData[2])).slice(-6);
-},false);");
-	
-  canvas.parentNode.insertBefore(newScript, canvas.nextSibling);
+  	insertAfter(canvas, newScript);
 
 	
 	
