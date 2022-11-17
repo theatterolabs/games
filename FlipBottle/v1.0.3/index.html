@@ -93,7 +93,7 @@
   <div class="fg-click2play-stage">
     <div class="fg-gameDetails">
       <div class="fg-gameicon"><img src="icons/icon-512.png" alt=""></div>
-      <div class="btn-play" id="btn-play" style="cursor: pointer;">
+      <div class="btn-play" id="btn-play" style="cursor: pointer;" onclick="setCanvas();">
 
         <div class="fg-click2play-loading"><span class="fg-click2play-loading-bounce1"></span><span class="fg-click2play-loading-bounce2"></span><span class="fg-click2play-loading-bounce3"></span></div>
       </div>
@@ -202,31 +202,29 @@ function rgbToHex(r, g, b) {
 	
 	
 	
-$(document).ready( function() {
+function setCanvas() {
 	$('canvas').attr('id', 'mycanvas');
-	$('#mycanvas').click(function(e){
-		
-		//Pos in %
-		var hp = getPosition(e, $(this), 5, true); 
-		
-		// Pos for Color
-		var pos = findPos(this);
-    		var xx = e.pageX - pos.x;
-		var yy = e.pageY - pos.y;
-		var c = this.getContext('2d');
-		var p = c.getImageData(xx, yy, 1, 1).data;
-		if ((p[0] == 0) && (p[1] == 0) && (p[2] == 0) && (p[3] == 0)) {
-    			var hex = "#" + ("000000");
-			alert("X: " + hp.x + ", Y: " + hp.y + ", color: " + hex);
+	var canvas = document.getElementById("mycanvas");
+	canvas.addEventListener("click", function(e) {
+  		var pos = getPosition(this);
+  		var x = e.pageX - pos.x;
+  		var y = e.pageY - pos.y;
+  		
+  		var c = this.getContext('2d');
+  		var p = c.getImageData(x, y, 1, 1).data;
+
+  		// If transparency on the image
+  		if ((p[0] == 0) && (p[1] == 0) && (p[2] == 0) && (p[3] == 0)) {
+   
   		}
-		var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
-		
-		
-		alert("X: " + hp.x + ", Y: " + hp.y + ", color: " + hex);
-	});
+
+  		var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
+
+  		alert(x, y, hex);
+	}, false);
 	
 	
-});
+}
 
 	
 
