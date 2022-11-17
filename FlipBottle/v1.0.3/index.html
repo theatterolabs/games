@@ -188,6 +188,7 @@ function rgbToHex(r, g, b) {
 function setCanvas() {
 	$('canvas').attr('id', 'mycanvas');
 	var canvas = document.getElementById("mycanvas");
+	var context = canvas.getContext('2d');
 	canvas.addEventListener("click", function(e) {
   		var pos = getPosition(this);
   		var x = e.pageX - pos.x;
