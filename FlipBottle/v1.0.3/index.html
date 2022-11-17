@@ -190,12 +190,12 @@ function rgbToHex(r, g, b) {
 	
 $(document).ready( function() {
 	$('canvas').attr('id', 'mycanvas');
-	var canvas = document.getElementById("mycanvas");
-	canvas.addEventListener('click', function(e){
+//	var canvas = document.getElementById("mycanvas");
+	$('#mycanvas').click(function(e){
 		
-		var hp = getPosition(e, canvas, 20, true); // true = percent | false or no attr = px
+		var hp = getPosition(e, $(this), 5, true); // true = percent | false or no attr = px
 		
-		var c = this.getContext('2d');
+		var c = $(this).get(0).getContext('2d');
 		var p = c.getImageData(hp.x, hp.y, 1, 1).data;
 		
 		if ((p[0] == 0) && (p[1] == 0) && (p[2] == 0) && (p[3] == 0)) {
@@ -205,7 +205,7 @@ $(document).ready( function() {
 		
 		var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
 		alert("X: " + hp.x + ", Y: " + hp.y + ", color: " + hex);
-	}, false);
+	});
 	
 	
 });
