@@ -7,6 +7,5 @@ target.addEventListener("click",function(event){
 	var c = this.getContext("webgl2", {preserveDrawingBuffer: true});
 	c.readPixels(eventLocation.x, eventLocation.y, 1, 1, c.RGBA, c.UNSIGNED_BYTE, pixels);
     	console.log(pixels);
-  });
 		
 });
