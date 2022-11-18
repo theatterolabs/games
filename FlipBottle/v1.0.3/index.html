@@ -156,60 +156,6 @@ var splashScreen;
 var mainContainer = document.getElementById('mainContainer');
 var footerAD = document.getElementById('gamescreen-footer');
 var skipBtn = document.getElementById('skip');
-var canva;
-
-	
-//  ********************************************** Begin Click Detection  ********************************************** -->
-
-/*function getElementPosition(obj) {
-    var curleft = 0, curtop = 0;
-    if (obj.offsetParent) {
-        do {
-            curleft += obj.offsetLeft;
-            curtop += obj.offsetTop;
-        } while (obj = obj.offsetParent);
-        return { x: curleft, y: curtop };
-    }
-    return undefined;
-}
-	
-	
-function getEventLocation(element,event){
-    // Relies on the getElementPosition function.
-    var pos = getElementPosition(element);
-    
-    return {
-    	x: (event.pageX - pos.x),
-      	y: (event.pageY - pos.y)
-    };
-}
-*/	
-	function insertAfter(referenceNode, newNode) {
-  referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-}	
-	
-/*	function rgbToHex(r, g, b) {
-    if (r > 255 || g > 255 || b > 255)
-        throw "Invalid color component";
-    return ((r << 16) | (g << 8) | b).toString(16);
-} */
-	
-$('#btn-play').click( function() {
-	$('canvas').attr('id', 'mycanvas');
-	window.canvas = document.getElementById("mycanvas");
-	
-	var newScript = document.createElement("script");
-	newScript.src = "./adActions.js";
-	insertAfter(canvas, newScript);
-	
-});
-
-	
-
-	
-//  ********************************************** End Click Detection  ********************************************** -->
-		
-		
 
 function init() {
  
