@@ -1,6 +1,7 @@
 
 // Import any other script files here, e.g.:
-// import * as myModule from "./mymodule.js";
+import * as GoogleAdsModule from "https://imasdk.googleapis.com/js/sdkloader/ima3.js";
+import * as adsModule from "./scripts/ads.js";
 
 runOnStartup(async runtime =>
 {
