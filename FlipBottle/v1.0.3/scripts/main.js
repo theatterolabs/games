@@ -193,7 +193,9 @@
             return elem
         }
         _OnFocus(elementId) {
-            this.PostToRuntimeElement("elem-focused", elementId)
+            this.PostToRuntimeElement("elem-focused", elementId);
+            var whichelem = this.elementId;
+            console.log("elem-focused", whichelem)
         }
         _OnBlur(elementId) {
             this.PostToRuntimeElement("elem-blurred",
