@@ -76,7 +76,7 @@
     mixpanel.init('28ad1bd3f9fbcda7356c70835a0b4d96');
     mixpanel.track('Screen View', {
   'Game Name': "Flip Bottle",
-  'Page Name': "Game Landing Page",
+  'Page Name': "Game Landing Page"
 });
 
   </script>
@@ -183,6 +183,10 @@ function closeAds() {
 	mainContainer.style.display = 'none';
 	mycanvas.style.pointerEvents = "auto";
 	adsManager.destroy();
+	mixpanel.track('Skip Ad', {
+  		'Game Name': "Flip Bottle"
+  		
+	});
 	
 
 }
@@ -205,6 +209,14 @@ function requestAds() {
   	createAdDisplayContainer();
   	// Initialize the container. Must be done via a user action on mobile devices.
   	adDisplayContainer.initialize();
+	
+	//Start Mixpanel
+	mixpanel.track('Ad Request', {
+		
+  		'Game Name': "Flip Bottle"
+  		
+	});
+	//End Mixpanel
   
   	// Create ads loader.
   	adsLoader = new google.ima.AdsLoader(adDisplayContainer);
@@ -258,15 +270,40 @@ function onAdsManagerLoaded(adsManagerLoadedEvent) {
       onAdEvent);
 
   // Listen to any additional events, if necessary.
-  adsManager.addEventListener(
+adsManager.addEventListener(
       google.ima.AdEvent.Type.LOADED,
       onAdEvent);
-  adsManager.addEventListener(
+	
+adsManager.addEventListener(
       google.ima.AdEvent.Type.STARTED,
       onAdEvent);
-  adsManager.addEventListener(
-      google.ima.AdEvent.Type.COMPLETE,
+	
+adsManager.addEventListener(
+      google.ima.AdEvent.Type.CLICK,
       onAdEvent);
+	
+
+adsManager.addEventListener(
+      google.ima.AdEvent.Type.FIRST_QUARTILE,
+      onAdEvent);
+	
+	
+
+adsManager.addEventListener(
+      google.ima.AdEvent.Type.MIDPOINT,
+      onAdEvent);		
+	
+		
+
+adsManager.addEventListener(
+      google.ima.AdEvent.Type.THIRD_QUARTILE,
+      onAdEvent);		
+		
+
+adsManager.addEventListener(
+      google.ima.AdEvent.Type.COMPLETE,
+      onAdEvent);	
+
 
   // For non-auto ad breaks, listen for ad break ready
   adsManager.addEventListener(
@@ -291,6 +328,15 @@ function onAdEvent(adEvent) {
 		case google.ima.AdEvent.Type.LOADED:
       		// This is the first event sent for an ad - it is possible to
       		// determine whether the ad is a video ad or an overlay.
+			
+			//Start Mixpanel
+			mixpanel.track('Ad Initialized', {
+		
+				'Game Name': "Flip Bottle"
+  		
+			});
+			//End Mixpanel
+			
 			skipAds();
 			if (!ad.isLinear()) {
         			// Position AdDisplayContainer correctly for overlay.
@@ -298,22 +344,100 @@ function onAdEvent(adEvent) {
 				videoContent.play();
 			}
 		break;
-		   
+			
+		case google.ima.AdEvent.Type.STARTED:
+			
+			//Start Mixpanel
+			mixpanel.track('Ad View', {
+		
+				'Game Name': "Flip Bottle"
+  		
+			});
+			//End Mixpanel
+			
+		break;
+		
+		case google.ima.AdEvent.Type.CLICK:
+			
+			//Start Mixpanel
+			mixpanel.track('Ad Clicks', {
+		
+				'Game Name': "Flip Bottle"
+  		
+			});
+			//End Mixpanel
+			
+		break;
+			
+		case google.ima.AdEvent.Type.FIRST_QUARTILE:
+			
+			//Start Mixpanel
+			mixpanel.track('Ad First Quartile', {
+		
+				'Game Name': "Flip Bottle"
+  		
+			});
+			//End Mixpanel
+			
+		break;
+			
+		case google.ima.AdEvent.Type.MIDPOINT:
+			
+			//Start Mixpanel
+			mixpanel.track('Ad Second Quartile', {
+		
+				'Game Name': "Flip Bottle"
+  		
+			});
+			//End Mixpanel
+			
+		break;
+			
+		case google.ima.AdEvent.Type.THIRD_QUARTILE:
+			
+			//Start Mixpanel
+			mixpanel.track('Ad Third Quartile', {
+		
+				'Game Name': "Flip Bottle"
+  		
+			});
+			//End Mixpanel
+			
+		break;	
+		  
 		case google.ima.AdEvent.Type.COMPLETE:
 			mainContainer.style.display = 'none';
 			skipBtn.style.display = 'none';
+			
+			//Start Mixpanel
+			mixpanel.track('Ad Completed', {
+		
+				'Game Name': "Flip Bottle"
+  		
+			});
+			//End Mixpanel
 		break;
 		  
 	}
 }
 
 function onAdError(adErrorEvent) {
-  // Handle the error logging.
-  console.log(adErrorEvent.getError());
-  adsManager.destroy();
-mainContainer.style.display = 'none';
-skipBtn.style.display = 'none';
+	// Handle the error logging.
+	console.log(adErrorEvent.getError());
+	var adError = adErrorEvent.getError();
+	adsManager.destroy();
+	mainContainer.style.display = 'none';
+	skipBtn.style.display = 'none';
 	mycanvas.style.pointerEvents = "auto";
+	
+	//Start Mixpanel
+	mixpanel.track('AD Failure', {
+		
+		'Game Name': "Flip Bottle",
+		'Failure Reason': adError
+  		
+	});
+	//End Mixpanel
 }
 
 function onContentPauseRequested() {
