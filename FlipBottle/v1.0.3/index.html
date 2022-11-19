@@ -85,7 +85,7 @@
 
 
 </head>
-<body>
+<body onload="setup();">
 
 
 <!-- ********************************************** Game Splash Screen ********************************************** -->
@@ -156,6 +156,15 @@ var footerAD = document.getElementById('gamescreen-footer');
 var skipBtn = document.getElementById('skip');	
 		
 
+function setup() {
+	mainContainer.style.display = 'none';
+	$('canvas').attr('id', 'mycanvas');
+	window.mycanvas = document.getElementById("mycanvas");
+	
+	
+}
+	
+	
 function init() {
  
   playButton = document.getElementById('btn-play');
@@ -172,7 +181,7 @@ function skipAds() {
 	
 function closeAds() {
 	mainContainer.style.display = 'none';
-	footerAD.style.display = 'none';
+	mycanvas.style.display = 'block';
 	adsManager.destroy();
 	
 
@@ -186,6 +195,7 @@ function createAdDisplayContainer() {
 }
 
 function requestAds() {
+	mycanvas.style.display = 'none';
 	mainContainer.style.display = 'block';
 	splashScreen.style.display = 'none';
 	skipBtn.style.display = 'none';
