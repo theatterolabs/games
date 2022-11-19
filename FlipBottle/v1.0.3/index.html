@@ -526,7 +526,6 @@ function onAdEvent(adEvent) {
 function onAdError(adErrorEvent) {
 	// Handle the error logging.
 	console.log(adErrorEvent.getError());
-	var adError = adErrorEvent.getError();
 	adsManager.destroy();
 	mainContainer.style.display = 'none';
 	skipBtn.style.display = 'none';
