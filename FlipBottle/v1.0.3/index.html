@@ -94,7 +94,7 @@
   		
 		});
 		//End Mixpanel
-          
+          console.log("Ad Initialized");
         });
 
         // This listener will be called when the specified service actually
@@ -111,6 +111,7 @@
   		
 		});
 		//End Mixpanel
+		console.log("Ad Request");
         });
 
         // This listener will be called when an ad response has been received for
@@ -125,6 +126,7 @@
   		
 		});
 		//End Mixpanel
+		console.log("Ad Response");
         }); 
 
         
@@ -248,6 +250,7 @@ function bannerClick() {
   		
 		});
 		//End Mixpanel
+	console.log("Ad Click");
 	
 }
 	
@@ -275,7 +278,7 @@ function closeAds() {
   		
 	});
 	
-
+console.log("Skip Ad");
 }
 	
 
@@ -308,6 +311,7 @@ function requestAds() {
   		
 	});
 	//End Mixpanel
+	console.log("Ad Request");
   
   	// Create ads loader.
   	adsLoader = new google.ima.AdsLoader(adDisplayContainer);
@@ -419,7 +423,7 @@ function onAdEvent(adEvent) {
 		case google.ima.AdEvent.Type.LOADED:
       		// This is the first event sent for an ad - it is possible to
       		// determine whether the ad is a video ad or an overlay.
-			
+			console.log("Ad Initialized");
 			//Start Mixpanel
 			mixpanel.track('Ad Initialized', {
 		
@@ -438,7 +442,7 @@ function onAdEvent(adEvent) {
 		break;
 			
 		case google.ima.AdEvent.Type.STARTED:
-			
+			console.log("Ad View");
 			//Start Mixpanel
 			mixpanel.track('Ad View', {
 		
@@ -451,7 +455,7 @@ function onAdEvent(adEvent) {
 		break;
 		
 		case google.ima.AdEvent.Type.CLICK:
-			
+			console.log("Ad Clicks");
 			//Start Mixpanel
 			mixpanel.track('Ad Clicks', {
 		
@@ -464,7 +468,7 @@ function onAdEvent(adEvent) {
 		break;
 			
 		case google.ima.AdEvent.Type.FIRST_QUARTILE:
-			
+			console.log("First Quartile");
 			//Start Mixpanel
 			mixpanel.track('Ad First Quartile', {
 		
@@ -477,7 +481,7 @@ function onAdEvent(adEvent) {
 		break;
 			
 		case google.ima.AdEvent.Type.MIDPOINT:
-			
+			console.log("Second Quartile");
 			//Start Mixpanel
 			mixpanel.track('Ad Second Quartile', {
 		
@@ -490,7 +494,7 @@ function onAdEvent(adEvent) {
 		break;
 			
 		case google.ima.AdEvent.Type.THIRD_QUARTILE:
-			
+			console.log("Third Quartile");
 			//Start Mixpanel
 			mixpanel.track('Ad Third Quartile', {
 		
@@ -506,7 +510,7 @@ function onAdEvent(adEvent) {
 			mainContainer.style.display = 'none';
 			adwrap.style.display = 'none';
 			skipBtn.style.display = 'none';
-			
+			console.log("Complete");
 			//Start Mixpanel
 			mixpanel.track('Ad Completed', {
 		
