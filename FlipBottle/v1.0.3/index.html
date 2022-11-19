@@ -38,8 +38,108 @@
   window.googletag = window.googletag || {cmd: []};
   googletag.cmd.push(function() {
     googletag.defineSlot('/21665149170/Zee5_Games_Sticky_320x50', [320, 50], 'div-gpt-ad-1668419977060-0').addService(googletag.pubads());
-    googletag.pubads().enableSingleRequest();
-    googletag.enableServices();
+	  
+	  // This listener will be called when an impression is considered viewable.
+        googletag.pubads().addEventListener('impressionViewable', function(event) {
+          var slotId = event.slot.getSlotElementId();
+           //Start Mixpanel
+		mixpanel.track('Ad View', {
+		
+			'Game Name': "Flip Bottle",
+			'Ad Media Type': "Banner",
+			'Ad Slot': 21665149170
+  		
+		});
+		//End Mixpanel
+        });
+
+        // This listener will be called when a slots creative iframe load event fires.
+        googletag.pubads().addEventListener('slotOnload', function(event) {
+		var slotId = event.slot.getSlotElementId();
+         	
+        });
+
+        // This listener will be called when a slot has finished rendering.
+        googletag.pubads().addEventListener('slotRenderEnded', function(event) {
+		
+		 //Start Mixpanel
+		mixpanel.track('Ad Initialized', {
+		
+			'Game Name': "Flip Bottle",
+			'Ad Media Type': "Banner",
+			'Ad Slot': 21665149170
+  		
+		});
+		//End Mixpanel
+          var slotId = event.slot.getSlotElementId();
+
+          // Record details of the rendered ad.
+          var details = {
+            'Advertiser ID': event.advertiserId,
+            'Campaign ID': event.campaignId,
+            'Company IDs': event.companyIds,
+            'Creative ID': event.creativeId,
+            'Creative Template ID': event.creativeId,
+            'Is backfill?': event.isBackfill,
+            'Is empty?': event.isEmpty,
+            'Label IDs': event.labelIds,
+            'Line Item ID': event.lineItemId,
+            'Size': event.size.join('x'),
+            'Slot content changed?': event.slotContentChanged,
+            'Source Agnostic Creative ID': event.sourceAgnosticCreativeId,
+            'Source Agnostic Line Item ID': event.sourceAgnosticLineItemId,
+            'Yield Group IDs': event.yieldGroupIds
+          }
+
+          
+        });
+
+        // This listener will be called when the specified service actually
+        // sets an ad request for a slot. Each slot will fire this event, even
+        // though they may be batched together in a single request if single
+        // request architecture (SRA) is enabled.
+        googletag.pubads().addEventListener('slotRequested', function(event) {
+          var slotId = event.slot.getSlotElementId();
+          requestedTimestamp[slotId] = Date.now();
+           //Start Mixpanel
+		mixpanel.track('Ad Request', {
+		
+			'Game Name': "Flip Bottle",
+			'Ad Media Type': "Banner",
+			'Ad Slot': 21665149170
+  		
+		});
+		//End Mixpanel
+        });
+
+        // This listener will be called when an ad response has been received for
+        // a slot.
+        googletag.pubads().addEventListener('slotResponseReceived', function(event) {
+          var slotId = event.slot.getSlotElementId();
+           //Start Mixpanel
+		mixpanel.track('Ad Response', {
+		
+			'Game Name': "Flip Bottle",
+			'Ad Media Type': "Banner",
+			'Ad Slot': 21665149170
+  		
+		});
+		//End Mixpanel
+        });
+
+        // This listener will be called whenever the on-screen percentage of an ad slot's
+        // area changes.
+        googletag.pubads().addEventListener('slotVisibilityChanged', function(event) {
+          var slotId = event.slot.getSlotElementId();
+
+          // Record details of the event.
+          var details = {'Visible area': event.inViewPercentage + '%'};
+
+        });
+
+        // Enable SRA and services.
+	googletag.pubads().enableSingleRequest();
+    	googletag.enableServices();
   });
 </script>
 	
@@ -127,7 +227,7 @@
 	
 	
 <!-- ********************************************** Begin Game Footer AD ********************************************** -->	
-	 <div id="gamescreen-footer" class="gamescreen-footer" style='display: block;'> 
+	 <div id="gamescreen-footer" class="gamescreen-footer" style='display: block;' onclick="bannerClick();"> 
 		<!-- Begin Footer Ad -->
 		<div id='div-gpt-ad-1668419977060-0' class="div-gpt-ad-1668419977060-0" style='min-width: 320px; min-height: 50px;'>
   		<script>
@@ -164,13 +264,27 @@ function setup() {
 	
 }
 	
+
+	
+function bannerClick() {
+	  //Start Mixpanel
+		mixpanel.track('Ad Click', {
+		
+			'Game Name': "Flip Bottle",
+			'Ad Media Type': "Banner",
+			'Ad Slot': 21665149170
+  		
+		});
+		//End Mixpanel
+	
+}
 	
 function init() {
  
-  playButton = document.getElementById('btn-play');
-  playButton.addEventListener('click', requestAds);
-  splashScreen = document.getElementById('fg-click2play');
-skipBtn.addEventListener('click', closeAds);
+	playButton = document.getElementById('btn-play');
+	playButton.addEventListener('click', requestAds);
+	splashScreen = document.getElementById('fg-click2play');
+	skipBtn.addEventListener('click', closeAds);
 
 	
 }
@@ -184,7 +298,9 @@ function closeAds() {
 	mycanvas.style.pointerEvents = "auto";
 	adsManager.destroy();
 	mixpanel.track('Skip Ad', {
-  		'Game Name': "Flip Bottle"
+  		'Game Name': "Flip Bottle",
+		'Ad Media Type': "Video",
+		'Ad Slot': 21665149170
   		
 	});
 	
@@ -213,7 +329,9 @@ function requestAds() {
 	//Start Mixpanel
 	mixpanel.track('Ad Request', {
 		
-  		'Game Name': "Flip Bottle"
+  		'Game Name': "Flip Bottle",
+		'Ad Media Type': "Video",
+		'Ad Slot': 21665149170
   		
 	});
 	//End Mixpanel
@@ -332,7 +450,9 @@ function onAdEvent(adEvent) {
 			//Start Mixpanel
 			mixpanel.track('Ad Initialized', {
 		
-				'Game Name': "Flip Bottle"
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Video",
+				'Ad Slot': 21665149170
   		
 			});
 			//End Mixpanel
@@ -350,7 +470,9 @@ function onAdEvent(adEvent) {
 			//Start Mixpanel
 			mixpanel.track('Ad View', {
 		
-				'Game Name': "Flip Bottle"
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Video",
+				'Ad Slot': 21665149170
   		
 			});
 			//End Mixpanel
@@ -362,7 +484,9 @@ function onAdEvent(adEvent) {
 			//Start Mixpanel
 			mixpanel.track('Ad Clicks', {
 		
-				'Game Name': "Flip Bottle"
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Video",
+				'Ad Slot': 21665149170
   		
 			});
 			//End Mixpanel
@@ -374,7 +498,9 @@ function onAdEvent(adEvent) {
 			//Start Mixpanel
 			mixpanel.track('Ad First Quartile', {
 		
-				'Game Name': "Flip Bottle"
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Video",
+				'Ad Slot': 21665149170
   		
 			});
 			//End Mixpanel
@@ -386,7 +512,9 @@ function onAdEvent(adEvent) {
 			//Start Mixpanel
 			mixpanel.track('Ad Second Quartile', {
 		
-				'Game Name': "Flip Bottle"
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Video",
+				'Ad Slot': 21665149170
   		
 			});
 			//End Mixpanel
@@ -398,7 +526,9 @@ function onAdEvent(adEvent) {
 			//Start Mixpanel
 			mixpanel.track('Ad Third Quartile', {
 		
-				'Game Name': "Flip Bottle"
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Video",
+				'Ad Slot': 21665149170
   		
 			});
 			//End Mixpanel
@@ -412,7 +542,9 @@ function onAdEvent(adEvent) {
 			//Start Mixpanel
 			mixpanel.track('Ad Completed', {
 		
-				'Game Name': "Flip Bottle"
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Video",
+				'Ad Slot': 21665149170
   		
 			});
 			//End Mixpanel
@@ -434,6 +566,8 @@ function onAdError(adErrorEvent) {
 	mixpanel.track('AD Failure', {
 		
 		'Game Name': "Flip Bottle",
+		'Ad Media Type': "Video",
+		'Ad Slot': 21665149170,
 		'Failure Reason': adError
   		
 	});
