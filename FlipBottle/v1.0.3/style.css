@@ -235,7 +235,7 @@ html, body, canvas {
 #mainContainer {
   	position: relative;
   	height: 100vh;
-	z-index: 10000;
+	z-index: 999999012;
 	width: 100%;
 	height: 100%;
 
@@ -247,7 +247,7 @@ top: 0px;
 left: 0px;
 width: 100%;
 height: 100%;
-z-index: 10001;	
+z-index: 999999013;	
 }
 
 .skip {
@@ -262,7 +262,7 @@ z-index: 10001;
   position: absolute;
   bottom: 50px;
   right: 1vw;
-  z-index: 20000;
+  z-index: 999999014;
   
 }
 
