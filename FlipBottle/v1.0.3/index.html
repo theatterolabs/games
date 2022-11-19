@@ -181,7 +181,7 @@ function skipAds() {
 	
 function closeAds() {
 	mainContainer.style.display = 'none';
-	mycanvas.style.display = 'block';
+	mycanvas.style.pointerEvents = "auto";
 	adsManager.destroy();
 	
 
@@ -195,7 +195,7 @@ function createAdDisplayContainer() {
 }
 
 function requestAds() {
-	mycanvas.style.display = 'none';
+	mycanvas.style.pointerEvents = "none";
 	mainContainer.style.display = 'block';
 	splashScreen.style.display = 'none';
 	skipBtn.style.display = 'none';
@@ -313,6 +313,7 @@ function onAdError(adErrorEvent) {
   adsManager.destroy();
 mainContainer.style.display = 'none';
 skipBtn.style.display = 'none';
+	mycanvas.style.pointerEvents = "auto";
 }
 
 function onContentPauseRequested() {
