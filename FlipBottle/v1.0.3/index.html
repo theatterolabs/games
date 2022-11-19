@@ -47,11 +47,12 @@
 	
 <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 <script>
-  window.googletag = window.googletag || {cmd: []};
-  googletag.cmd.push(function() {
-    googletag.defineSlot('/21665149170/Zee5_Games_Interstitial', [320, 50], 'div-gpt-ad-1666257126465-0').addService(googletag.pubads());
-    googletag.pubads().enableSingleRequest();
-    googletag.enableServices();
+		
+	window.googletag = window.googletag || {cmd: []};
+	googletag.cmd.push(function() {
+		googletag.defineSlot('/21665149170/Zee5_Games_Interstitial', [320, 50], 'div-gpt-ad-1666257126465-0').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+	googletag.enableServices();
   });
 </script>
 	
@@ -60,12 +61,13 @@
 <!--  ********************************************** Begin Google Footer Splash Screen Ad  ********************************************** -->
 	
 <script>
-  window.googletag = window.googletag || {cmd: []};
-  googletag.cmd.push(function() {
-    googletag.defineSlot('/21665149170/Zee5_Games_Sticky_320x50', [320, 50], 'div-gpt-ad-1668419977060-0').addService(googletag.pubads());
+	var adSlot1;	
+	window.googletag = window.googletag || {cmd: []};
+	adSlot1 = googletag.cmd.push(function() {
+	googletag.defineSlot('/21665149170/Zee5_Games_Sticky_320x50', [320, 50], 'div-gpt-ad-1668419977060-0').addService(googletag.pubads());
 	  
 	  // This listener will be called when an impression is considered viewable.
-       googletag.pubads().addEventListener('impressionViewable', function(event) {
+	googletag.pubads().addEventListener('impressionViewable', function(event) {
           
            //Start Mixpanel
 		mixpanel.track('Ad View', {
@@ -135,6 +137,13 @@
 	googletag.pubads().enableSingleRequest();
     	googletag.enableServices();
   });
+	
+	 var refreshFirstSlot = function() {
+      googletag.cmd.push(function() {
+        googletag.pubads().refresh([adSlot1]);
+      });
+		 console.log("Ad Slot Refreshed");
+    };
 </script>
 	
 <!--  ********************************************** End Google Footer Splash Screen Ad  ********************************************** -->
@@ -240,7 +249,6 @@ function setup() {
 	
 	
 }
-	
 
 	
 function bannerClick() {
@@ -271,6 +279,7 @@ function skipAds() {
 }
 	
 function closeAds() {
+	refreshFirstSlot();
 	mainContainer.style.display = 'none';
 	adwrap.style.display = 'none';
 	adsManager.destroy();
@@ -283,7 +292,6 @@ function closeAds() {
 console.log("Skip Ad");
 }
 	
-
 
 function createAdDisplayContainer() {
   // We assume the adContainer is the DOM id of the element that will house
