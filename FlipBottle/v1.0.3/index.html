@@ -75,7 +75,7 @@
   		
 		});
 		//End Mixpanel
-	       console.log("Ad View");
+	       console.log("Banner Ad View");
         });
 
         // This listener will be called when a slots creative iframe load event fires.
@@ -95,7 +95,7 @@
   		
 		});
 		//End Mixpanel
-          console.log("Ad Initialized");
+          console.log("Banner Ad Initialized");
         });
 
         // This listener will be called when the specified service actually
@@ -112,7 +112,7 @@
   		
 		});
 		//End Mixpanel
-		console.log("Ad Request");
+		console.log("Banner Ad Request");
         });
 
         // This listener will be called when an ad response has been received for
@@ -127,7 +127,7 @@
   		
 		});
 		//End Mixpanel
-		console.log("Ad Response");
+		console.log("Banner Ad Response");
         }); 
 
         
@@ -228,7 +228,8 @@ var splashScreen;
 var mainContainer = document.getElementById('mainContainer');
 var footerAD = document.getElementById('gamescreen-footer');
 var skipBtn = document.getElementById('skip');
-var adwrap = document.getElementById('adwrap');	
+var adwrap = document.getElementById('adwrap');
+	
 		
 
 function setup() {
@@ -287,6 +288,7 @@ console.log("Skip Ad");
 function createAdDisplayContainer() {
   // We assume the adContainer is the DOM id of the element that will house
   // the ads.
+	console.log("AD display conatiner Created");
   adDisplayContainer = new google.ima.AdDisplayContainer(
       document.getElementById('adContainer'), videoContent);
 }
@@ -312,7 +314,7 @@ function requestAds() {
   		
 	});
 	//End Mixpanel
-	console.log("Ad Request");
+	console.log("Video Ad Request");
   
   	// Create ads loader.
   	adsLoader = new google.ima.AdsLoader(adDisplayContainer);
@@ -344,6 +346,8 @@ function requestAds() {
 }
 
 function onAdsManagerLoaded(adsManagerLoadedEvent) {
+	
+	console.log("Ads Manager Loaded");
   // Get the ads manager.
   var adsRenderingSettings = new google.ima.AdsRenderingSettings();
   adsRenderingSettings.restoreCustomPlaybackStateOnAdBreakComplete = true;
@@ -412,6 +416,7 @@ adsManager.addEventListener(
   } catch (adError) {
     // An error may be thrown if there was a problem with the VAST response.
     videoContent.play();
+	  console.log("Catch Ad Error");
   }
 }
 
@@ -439,6 +444,7 @@ function onAdEvent(adEvent) {
         			// Position AdDisplayContainer correctly for overlay.
         			// Use ad.width and ad.height.
 				videoContent.play();
+				console.log("Alert: Not Linear Ad");
 			}
 		break;
 			
@@ -520,6 +526,11 @@ function onAdEvent(adEvent) {
   		
 			});
 			//End Mixpanel
+		break;
+			
+		case google.ima.AdErrorEvent.Type.AD_ERROR:
+			console.log("Ad Error");
+			
 		break;
 		  
 	}
