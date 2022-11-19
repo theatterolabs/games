@@ -265,7 +265,7 @@ function skipAds() {
 	
 function closeAds() {
 	mainContainer.style.display = 'none';
-	mycanvas.style.pointerEvents = "auto";
+	enablePointer();
 	adsManager.destroy();
 	mixpanel.track('Skip Ad', {
   		'Game Name': "Flip Bottle",
@@ -275,6 +275,11 @@ function closeAds() {
 	});
 	
 
+}
+	
+
+function enablePointer() {	
+	setTimeout(function(){ mycanvas.style.pointerEvents = "auto";}, 1000);
 }
 
 function createAdDisplayContainer() {
@@ -529,7 +534,7 @@ function onAdError(adErrorEvent) {
 	adsManager.destroy();
 	mainContainer.style.display = 'none';
 	skipBtn.style.display = 'none';
-	mycanvas.style.pointerEvents = "auto";
+	enablePointer();
 	
 	//Start Mixpanel
 	mixpanel.track('AD Failure', {
