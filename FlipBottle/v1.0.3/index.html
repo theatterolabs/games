@@ -99,8 +99,7 @@
         // though they may be batched together in a single request if single
         // request architecture (SRA) is enabled.
         googletag.pubads().addEventListener('slotRequested', function(event) {
-          var slotId = event.slot.getSlotElementId();
-          requestedTimestamp[slotId] = Date.now();
+          
            //Start Mixpanel
 		mixpanel.track('Ad Request', {
 		
@@ -115,7 +114,7 @@
         // This listener will be called when an ad response has been received for
         // a slot.
         googletag.pubads().addEventListener('slotResponseReceived', function(event) {
-          var slotId = event.slot.getSlotElementId();
+         
            //Start Mixpanel
 		mixpanel.track('Ad Response', {
 		
@@ -127,16 +126,7 @@
 		//End Mixpanel
         });
 
-        // This listener will be called whenever the on-screen percentage of an ad slot's
-        // area changes.
-        googletag.pubads().addEventListener('slotVisibilityChanged', function(event) {
-          var slotId = event.slot.getSlotElementId();
-
-          // Record details of the event.
-          var details = {'Visible area': event.inViewPercentage + '%'};
-
-        });
-
+        
         // Enable SRA and services.
 	googletag.pubads().enableSingleRequest();
     	googletag.enableServices();
