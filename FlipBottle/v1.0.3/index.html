@@ -40,8 +40,8 @@
     googletag.defineSlot('/21665149170/Zee5_Games_Sticky_320x50', [320, 50], 'div-gpt-ad-1668419977060-0').addService(googletag.pubads());
 	  
 	  // This listener will be called when an impression is considered viewable.
-    /*    googletag.pubads().addEventListener('impressionViewable', function(event) {
-          var slotId = event.slot.getSlotElementId();
+       googletag.pubads().addEventListener('impressionViewable', function(event) {
+          
            //Start Mixpanel
 		mixpanel.track('Ad View', {
 		
@@ -55,7 +55,7 @@
 
         // This listener will be called when a slots creative iframe load event fires.
         googletag.pubads().addEventListener('slotOnload', function(event) {
-		var slotId = event.slot.getSlotElementId();
+		
          	
         });
 
@@ -104,7 +104,7 @@
   		
 		});
 		//End Mixpanel
-        }); */
+        }); 
 
         
         // Enable SRA and services.
