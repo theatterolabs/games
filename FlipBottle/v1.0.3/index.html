@@ -138,12 +138,10 @@
     	googletag.enableServices();
   });
 	
-	 var refreshFirstSlot = function() {
-      googletag.cmd.push(function() {
-        googletag.pubads().refresh([adSlot1]);
-      });
-		 console.log("Ad Slot Refreshed");
-    };
+	function refreshFirstSlot() {
+      googletag.cmd.push(function() { googletag.pubads().refresh(); });
+	console.log("Ad Slot Refreshed");
+    }
 </script>
 	
 <!--  ********************************************** End Google Footer Splash Screen Ad  ********************************************** -->
