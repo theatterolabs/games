@@ -190,8 +190,8 @@
 	
 <!-- ********************************************** Zee5_Games_RewardedVideo ********************************************** -->
 	<div id="mainContainer" style="display: none;">
-		<div id="adContainer" style="display: block; cursor: not-allowed;
-    pointer-events: none; width: 100vw; height: 100vh; z-index: 999999013;"></div>
+		<div id="adwrap" style="display: none; cursor: not-allowed;
+    pointer-events: none; width: 100vw; height: 100vh; z-index: 999999012;"></div>
 		<div id="adContainer" style="display: block;"></div>
 		<button id="skip" class="skip" style='display: none;'>Skip Ads ></button>
 	</div>
@@ -228,11 +228,13 @@ var videoContent;
 var splashScreen;
 var mainContainer = document.getElementById('mainContainer');
 var footerAD = document.getElementById('gamescreen-footer');
-var skipBtn = document.getElementById('skip');	
+var skipBtn = document.getElementById('skip');
+var adwrap = document.getElementById('adwrap');	
 		
 
 function setup() {
 	mainContainer.style.display = 'none';
+	adwrap.style.display = 'none';
 	$('canvas').attr('id', 'mycanvas');
 	window.mycanvas = document.getElementById("mycanvas");
 	
@@ -270,6 +272,7 @@ function skipAds() {
 	
 function closeAds() {
 	mainContainer.style.display = 'none';
+	adwrap.style.display = 'none';
 	enablePointer();
 	adsManager.destroy();
 	mixpanel.track('Skip Ad', {
@@ -283,12 +286,6 @@ function closeAds() {
 }
 	
 
-function enablePointer() {	
-	setTimeout(function(){ 
-		mycanvas.style.pointerEvents = "auto";
-		mycanvas.style.touch-action: none;
-	}, 1000);
-}
 
 function createAdDisplayContainer() {
   // We assume the adContainer is the DOM id of the element that will house
@@ -298,8 +295,9 @@ function createAdDisplayContainer() {
 }
 
 function requestAds() {
-	mycanvas.style.pointerEvents = "none";
+	
 	mainContainer.style.display = 'block';
+	adwrap.style.display = 'block';
 	splashScreen.style.display = 'none';
 	skipBtn.style.display = 'none';
   	google.ima.settings.setPlayerType('google/codepen-demo-manual-ad-breaks');
@@ -520,6 +518,7 @@ function onAdEvent(adEvent) {
 		  
 		case google.ima.AdEvent.Type.COMPLETE:
 			mainContainer.style.display = 'none';
+			adwrap.style.display = 'none';
 			skipBtn.style.display = 'none';
 			
 			//Start Mixpanel
@@ -541,6 +540,7 @@ function onAdError(adErrorEvent) {
 	console.log(adErrorEvent.getError());
 	adsManager.destroy();
 	mainContainer.style.display = 'none';
+	adwrap.style.display = 'none';
 	skipBtn.style.display = 'none';
 	enablePointer();
 	
