@@ -186,8 +186,8 @@ function createAdDisplayContainer() {
 }
 
 function requestAds() {
+	mainContainer.style.display = 'block';
 	splashScreen.style.display = 'none';
-	footerAD.style.display = 'none';
 	skipBtn.style.display = 'none';
   	google.ima.settings.setPlayerType('google/codepen-demo-manual-ad-breaks');
   	google.ima.settings.setPlayerVersion('1.0.0');
