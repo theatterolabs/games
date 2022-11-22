@@ -291,6 +291,21 @@ function closeAds() {
 console.log("Skip Ad");
 }
 	
+	
+function closeFailedAds() {
+	refreshFirstSlot();
+	mainContainer.style.display = 'none';
+	adwrap.style.display = 'none';
+	adsManager.destroy();
+	mixpanel.track('Ad Failure', {
+  		'Game Name': "Flip Bottle",
+		'Ad Media Type': "Video"
+  		
+	});
+	
+
+}
+	
 
 function createAdDisplayContainer() {
   // We assume the adContainer is the DOM id of the element that will house
@@ -550,7 +565,6 @@ function onAdError(adErrorEvent) {
 	mainContainer.style.display = 'none';
 	adwrap.style.display = 'none';
 	skipBtn.style.display = 'none';
-	enablePointer();
 	
 	//Start Mixpanel
 	mixpanel.track('AD Failure', {
@@ -570,7 +584,7 @@ function onContentPauseRequested() {
 }
 
 function onContentResumeRequested() {
-  closeAds();
+  closeFailedAds();
 	console.log("Couldnt Play Ad");
   // This function is where you should ensure that your UI is ready
   // to play content. It is the responsibility of the Publisher to
