@@ -133,12 +133,14 @@
 	
 	var refreshfooterSlot = function() {
       googletag.cmd.push(function() { googletag.pubads().refresh([footerSlot]); });
-	console.log("Footer Slot Refreshed");
+	
+		console.log("Footer Slot Refreshed");
     }
 	
 		var refreshinterSlot = function() {
       googletag.cmd.push(function() { googletag.pubads().refresh([interSlot]); });
 	console.log("Interstitial Slot Refreshed");
+			
     }
 </script>
 	
@@ -180,7 +182,7 @@
 			</div>	
 			
 		</div>
-		<button id="skip" class="skip" style='display: none;'>Skip Ads ></button>
+		<button id="skip" class="skip" style='display: block;'>Skip Ads ></button>
 	</div>
 
 <!-- ********************************************** Zee5_Games_RewardedVideo ********************************************** -->	
