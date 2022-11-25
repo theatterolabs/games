@@ -43,27 +43,20 @@
 	
 <!-- ********************************************** END MIX PANEL *****************************************-->		
 <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>	
-<!--  ********************************************** Begin Google Interstitial Ads  **********************************************
-
-<script>
-		
-	window.googletag = window.googletag || {cmd: []};
-	googletag.cmd.push(function() {
-		googletag.defineSlot('/21665149170/Zee5_Games_Interstitial', [320, 50], 'div-gpt-ad-1666257126465-0').addService(googletag.pubads());
-	googletag.pubads().enableSingleRequest();
-	googletag.enableServices();
-  });
-</script>
-	
- ********************************************** End Google Interstitial Ads  ********************************************** -->
 	
 <!--  ********************************************** Begin Google Footer Splash Screen Ad  ********************************************** -->
 	
 <script>
 		
 	window.googletag = window.googletag || {cmd: []};
+	
+	// GPT slots
+	var footerSlot;
+	var interSlot;
+	
 	googletag.cmd.push(function() {
-	googletag.defineSlot('/21665149170/Zee5_Games_Sticky_320x50', [320, 50], 'div-gpt-ad-1668419977060-0').addService(googletag.pubads());
+	footerSlot = googletag.defineSlot('/21665149170/Zee5_Games_Sticky_320x50', [320, 50], 'div-gpt-ad-1668419977060-0').addService(googletag.pubads());
+	interSlot = googletag.defineSlot('/21665149170/Zee5_Games_Interstitial', [[768, 1024], [336, 280], [300, 250], [320, 480], [480, 640]], 'div-gpt-ad-1669353828671-0').addService(googletag.pubads());
 	  
 	  // This listener will be called when an impression is considered viewable.
 	googletag.pubads().addEventListener('impressionViewable', function(event) {
@@ -114,6 +107,7 @@
 		});
 		//End Mixpanel
 		console.log("Banner Ad Request");
+		console.log("Event:", event);
         });
 
         // This listener will be called when an ad response has been received for
@@ -137,32 +131,19 @@
     	googletag.enableServices();
   });
 	
-	function refreshFirstSlot() {
-      googletag.cmd.push(function() { googletag.pubads().refresh(); });
-	console.log("Ad Slot Refreshed");
+	var refreshfooterSlot = function() {
+      googletag.cmd.push(function() { googletag.pubads().refresh([footerSlot]); });
+	console.log("Footer Slot Refreshed");
+    }
+	
+		var refreshinterSlot = function() {
+      googletag.cmd.push(function() { googletag.pubads().refresh([interSlot]); });
+	console.log("Interstitial Slot Refreshed");
     }
 </script>
 	
 <!--  ********************************************** End Google Footer Splash Screen Ad  ********************************************** -->
 	
-
-<!--  ********************************************** Begin Google Footer Game Screen Ad  ********************************************** 
-	
-<script>
-  window.googletag = window.googletag || {cmd: []};
-  googletag.cmd.push(function() {
-    googletag.defineSlot('/21665149170/Zee5_Games_Sticky_320x50', [320, 50], 'div-gpt-ad-1668419977060-1').addService(googletag.pubads());
-    googletag.pubads().enableSingleRequest();
-    googletag.enableServices();
-  });
-</script>
-	
-  ********************************************** End Google Footer Game Screen Ad  ********************************************** -->	
-	
-	
-
-
-
 </head>
 <body onload="setup();">
 
@@ -177,15 +158,7 @@
         <div class="fg-click2play-loading"><span class="fg-click2play-loading-bounce1"></span><span class="fg-click2play-loading-bounce2"></span><span class="fg-click2play-loading-bounce3"></span></div>
       </div>
     </div>
-	   <!-- <div class="fg-click2play-stage-footer">
-		    <!-- Begin Footer Ad 
-		<div id='div-gpt-ad-1668419977060-0' class="div-gpt-ad-1668419977060-0" style='min-width: 320px; min-height: 50px;'>
-  		<script>
-    			googletag.cmd.push(function() { googletag.display('div-gpt-ad-1668419977060-0'); });
-  		</script>
-		</div>
-		 End Footer Ad 
-	    </div> -->
+	 
   </div>
   <div class="fg-branding"></div>
 </div>
@@ -197,7 +170,16 @@
 	<div id="mainContainer" class="mainContainer" style="display: none;">
 		<div id="adwrap" class="adwrap" style="display: none; cursor: not-allowed;
     pointer-events: none; width: 100vw; height: 100vh; z-index: 999999012;"></div>
-		<div id="adContainer" style="display: block;"></div>
+		<div id="adContainer" style="display: block;">
+			
+			<!-- /21665149170/Zee5_Games_Interstitial -->
+			<div id='div-gpt-ad-1669353828671-0' style='min-width: 300px; min-height: 250px;'>
+  			<script>
+    			googletag.cmd.push(function() { googletag.display('div-gpt-ad-1669353828671-0'); });
+  			</script>
+			</div>	
+			
+		</div>
 		<button id="skip" class="skip" style='display: none;'>Skip Ads ></button>
 	</div>
 
@@ -239,7 +221,7 @@ var adwrap = document.getElementById('adwrap');
 		
 
 function setup() {
-	refreshFirstSlot();
+	refreshfooterSlot();
 	mainContainer.style.display = 'none';
 	adwrap.style.display = 'none';
 	$('canvas').attr('id', 'mycanvas');
@@ -277,13 +259,13 @@ function skipAds() {
 }
 	
 function closeAds() {
-	refreshFirstSlot();
+	refreshfooterSlot();
 	mainContainer.style.display = 'none';
 	adwrap.style.display = 'none';
-	adsManager.destroy();
+	//adsManager.destroy();
 	mixpanel.track('Skip Ad', {
   		'Game Name': "Flip Bottle",
-		'Ad Media Type': "Video"
+		'Ad Media Type': "Image"
   		
 	});
 	
@@ -292,10 +274,10 @@ console.log("Skip Ad");
 	
 	
 function closeFailedAds() {
-	refreshFirstSlot();
+	refreshfooterSlot();
 	mainContainer.style.display = 'none';
 	adwrap.style.display = 'none';
-	adsManager.destroy();
+	//adsManager.destroy();
 	mixpanel.track('Ad Failure', {
   		'Game Name': "Flip Bottle",
 		'Ad Media Type': "Video"
@@ -304,7 +286,15 @@ function closeFailedAds() {
 	
 
 }
+
 	
+function requestAds() {
+	refreshinterSlot();
+	mainContainer.style.display = 'block';
+	adwrap.style.display = 'block';
+	splashScreen.style.display = 'none';
+	//skipBtn.style.display = 'none';
+}
 
 function createAdDisplayContainer() {
   // We assume the adContainer is the DOM id of the element that will house
@@ -314,7 +304,11 @@ function createAdDisplayContainer() {
       document.getElementById('adContainer'), videoContent);
 }
 
-function requestAds() {
+
+	
+	
+/* Video Ads	
+	function requestAds() {
 	
 	mainContainer.style.display = 'block';
 	adwrap.style.display = 'block';
@@ -607,7 +601,8 @@ function contentEnded() {
   adsLoader.contentComplete();
 	
 }
-
+End Video Ads Functions */
+	
 // Wire UI element references and UI event listeners.
 init();
 </script>
