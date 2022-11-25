@@ -57,7 +57,9 @@
 	googletag.cmd.push(function() {
 	footerSlot = googletag.defineSlot('/21665149170/Zee5_Games_Sticky_320x50', [320, 50], 'div-gpt-ad-1668419977060-0').addService(googletag.pubads());
 	interSlot = googletag.defineSlot('/21665149170/Zee5_Games_Interstitial', [[768, 1024], [336, 280], [300, 250], [320, 480], [480, 640]], 'div-gpt-ad-1669353828671-0').addService(googletag.pubads());
-	  
+	 
+	/*	
+	<!-- Begin AdEvent Listeners -->	
 	  // This listener will be called when an impression is considered viewable.
 	googletag.pubads().addEventListener('impressionViewable', function(event) {
           
@@ -123,7 +125,9 @@
 		});
 		//End Mixpanel
 		console.log("Banner Ad Response");
-        }); 
+        });
+	<!-- End AdEvent Listeners -->
+	*/
 
         
         // Enable SRA and services.
@@ -135,11 +139,147 @@
       googletag.cmd.push(function() { googletag.pubads().refresh([footerSlot]); });
 	
 		console.log("Footer Slot Refreshed");
+		<!-- Begin AdEvent Listeners -->	
+	  // This listener will be called when an impression is considered viewable.
+	googletag.pubads().addEventListener('impressionViewable', function(event) {
+          
+           //Start Mixpanel
+		mixpanel.track('Ad View', {
+		
+			'Game Name': "Flip Bottle",
+			'Ad Media Type': "Banner"
+  		
+		});
+		//End Mixpanel
+	       console.log("Banner Ad View");
+        });
+
+        // This listener will be called when a slots creative iframe load event fires.
+        googletag.pubads().addEventListener('slotOnload', function(event) {
+		
+         	
+        });
+
+        // This listener will be called when a slot has finished rendering.
+        googletag.pubads().addEventListener('slotRenderEnded', function(event) {
+		
+		 //Start Mixpanel
+		mixpanel.track('Ad Initialized', {
+		
+			'Game Name': "Flip Bottle",
+			'Ad Media Type': "Banner"
+  		
+		});
+		//End Mixpanel
+          console.log("Banner Ad Initialized");
+        });
+
+        // This listener will be called when the specified service actually
+        // sets an ad request for a slot. Each slot will fire this event, even
+        // though they may be batched together in a single request if single
+        // request architecture (SRA) is enabled.
+        googletag.pubads().addEventListener('slotRequested', function(event) {
+          
+           //Start Mixpanel
+		mixpanel.track('Ad Request', {
+		
+			'Game Name': "Flip Bottle",
+			'Ad Media Type': "Banner"
+  		
+		});
+		//End Mixpanel
+		console.log("Banner Ad Request");
+		
+        });
+
+        // This listener will be called when an ad response has been received for
+        // a slot.
+        googletag.pubads().addEventListener('slotResponseReceived', function(event) {
+         
+           //Start Mixpanel
+		mixpanel.track('Ad Response', {
+		
+			'Game Name': "Flip Bottle",
+			'Ad Media Type': "Banner"
+  		
+		});
+		//End Mixpanel
+		console.log("Banner Ad Response");
+        });
+	<!-- End AdEvent Listeners -->
     }
 	
 		var refreshinterSlot = function() {
       googletag.cmd.push(function() { googletag.pubads().refresh([interSlot]); });
 	console.log("Interstitial Slot Refreshed");
+			<!-- Begin AdEvent Listeners -->	
+	  // This listener will be called when an impression is considered viewable.
+	googletag.pubads().addEventListener('impressionViewable', function(event) {
+          
+           //Start Mixpanel
+		mixpanel.track('Ad View', {
+		
+			'Game Name': "Flip Bottle",
+			'Ad Media Type': "Banner"
+  		
+		});
+		//End Mixpanel
+	       console.log("Interstitial Ad View");
+        });
+
+        // This listener will be called when a slots creative iframe load event fires.
+        googletag.pubads().addEventListener('slotOnload', function(event) {
+		
+         	
+        });
+
+        // This listener will be called when a slot has finished rendering.
+        googletag.pubads().addEventListener('slotRenderEnded', function(event) {
+		
+		 //Start Mixpanel
+		mixpanel.track('Ad Initialized', {
+		
+			'Game Name': "Flip Bottle",
+			'Ad Media Type': "Banner"
+  		
+		});
+		//End Mixpanel
+          console.log("Interstitial Ad Initialized");
+        });
+
+        // This listener will be called when the specified service actually
+        // sets an ad request for a slot. Each slot will fire this event, even
+        // though they may be batched together in a single request if single
+        // request architecture (SRA) is enabled.
+        googletag.pubads().addEventListener('slotRequested', function(event) {
+          
+           //Start Mixpanel
+		mixpanel.track('Ad Request', {
+		
+			'Game Name': "Flip Bottle",
+			'Ad Media Type': "Banner"
+  		
+		});
+		//End Mixpanel
+		console.log("Interstitial Ad Request");
+		
+        });
+
+        // This listener will be called when an ad response has been received for
+        // a slot.
+        googletag.pubads().addEventListener('slotResponseReceived', function(event) {
+         
+           //Start Mixpanel
+		mixpanel.track('Ad Response', {
+		
+			'Game Name': "Flip Bottle",
+			'Ad Media Type': "Banner"
+  		
+		});
+		//End Mixpanel
+		console.log("Interstitial Ad Response");
+        });
+	<!-- End AdEvent Listeners -->
 			
     }
 </script>
