@@ -237,8 +237,7 @@
 	
 <!-- ********************************************** Zee5_Games_RewardedVideo ********************************************** -->
 	<div id="mainContainer" class="mainContainer" style="display: none;">
-		<div id="adwrap" class="adwrap" style="display: none; cursor: not-allowed;
-    pointer-events: none; width: 100vw; height: 100vh; z-index: 999999012;"></div>
+		
 		<div id="adContainer" style="display: block;">
 			
 			<!-- /21665149170/Zee5_Games_Interstitial -->
@@ -329,6 +328,7 @@ function skipAds() {
 	
 function closeAds() {
 	refreshfooterSlot();
+	mycanvas.style.pointerEvents = "auto";
 	mainContainer.style.display = 'none';
 	adwrap.style.display = 'none';
 	//adsManager.destroy();
@@ -344,6 +344,7 @@ console.log("Skip Ad");
 	
 function closeFailedAds() {
 	refreshfooterSlot();
+	mycanvas.style.pointerEvents = "auto";
 	mainContainer.style.display = 'none';
 	adwrap.style.display = 'none';
 	//adsManager.destroy();
@@ -362,6 +363,7 @@ function requestAds() {
 	mainContainer.style.display = 'block';
 	adwrap.style.display = 'block';
 	splashScreen.style.display = 'none';
+	mycanvas.style.pointerEvents = "none";
 	//skipBtn.style.display = 'none';
 }
 
