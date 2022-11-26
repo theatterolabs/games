@@ -336,7 +336,9 @@ function closeAds() {
   		
 	});
 	
-console.log("Skip Ad");
+	
+	
+	console.log("Skip Ad");
 }
 	
 	
@@ -361,6 +363,9 @@ function requestAds() {
 	splashScreen.style.display = 'none';
 	mycanvas.style.pointerEvents = "none";
 	//skipBtn.style.display = 'none';
+	mycanvas.addEventListener("click", function(event){
+  		event.preventDefault()
+	});
 }
 
 
