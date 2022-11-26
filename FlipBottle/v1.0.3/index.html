@@ -236,7 +236,7 @@
 
 	
 <!-- ********************************************** Zee5_Games_RewardedVideo ********************************************** -->
-	<div id="mainContainer" class="mainContainer" style="display: none;">
+	<object id="mainContainer" class="mainContainer" style="display: none;">
 		
 		<div id="adContainer" style="display: block;">
 			
@@ -249,7 +249,7 @@
 			
 		</div>
 		<button id="skip" class="skip" style='display: block;'>Skip Ads ></button>
-	</div>
+	</object>
 
 <!-- ********************************************** Zee5_Games_RewardedVideo ********************************************** -->	
 	
@@ -327,7 +327,6 @@ function skipAds() {
 	
 function closeAds() {
 	refreshfooterSlot();
-	mycanvas.style.pointerEvents = "auto";
 	mainContainer.style.display = 'none';
 	//adsManager.destroy();
 	mixpanel.track('Skip Ad', {
@@ -344,7 +343,6 @@ function closeAds() {
 	
 function closeFailedAds() {
 	refreshfooterSlot();
-	mycanvas.style.pointerEvents = "auto";
 	mainContainer.style.display = 'none';
 	//adsManager.destroy();
 	mixpanel.track('Ad Failure', {
@@ -361,12 +359,8 @@ function requestAds() {
 	refreshinterSlot();
 	mainContainer.style.display = 'block';
 	splashScreen.style.display = 'none';
-	mycanvas.style.pointerEvents = "none";
 	//skipBtn.style.display = 'none';
-	mycanvas.addEventListener("click", function(event){
-  		event.preventDefault();
-		event.stopPropagation();
-	});
+	
 }
 
 
