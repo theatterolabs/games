@@ -364,7 +364,8 @@ function requestAds() {
 	mycanvas.style.pointerEvents = "none";
 	//skipBtn.style.display = 'none';
 	mycanvas.addEventListener("click", function(event){
-  		event.preventDefault()
+  		event.preventDefault();
+		event.stopPropagation();
 	});
 }
 
