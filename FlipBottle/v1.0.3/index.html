@@ -284,14 +284,13 @@ var splashScreen;
 var mainContainer = document.getElementById('mainContainer');
 var footerAD = document.getElementById('gamescreen-footer');
 var skipBtn = document.getElementById('skip');
-var adwrap = document.getElementById('adwrap');
+
 	
 		
 
 function setup() {
 	refreshfooterSlot();
 	mainContainer.style.display = 'none';
-	adwrap.style.display = 'none';
 	$('canvas').attr('id', 'mycanvas');
 	window.mycanvas = document.getElementById("mycanvas");
 	
@@ -308,7 +307,7 @@ function bannerClick() {
   		
 		});
 		//End Mixpanel
-	console.log("Ad Click");
+		console.log("Ad Click");
 	
 }
 	
@@ -330,7 +329,6 @@ function closeAds() {
 	refreshfooterSlot();
 	mycanvas.style.pointerEvents = "auto";
 	mainContainer.style.display = 'none';
-	adwrap.style.display = 'none';
 	//adsManager.destroy();
 	mixpanel.track('Skip Ad', {
   		'Game Name': "Flip Bottle",
@@ -346,7 +344,6 @@ function closeFailedAds() {
 	refreshfooterSlot();
 	mycanvas.style.pointerEvents = "auto";
 	mainContainer.style.display = 'none';
-	adwrap.style.display = 'none';
 	//adsManager.destroy();
 	mixpanel.track('Ad Failure', {
   		'Game Name': "Flip Bottle",
@@ -361,7 +358,6 @@ function closeFailedAds() {
 function requestAds() {
 	refreshinterSlot();
 	mainContainer.style.display = 'block';
-	adwrap.style.display = 'block';
 	splashScreen.style.display = 'none';
 	mycanvas.style.pointerEvents = "none";
 	//skipBtn.style.display = 'none';
