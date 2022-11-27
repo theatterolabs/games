@@ -236,10 +236,8 @@
 
 	
 <!-- ********************************************** Zee5_Games_RewardedVideo ********************************************** -->
-	<iframe id="mainContainer" class="mainContainer" style="display: none;">
-		<html>
-		<head></head>
-		<body>
+	<div id="mainContainer" class="mainContainer" style="display: none;">
+		
 		<div id="adContainer" style="display: block;">
 			
 			<!-- /21665149170/Zee5_Games_Interstitial -->
@@ -251,9 +249,8 @@
 			
 		</div>
 		<button id="skip" class="skip" style='display: block;'>Skip Ads ></button>
-		</body>
-		</html>
-	</iframe>
+		
+	</div>
 
 <!-- ********************************************** Zee5_Games_RewardedVideo ********************************************** -->	
 	
@@ -320,7 +317,10 @@ function init() {
 	playButton = document.getElementById('btn-play');
 	playButton.addEventListener('click', requestAds);
 	splashScreen = document.getElementById('fg-click2play');
-	skipBtn.addEventListener('click', closeAds);
+	skipBtn.addEventListener('click', function(event){
+		closeAds();
+		event.stopPropagation();
+	});
 
 	
 }
