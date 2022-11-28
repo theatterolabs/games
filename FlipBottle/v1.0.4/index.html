@@ -52,11 +52,9 @@
 	
 	// GPT slots
 	var footerSlot;
-	var interSlot;
 	
 	googletag.cmd.push(function() {
 	footerSlot = googletag.defineSlot('/21665149170/Zee5_Games_Sticky_320x50', [320, 50], 'div-gpt-ad-1668419977060-0').addService(googletag.pubads());
-	interSlot = googletag.defineSlot('/21665149170/Zee5_Games_Interstitial', [[768, 1024], [336, 280], [300, 250], [320, 480], [480, 640]], 'div-gpt-ad-1669353828671-0').addService(googletag.pubads());
 	 
 		
 	<!-- Begin AdEvent Listeners -->	
@@ -65,7 +63,6 @@
           
            
 		
-		if(footerSlot === event.slot){
         		console.log("Footer Ad View");
 			//Start Mixpanel
 			mixpanel.track('Ad View', {
@@ -76,19 +73,7 @@
   		
 			});
 			//End Mixpanel
-			
-		} else if (interSlot === event.slot){
-			console.log("Interstitial Ad View");
-			//Start Mixpanel
-			mixpanel.track('Ad View', {
-		
-				'Game Name': "Flip Bottle",
-				'Ad Media Type': "Interstitial"
-			
-  		
-			});
-			//End Mixpanel
-		}
+	
 	       
         });
 
@@ -103,7 +88,7 @@
 		
 		
 		
-		if(footerSlot === event.slot){
+		
         		console.log("Footer Ad Initialized");
 			//Start Mixpanel
 			mixpanel.track('Ad Initialized', {
@@ -114,20 +99,7 @@
   		
 			});
 			//End Mixpanel
-			
-		} else if (interSlot === event.slot){
-			console.log("Interstitial Ad Initialized");
-			
-			//Start Mixpanel
-			mixpanel.track('Ad Initialized', {
 		
-				'Game Name': "Flip Bottle",
-				'Ad Media Type': "Interstitial"
-			
-  		
-			});
-			//End Mixpanel
-		}
 		
 	
         });
@@ -138,7 +110,6 @@
         // request architecture (SRA) is enabled.
         googletag.pubads().addEventListener('slotRequested', function(event) {
 		
-		if(footerSlot === event.slot){
         		console.log("Footer Ad Request");
 			
 			//Start Mixpanel
@@ -148,18 +119,7 @@
 				'Ad Media Type': "Footer"
 			});
 			//End Mixpanel
-			
-		} else if (interSlot === event.slot){
-			console.log("Interstitial Ad Request");
-			
-			//Start Mixpanel
-			mixpanel.track('Ad Request', {
 		
-				'Game Name': "Flip Bottle",
-				'Ad Media Type': "Interstitial"
-			});
-			//End Mixpanel
-		}
 	
         });
 
@@ -167,7 +127,7 @@
         // a slot.
         googletag.pubads().addEventListener('slotResponseReceived', function(event) {
 		
-		if(footerSlot === event.slot){
+		
         		console.log("Footer Ad Response");
 			
 			//Start Mixpanel
@@ -178,17 +138,7 @@
 			});
 			//End Mixpanel
 			
-		} else if (interSlot === event.slot){
-			console.log("Interstitial Ad Response");
-			
-			//Start Mixpanel
-			mixpanel.track('Ad Response', {
 		
-				'Game Name': "Flip Bottle",
-				'Ad Media Type': "Interstitial"
-			});
-			//End Mixpanel
-		}
 	
         });
 	
@@ -204,11 +154,7 @@
 		
 	}
 	
-	var refreshinterSlot = function() {
-		googletag.cmd.push(function() { googletag.pubads().refresh([interSlot]); });
-		console.log("Interstitial Slot Refreshed");
-			
-	}
+
 </script>
 	
 <!--  ********************************************** End Google Footer Splash Screen Ad  ********************************************** -->
@@ -217,41 +163,339 @@
 <body onload="setup();">
 
 
-<!-- ********************************************** Game Splash Screen ********************************************** -->
-<div class="fg-click2play" id="fg-click2play" style="transition: opacity 1s ease 0s; opacity: 1;">
-  <div class="fg-click2play-stage">
-    <div class="fg-gameDetails">
-      <div class="fg-gameicon"><img src="icons/icon-512.png" alt=""></div>
-      <div class="btn-play" id="btn-play" style="cursor: pointer;">
+<!-- ********************************************** Game Splash Screen Iframe ********************************************** -->
+<iframe class="fg-click2play" id="fg-click2play" style="transition: opacity 1s ease 0s; opacity: 1;" width="100%" height="100%" frameBorder="0">
+	<html>
+		<head>
+			<stlye>
+				
 
-        <div class="fg-click2play-loading"><span class="fg-click2play-loading-bounce1"></span><span class="fg-click2play-loading-bounce2"></span><span class="fg-click2play-loading-bounce3"></span></div>
-      </div>
-    </div>
-	 
-  </div>
-  <div class="fg-branding"></div>
-</div>
-<!-- ********************************************** End Of Game Splash Screen ********************************************** -->
-	
+				.fg-click2play {
+  					transition: opacity 1s ease 0s;
+  					opacity: 1;
+  					position: absolute;
+  					top: 0;
+  					left: 0;
+  					width: 100%;
+  					min-height: 100%;
+  					text-align: center;
+  					z-index: 999999000;
+  					display: flex;
+  					align-items: center;
+  					cursor: pointer;
+  					font-weight: 400;
+  	
+				}
 
-	
-<!-- ********************************************** Zee5_Games_RewardedVideo ********************************************** -->
-	<div id="mainContainer" class="mainContainer" style="display: none;">
-		
-		<div id="adContainer" style="display: block;">
+				.fg-click2play-stage {
+  					display: flex;
+  					flex-direction: column;
+  					position: absolute;
+  					top: 0;
+  					left: 0;
+  					right: 0;
+  					bottom: 0;
+  					margin: 0;
+  					z-index: 2;
+  					padding: 0;
+					z-index: 999999002;
+
+				}
+
+				.fg-gameDetails {
+  					flex-grow: 1;
+  					flex-shrink: 1;
+  					flex-basis: 0;
+  					display: flex;
+  					flex-direction: column;
+  					flex-wrap: wrap;
+  					justify-content: center;
+  					align-content: center;
+  					align-items: center;
+  					min-height: 0;
+  					min-width: -webkit-fit-content;
+  					min-width: -moz-fit-content;
+  					min-width: fit-content;
+					z-index: 999999003;
+
+				}
+
+				.fg-gameicon {
+  					display: inline-block;
+					z-index: 999999004;
+				}
+
+				.fg-gameicon img {
+  					display: inline-block;
+  					margin: 0;
+  					border: none;
+  					border-radius: 16px;
+  					max-height: 100%;
+  					max-width: 100%;
+  					width: 140px;
+  					height: 140px;
+  					box-shadow: 0 0 10px 0 rgb(0 0 0 / 33%);
+  					width: 192px;
+  					height: 192px;
+					z-index: 999999004;
+
+				}
+
+				.btn-play {
+  					background-color: #008c14;
+  					box-shadow: 0 0 10px 0 rgb(0 0 0 / 33%);
+  					position: relative;
+  					width: 118px;
+  					height: 49.5px;
+  					border-color: #008c14;
+  					border-radius: 16px;
+  					border-width: 2px;
+  					min-height: 49.5px;
+  					animation-name: animate-btn-play;
+  					animation-duration: 2s;
+  					animation-iteration-count: infinite;
+  					animation-direction: alternate;
+  					animation-timing-function: ease-in-out;
+  					margin: 11px;
+  					border: 1px solid #fff;
+  					color: #fff;
+  					display: inline-block;
+  					box-sizing: border-box;
+  					adding: 10px 20px;
+  					text-decoration: none;
+  					text-align: center;
+  					font-size: 16px;
+					z-index: 999999004;
+
+				}
+
+				.btn-play:before {
+  					color: #fff;
+	  				display: block;
+	  				position: absolute;
+	  				bottom: -25px;
+	  				font-size: 14px;
+	  				height: 20px;
+	  				line-height: 20px;
+	  				text-align: center;
+	  				left: 50%;
+  					width: 200%;
+  					margin-left: -100%;
+				}
+
+				.btn-play:after {
+  					content: "";
+  					position: absolute;
+  					width: 0;
+  					height: 0;
+	  				left: 47px;
+  					top: 9.75px;
+  					border: 13px solid transparent;
+  					border-left: 20px solid #fff;
+  					border-right: 0;
+				}
+
+				.fg-branding {
+  					position: absolute;
+  					top: 0;
+  					left: 0;
+  					width: 100%;
+	  				height: 100%;
+  					opacity: 1;
+  					background: url("images/Splash_Bg.jpeg")
+    					center center / cover no-repeat rgb(0, 0, 0);
+					z-index: 999999001;
+				}
+
+				.fg-click2play-stage-footer {
+    					flex-grow: 0;
+    					flex-shrink: 1;
+    					flex-basis: auto;
+	    				display: flex;
+    					flex-direction: row;
+    					max-height: -webkit-fit-content;
+    					max-height: -moz-fit-content;
+    					max-height: fit-content;
+	    				background: rgba(0,0,0,0);
+					overflow: visible;	
+				}
+
+				
+				
+			</style>
 			
-			<!-- /21665149170/Zee5_Games_Interstitial -->
-			<div id='div-gpt-ad-1669353828671-0' class='div-gpt-ad-1669353828671-0' style='min-width: 480px; min-height: 640px;'>
-  			<script>
-    			googletag.cmd.push(function() { googletag.display('div-gpt-ad-1669353828671-0'); });
-  			</script>
-			</div>	
+		</head>
+		<body style="widht: 100vw; height: 100vh">
+			
+			<div class="fg-click2play-stage">
+    				<div class="fg-gameDetails">
+     		 			<div class="fg-gameicon"><img src="icons/icon-512.png" alt=""></div>
+     		 			<div class="btn-play" id="btn-play" style="cursor: pointer;" onclick="parent.requestAds();">
+
+       		 				<div class="fg-click2play-loading">
+							<span class="fg-click2play-loading-bounce1"></span>
+							<span class="fg-click2play-loading-bounce2"></span>
+							<span class="fg-click2play-loading-bounce3"></span>
+					
+						</div>
+      					</div>
+    				</div>
+ 			 </div>
+  			<div class="fg-branding"></div>
+		</body>
+	</html>
+	
+</iframe>
+<!-- ********************************************** End Of Game Splash Screen Iframe ********************************************** -->
+	
+
+	
+<!-- ********************************************** Zee5_Games_RewardedVideo Iframe ********************************************** -->
+<iframe id="mainContainer" class="mainContainer" style="display: none;" width="100%" height="100%" frameBorder="0">
+<html>
+<head>
+				
+					
+<!-- ********************************************** END MIX PANEL *****************************************-->		
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>	
+	
+<!--  ********************************************** Begin Google Footer Splash Screen Ad  ********************************************** -->
+	
+<script>
+		
+	window.googletag = window.googletag || {cmd: []};
+	
+	// GPT slots
+	
+	var interSlot;
+	
+	googletag.cmd.push(function() {
+	interSlot = googletag.defineSlot('/21665149170/Zee5_Games_Interstitial', [[768, 1024], [336, 280], [300, 250], [320, 480], [480, 640]], 'div-gpt-ad-1669353828671-0').addService(googletag.pubads());
+	 
+		
+	<!-- Begin AdEvent Listeners -->	
+	  // This listener will be called when an impression is considered viewable.
+	googletag.pubads().addEventListener('impressionViewable', function(event) {
+          
+           
+		
+			console.log("Interstitial Ad View");
+			//Start Mixpanel
+			mixpanel.track('Ad View', {
+		
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Interstitial"
+			
+  		
+			});
+			//End Mixpanel
+		
+	       
+        });
+
+        // This listener will be called when a slots creative iframe load event fires.
+        googletag.pubads().addEventListener('slotOnload', function(event) {
+		
+         	
+        });
+
+        // This listener will be called when a slot has finished rendering.
+        googletag.pubads().addEventListener('slotRenderEnded', function(event) {
+		
+		
+	
+			console.log("Interstitial Ad Initialized");
+			
+			//Start Mixpanel
+			mixpanel.track('Ad Initialized', {
+		
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Interstitial"
+			
+  		
+			});
+			//End Mixpanel
+		
+		
+	
+        });
+
+        // This listener will be called when the specified service actually
+        // sets an ad request for a slot. Each slot will fire this event, even
+        // though they may be batched together in a single request if single
+        // request architecture (SRA) is enabled.
+        googletag.pubads().addEventListener('slotRequested', function(event) {
+		
+		
+			console.log("Interstitial Ad Request");
+			
+			//Start Mixpanel
+			mixpanel.track('Ad Request', {
+		
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Interstitial"
+			});
+			//End Mixpanel
+		
+	
+        });
+
+        // This listener will be called when an ad response has been received for
+        // a slot.
+        googletag.pubads().addEventListener('slotResponseReceived', function(event) {
+		
+		
+			console.log("Interstitial Ad Response");
+			
+			//Start Mixpanel
+			mixpanel.track('Ad Response', {
+		
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Interstitial"
+			});
+			//End Mixpanel
+		
+	
+        });
+	
+        
+        // Enable SRA and services.
+	googletag.pubads().disableInitialLoad();
+    	googletag.enableServices();
+  });
+	
+	
+	var refreshinterSlot = function() {
+		googletag.cmd.push(function() { googletag.pubads().refresh([interSlot]); });
+		console.log("Interstitial Slot Refreshed");
+			
+	}
+</script>
+	
+<!--  ********************************************** End Google Footer Splash Screen Ad  ********************************************** -->
+				
+			</head>
+			
+			<body style="width: 100vw; height: 100vh" onload="refreshinterSlot();">
+		
+				<div id="adContainer" style="display: block;">
+			
+				<!-- /21665149170/Zee5_Games_Interstitial -->
+				<div id='div-gpt-ad-1669353828671-0' class='div-gpt-ad-1669353828671-0' style='min-width: 480px; min-height: 640px;'>
+  					<script>
+    					googletag.cmd.push(function() { googletag.display('div-gpt-ad-1669353828671-0'); });
+  					</script>
+				</div>	
 			
 		</div>
-		<button id="skip" class="skip" style='display: block;'>Skip Ads ></button>
+		<button id="skip" class="skip" style='display: block;' onclick="parent.closeAds();">Skip Ads ></button>
+				
+</body>
+			
+</html>
 		
 		
-	</div>
+</iframe>
 
 <!-- ********************************************** Zee5_Games_RewardedVideo ********************************************** -->	
 	
@@ -282,10 +526,10 @@ var adsLoader;
 var adDisplayContainer;
 var playButton;
 var videoContent;
-var splashScreen;
+var splashScreen = document.getElementById('fg-click2play');
 var mainContainer = document.getElementById('mainContainer');
 var footerAD = document.getElementById('gamescreen-footer');
-var skipBtn = document.getElementById('skip');
+
 
 	
 		
@@ -314,15 +558,7 @@ function bannerClick() {
 	
 }
 	
-function init() {
- 
-	playButton = document.getElementById('btn-play');
-	playButton.addEventListener('click', requestAds);
-	splashScreen = document.getElementById('fg-click2play');
-	skipBtn.addEventListener('click', closeAds);
 
-	
-}
 	
 function skipAds() {
 	setTimeout(function(){ skipBtn.style.display = 'block';}, 1000);
@@ -345,7 +581,7 @@ function closeAds() {
 	
 	
 function closeFailedAds() {
-	refreshfooterSlot();
+	
 	mainContainer.style.display = 'none';
 	//adsManager.destroy();
 	mixpanel.track('Ad Failure', {
@@ -359,7 +595,6 @@ function closeFailedAds() {
 
 	
 function requestAds() {
-	refreshinterSlot();
 	mainContainer.style.display = 'block';
 	splashScreen.style.display = 'none';
 	//skipBtn.style.display = 'none';
@@ -678,7 +913,7 @@ function contentEnded() {
 End Video Ads Functions */
 	
 // Wire UI element references and UI event listeners.
-init();
+
 </script>
 	
 <!-- **********************************************  End Video AD ********************************************** -->			
