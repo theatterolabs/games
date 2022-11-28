@@ -158,7 +158,21 @@
   });
 	
 	
+	
+	
+	
 	var refreshinterSlot = function() {
+		
+		var gptdiv = = document.getElementById('div-gpt-ad-1669353828671-0');
+		var h = window.innerHeight;
+		var gptdivframe = document.getElementById('google_ads_iframe_/21665149170/Zee5_Games_Interstitial_0');
+		var w = window.innerWidth;
+		gpt.style.height = h;
+		gpt.style.width = w;
+		gptdivframe.style.height = h;
+		gptdivframe.style.width = w;
+		
+		
 		googletag.cmd.push(function() { googletag.pubads().refresh([interSlot]); });
 		console.log("Interstitial Slot Refreshed");
 			
@@ -168,12 +182,12 @@
  				
 </head>
 			
-			<body style="width: 100vw; height: 100vh; overflow: hidden;" onload="refreshinterSlot(); setgptdiv();">
+			<body style="width: 100vw; height: 100vh; overflow: hidden;" onload="refreshinterSlot();">
 		
 				<div id="adContainer" style="display: block;">
 			
 				<!-- /21665149170/Zee5_Games_Interstitial -->
-				<div id='div-gpt-ad-1669353828671-0' class='div-gpt-ad-1669353828671-0' style='width: 480px; height: 640px;'>
+				<div id='div-gpt-ad-1669353828671-0' class='div-gpt-ad-1669353828671-0' style='min-width: 320px; min-height: 480px; width: 100vw; height: 100vh;'>
   					<script>
     					googletag.cmd.push(function() { googletag.display('div-gpt-ad-1669353828671-0'); });
   					</script>
@@ -182,20 +196,7 @@
 		</div>
 		<button id="skip" class="skip" style='display: block;' onclick="parent.closeAds();">Skip Ads ></button>
 				 
-				<script>
-					var gptdiv = = document.getElementById('div-gpt-ad-1669353828671-0');
-					var h = window.innerHeight;
-					var gptdivframe = document.getElementById('google_ads_iframe_/21665149170/Zee5_Games_Interstitial_0');
-					var w = window.innerWidth;
-					
-					function setgptdiv() {
-						gpt.style.height = h;
-						gpt.style.width = w;
-						gptdivframe.style.height = h;
-						gptdivframe.style.width = w;
-						
-					}
-				</script>
+			
 				
 				
 </body>
