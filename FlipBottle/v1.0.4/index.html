@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Flip Bottle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<meta name="generator" content="Construct 3">
+	<meta name="author" content="Attero Labs">
+	<meta name="description" content="Flip Bottle">
+	<link rel="manifest" href="appmanifest.json">
+	<link rel="apple-touch-icon" sizes="128x128" href="icons/icon-128.png">
+	<link rel="apple-touch-icon" sizes="256x256" href="icons/icon-256.png">
+	<link rel="apple-touch-icon" sizes="512x512" href="icons/icon-512.png">
+	<link rel="icon" type="image/png" href="icons/icon-512.png">
+
+<link rel="stylesheet" href="style.css">
+	
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" crossorigin="anonymous"></script>
+	
+	
+<!-- ********************************************** BEGIN MIX PANEL *****************************************-->
+	
+  <script type="text/javascript">
+    (function (f, b) {
+      if (!b.__SV) {
+        var e, g, i, h; window.mixpanel = b; b._i = []; b.init = function (e, f, c) {
+          function g(a, d) { var b = d.split("."); 2 == b.length && (a = a[b[0]], d = b[1]); a[d] = function () { a.push([d].concat(Array.prototype.slice.call(arguments, 0))) } } var a = b; "undefined" !== typeof c ? a = b[c] = [] : c = "mixpanel"; a.people = a.people || []; a.toString = function (a) { var d = "mixpanel"; "mixpanel" !== c && (d += "." + c); a || (d += " (stub)"); return d }; a.people.toString = function () { return a.toString(1) + ".people (stub)" }; i = "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+          for (h = 0;h < i.length;h++)g(a, i[h]); var j = "set set_once union unset remove delete".split(" "); a.get_group = function () { function b(c) { d[c] = function () { call2_args = arguments; call2 = [c].concat(Array.prototype.slice.call(call2_args, 0)); a.push([e, call2]) } } for (var d = {}, e = ["get_group"].concat(Array.prototype.slice.call(arguments, 0)), c = 0;c < j.length;c++)b(j[c]); return d }; b._i.push([e, f, c])
+        }; b.__SV = 1.2; e = f.createElement("script"); e.type = "text/javascript"; e.async = !0; e.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ?
+          MIXPANEL_CUSTOM_LIB_URL : "file:" === f.location.protocol && "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//) ? "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js" : "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"; g = f.getElementsByTagName("script")[0]; g.parentNode.insertBefore(e, g)
+      }
+    })(document, window.mixpanel || []);
+
+    mixpanel.init('28ad1bd3f9fbcda7356c70835a0b4d96');
+    mixpanel.track('Screen View', {
+  'Game Name': "Flip Bottle",
+  'Page Name': "Game Landing Page"
+});
+
+  </script>
+	
+<!-- ********************************************** END MIX PANEL *****************************************-->		
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>	
+	
+<!--  ********************************************** Begin Google Footer Splash Screen Ad  ********************************************** -->
+	
+<script>
+		
+	window.googletag = window.googletag || {cmd: []};
+	
+	// GPT slots
+	var footerSlot;
+	var interSlot;
+	
+	googletag.cmd.push(function() {
+	footerSlot = googletag.defineSlot('/21665149170/Zee5_Games_Sticky_320x50', [320, 50], 'div-gpt-ad-1668419977060-0').addService(googletag.pubads());
+	interSlot = googletag.defineSlot('/21665149170/Zee5_Games_Interstitial', [[768, 1024], [336, 280], [300, 250], [320, 480], [480, 640]], 'div-gpt-ad-1669353828671-0').addService(googletag.pubads());
+	 
+		
+	<!-- Begin AdEvent Listeners -->	
+	  // This listener will be called when an impression is considered viewable.
+	googletag.pubads().addEventListener('impressionViewable', function(event) {
+          
+           
+		
+		if(footerSlot === event.slot){
+        		console.log("Footer Ad View");
+			//Start Mixpanel
+			mixpanel.track('Ad View', {
+		
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Footer"
+			
+  		
+			});
+			//End Mixpanel
+			
+		} else if (interSlot === event.slot){
+			console.log("Interstitial Ad View");
+			//Start Mixpanel
+			mixpanel.track('Ad View', {
+		
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Interstitial"
+			
+  		
+			});
+			//End Mixpanel
+		}
+	       
+        });
+
+        // This listener will be called when a slots creative iframe load event fires.
+        googletag.pubads().addEventListener('slotOnload', function(event) {
+		
+         	
+        });
+
+        // This listener will be called when a slot has finished rendering.
+        googletag.pubads().addEventListener('slotRenderEnded', function(event) {
+		
+		
+		
+		if(footerSlot === event.slot){
+        		console.log("Footer Ad Initialized");
+			//Start Mixpanel
+			mixpanel.track('Ad Initialized', {
+		
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Footer"
+			
+  		
+			});
+			//End Mixpanel
+			
+		} else if (interSlot === event.slot){
+			console.log("Interstitial Ad Initialized");
+			
+			//Start Mixpanel
+			mixpanel.track('Ad Initialized', {
+		
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Interstitial"
+			
+  		
+			});
+			//End Mixpanel
+		}
+		
+	
+        });
+
+        // This listener will be called when the specified service actually
+        // sets an ad request for a slot. Each slot will fire this event, even
+        // though they may be batched together in a single request if single
+        // request architecture (SRA) is enabled.
+        googletag.pubads().addEventListener('slotRequested', function(event) {
+		
+		if(footerSlot === event.slot){
+        		console.log("Footer Ad Request");
+			
+			//Start Mixpanel
+			mixpanel.track('Ad Request', {
+		
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Footer"
+			});
+			//End Mixpanel
+			
+		} else if (interSlot === event.slot){
+			console.log("Interstitial Ad Request");
+			
+			//Start Mixpanel
+			mixpanel.track('Ad Request', {
+		
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Interstitial"
+			});
+			//End Mixpanel
+		}
+	
+        });
+
+        // This listener will be called when an ad response has been received for
+        // a slot.
+        googletag.pubads().addEventListener('slotResponseReceived', function(event) {
+		
+		if(footerSlot === event.slot){
+        		console.log("Footer Ad Response");
+			
+			//Start Mixpanel
+			mixpanel.track('Ad Response', {
+		
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Footer"
+			});
+			//End Mixpanel
+			
+		} else if (interSlot === event.slot){
+			console.log("Interstitial Ad Response");
+			
+			//Start Mixpanel
+			mixpanel.track('Ad Response', {
+		
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Interstitial"
+			});
+			//End Mixpanel
+		}
+	
+        });
+	
+        
+        // Enable SRA and services.
+	googletag.pubads().disableInitialLoad();
+    	googletag.enableServices();
+  });
+	
+	var refreshfooterSlot = function() {
+		googletag.cmd.push(function() { googletag.pubads().refresh([footerSlot]); });
+		console.log("Footer Slot Refreshed");
+		
+	}
+	
+	var refreshinterSlot = function() {
+		googletag.cmd.push(function() { googletag.pubads().refresh([interSlot]); });
+		console.log("Interstitial Slot Refreshed");
+			
+	}
+</script>
+	
+<!--  ********************************************** End Google Footer Splash Screen Ad  ********************************************** -->
+	
+</head>
+<body onload="setup();">
+
+
+<!-- ********************************************** Game Splash Screen ********************************************** -->
+<div class="fg-click2play" id="fg-click2play" style="transition: opacity 1s ease 0s; opacity: 1;">
+  <div class="fg-click2play-stage">
+    <div class="fg-gameDetails">
+      <div class="fg-gameicon"><img src="icons/icon-512.png" alt=""></div>
+      <div class="btn-play" id="btn-play" style="cursor: pointer;">
+
+        <div class="fg-click2play-loading"><span class="fg-click2play-loading-bounce1"></span><span class="fg-click2play-loading-bounce2"></span><span class="fg-click2play-loading-bounce3"></span></div>
+      </div>
+    </div>
+	 
+  </div>
+  <div class="fg-branding"></div>
+</div>
+<!-- ********************************************** End Of Game Splash Screen ********************************************** -->
+	
+
+	
+<!-- ********************************************** Zee5_Games_RewardedVideo ********************************************** -->
+	<div id="mainContainer" class="mainContainer" style="display: none;">
+		
+		<div id="adContainer" style="display: block;">
+			
+			<!-- /21665149170/Zee5_Games_Interstitial -->
+			<div id='div-gpt-ad-1669353828671-0' class='div-gpt-ad-1669353828671-0' style='min-width: 300px; min-height: 250px;'>
+  			<script>
+    			googletag.cmd.push(function() { googletag.display('div-gpt-ad-1669353828671-0'); });
+  			</script>
+			</div>	
+			
+		</div>
+		<button id="skip" class="skip" style='display: block;'>Skip Ads ></button>
+		
+		
+	</div>
+
+<!-- ********************************************** Zee5_Games_RewardedVideo ********************************************** -->	
+	
+	
+	
+	
+<!-- ********************************************** Begin Game Footer AD ********************************************** -->	
+	 <div id="gamescreen-footer" class="gamescreen-footer" style='display: block;' onclick="bannerClick();"> 
+		<!-- Begin Footer Ad -->
+		<div id='div-gpt-ad-1668419977060-0' class="div-gpt-ad-1668419977060-0" style='min-width: 320px; min-height: 50px;'>
+  		<script>
+    			googletag.cmd.push(function() { googletag.display('div-gpt-ad-1668419977060-0'); });
+  		</script>
+		</div>
+		<!-- End Footer Ad -->
+	</div> 
+	   
+	
+<!-- **********************************************  End Game Footer AD ********************************************** -->	
+	
+
+	
+<!-- **********************************************  Begin Video AD ********************************************** -->		
+<script src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>	
+<script>	
+var adsManager;
+var adsLoader;
+var adDisplayContainer;
+var playButton;
+var videoContent;
+var splashScreen;
+var mainContainer = document.getElementById('mainContainer');
+var footerAD = document.getElementById('gamescreen-footer');
+var skipBtn = document.getElementById('skip');
+
+	
+		
+
+function setup() {
+	refreshfooterSlot();
+	mainContainer.style.display = 'none';
+	$('canvas').attr('id', 'mycanvas');
+	$('canvas').attr('class', 'mycanvas');
+	window.mycanvas = document.getElementById("mycanvas");
+	
+	
+}
+
+	
+function bannerClick() {
+	  //Start Mixpanel
+		mixpanel.track('Ad Click', {
+		
+			'Game Name': "Flip Bottle",
+			'Ad Media Type': "Banner"
+  		
+		});
+		//End Mixpanel
+		console.log("Ad Click");
+	
+}
+	
+function init() {
+ 
+	playButton = document.getElementById('btn-play');
+	playButton.addEventListener('click', requestAds);
+	splashScreen = document.getElementById('fg-click2play');
+	skipBtn.addEventListener('click', closeAds);
+
+	
+}
+	
+function skipAds() {
+	setTimeout(function(){ skipBtn.style.display = 'block';}, 1000);
+}
+	
+function closeAds() {
+	refreshfooterSlot();
+	mainContainer.style.display = 'none';
+	//adsManager.destroy();
+	mixpanel.track('Skip Ad', {
+  		'Game Name': "Flip Bottle",
+		'Ad Media Type': "Interstitial"
+  		
+	});
+	
+	
+	
+	console.log("Skip Ad");
+}
+	
+	
+function closeFailedAds() {
+	refreshfooterSlot();
+	mainContainer.style.display = 'none';
+	//adsManager.destroy();
+	mixpanel.track('Ad Failure', {
+  		'Game Name': "Flip Bottle",
+		'Ad Media Type': "Video"
+  		
+	});
+	
+
+}
+
+	
+function requestAds() {
+	refreshinterSlot();
+	mainContainer.style.display = 'block';
+	splashScreen.style.display = 'none';
+	//skipBtn.style.display = 'none';
+	
+}
+
+
+	
+/* Video Ads	
+	
+	function createAdDisplayContainer() {
+  // We assume the adContainer is the DOM id of the element that will house
+  // the ads.
+	console.log("AD display conatiner Created");
+  adDisplayContainer = new google.ima.AdDisplayContainer(
+      document.getElementById('adContainer'), videoContent);
+}
+
+
+	
+	
+	
+	function requestAds() {
+	
+	mainContainer.style.display = 'block';
+	adwrap.style.display = 'block';
+	splashScreen.style.display = 'none';
+	skipBtn.style.display = 'none';
+  	google.ima.settings.setPlayerType('google/codepen-demo-manual-ad-breaks');
+  	google.ima.settings.setPlayerVersion('1.0.0');
+  	// Create the ad display container.
+  	createAdDisplayContainer();
+  	// Initialize the container. Must be done via a user action on mobile devices.
+  	adDisplayContainer.initialize();
+	
+	//Start Mixpanel
+	mixpanel.track('Ad Request', {
+		
+  		'Game Name': "Flip Bottle",
+		'Ad Media Type': "Video"
+  		
+	});
+	//End Mixpanel
+	console.log("Video Ad Request");
+  
+  	// Create ads loader.
+  	adsLoader = new google.ima.AdsLoader(adDisplayContainer);
+ 	 adsLoader.getSettings().setAutoPlayAdBreaks(false);
+  	// Listen and respond to ads loaded and error events.
+  	adsLoader.addEventListener(
+      		google.ima.AdsManagerLoadedEvent.Type.ADS_MANAGER_LOADED,
+      		onAdsManagerLoaded,
+      		false);
+  	adsLoader.addEventListener(
+      		google.ima.AdErrorEvent.Type.AD_ERROR,
+      		onAdError,
+      		false);
+
+  // Request video ads.
+  var adsRequest = new google.ima.AdsRequest();
+  adsRequest.adTagUrl =
+    'https://pubads.g.doubleclick.net/gampad/ads?iu=/21665149170/Zee5_Games_GameStartVideo&description_url=[placeholder]&tfcd=0&npa=0&sz=480x640%7C640x480&gdfp_req=1&output=vast&unviewed_position_start=1&env=vp&impl=s&correlator=';
+
+  // Specify the linear and nonlinear slot sizes. This helps the SDK to
+  // select the correct creative if multiple are returned.
+  adsRequest.linearAdSlotWidth = 480;
+  adsRequest.linearAdSlotHeight = 640;
+
+  adsRequest.nonLinearAdSlotWidth = 480;
+  adsRequest.nonLinearAdSlotHeight = 640;
+
+  adsLoader.requestAds(adsRequest);
+}
+
+function onAdsManagerLoaded(adsManagerLoadedEvent) {
+	
+	console.log("Ads Manager Loaded");
+  // Get the ads manager.
+  var adsRenderingSettings = new google.ima.AdsRenderingSettings();
+  adsRenderingSettings.restoreCustomPlaybackStateOnAdBreakComplete = true;
+  // videoContent should be set to the content video element.
+  adsManager = adsManagerLoadedEvent.getAdsManager(
+      videoContent, adsRenderingSettings);
+
+  // Add listeners to the required events.
+  adsManager.addEventListener(
+      google.ima.AdErrorEvent.Type.AD_ERROR,
+      onAdError);
+  adsManager.addEventListener(
+      google.ima.AdEvent.Type.CONTENT_PAUSE_REQUESTED,
+      onContentPauseRequested);
+  adsManager.addEventListener(
+      google.ima.AdEvent.Type.CONTENT_RESUME_REQUESTED,
+      onContentResumeRequested);
+  adsManager.addEventListener(
+      google.ima.AdEvent.Type.ALL_ADS_COMPLETED,
+      onAdEvent);
+
+  // Listen to any additional events, if necessary.
+adsManager.addEventListener(
+      google.ima.AdEvent.Type.LOADED,
+      onAdEvent);
+	
+adsManager.addEventListener(
+      google.ima.AdEvent.Type.STARTED,
+      onAdEvent);
+	
+adsManager.addEventListener(
+      google.ima.AdEvent.Type.CLICK,
+      onAdEvent);
+	
+
+adsManager.addEventListener(
+      google.ima.AdEvent.Type.FIRST_QUARTILE,
+      onAdEvent);
+	
+	
+
+adsManager.addEventListener(
+      google.ima.AdEvent.Type.MIDPOINT,
+      onAdEvent);		
+	
+		
+
+adsManager.addEventListener(
+      google.ima.AdEvent.Type.THIRD_QUARTILE,
+      onAdEvent);		
+		
+
+adsManager.addEventListener(
+      google.ima.AdEvent.Type.COMPLETE,
+      onAdEvent);	
+
+
+  // For non-auto ad breaks, listen for ad break ready
+  adsManager.addEventListener(
+      google.ima.AdEvent.Type.AD_BREAK_READY,
+      adBreakReadyHandler);
+
+  try {
+    // Initialize the ads manager. Ad rules playlist will start at this time.
+    adsManager.init(window.innerWidth, window.innerHeight, google.ima.ViewMode.NORMAL);
+  } catch (adError) {
+    // An error may be thrown if there was a problem with the VAST response.
+    videoContent.play();
+	  console.log("Catch Ad Error");
+  }
+}
+
+function onAdEvent(adEvent) {
+	
+  	// Retrieve the ad from the event. Some events (e.g. ALL_ADS_COMPLETED)
+	// don't have ad object associated.
+	var ad = adEvent.getAd();
+	switch (adEvent.type) {
+		case google.ima.AdEvent.Type.LOADED:
+      		// This is the first event sent for an ad - it is possible to
+      		// determine whether the ad is a video ad or an overlay.
+			console.log("Ad Initialized");
+			//Start Mixpanel
+			mixpanel.track('Ad Initialized', {
+		
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Video"
+  		
+			});
+			//End Mixpanel
+			
+			skipAds();
+			if (!ad.isLinear()) {
+        			// Position AdDisplayContainer correctly for overlay.
+        			// Use ad.width and ad.height.
+				videoContent.play();
+				console.log("Alert: Not Linear Ad");
+			}
+		break;
+			
+		case google.ima.AdEvent.Type.STARTED:
+			console.log("Ad View");
+			//Start Mixpanel
+			mixpanel.track('Ad View', {
+		
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Video"
+  		
+			});
+			//End Mixpanel
+			
+		break;
+		
+		case google.ima.AdEvent.Type.CLICK:
+			console.log("Ad Clicks");
+			//Start Mixpanel
+			mixpanel.track('Ad Clicks', {
+		
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Video"
+  		
+			});
+			//End Mixpanel
+			
+		break;
+			
+		case google.ima.AdEvent.Type.FIRST_QUARTILE:
+			console.log("First Quartile");
+			//Start Mixpanel
+			mixpanel.track('Ad First Quartile', {
+		
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Video"
+  		
+			});
+			//End Mixpanel
+			
+		break;
+			
+		case google.ima.AdEvent.Type.MIDPOINT:
+			console.log("Second Quartile");
+			//Start Mixpanel
+			mixpanel.track('Ad Second Quartile', {
+		
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Video"
+  		
+			});
+			//End Mixpanel
+			
+		break;
+			
+		case google.ima.AdEvent.Type.THIRD_QUARTILE:
+			console.log("Third Quartile");
+			//Start Mixpanel
+			mixpanel.track('Ad Third Quartile', {
+		
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Video"
+  		
+			});
+			//End Mixpanel
+			
+		break;	
+		  
+		case google.ima.AdEvent.Type.COMPLETE:
+			mainContainer.style.display = 'none';
+			adwrap.style.display = 'none';
+			skipBtn.style.display = 'none';
+			console.log("Complete");
+			//Start Mixpanel
+			mixpanel.track('Ad Completed', {
+		
+				'Game Name': "Flip Bottle",
+				'Ad Media Type': "Video"
+  		
+			});
+			//End Mixpanel
+		break;
+			
+		case google.ima.AdErrorEvent.Type.AD_ERROR:
+			console.log("Ad Error");
+			
+		break;
+		  
+	}
+}
+
+function onAdError(adErrorEvent) {
+	// Handle the error logging.
+	console.log(adErrorEvent.getError());
+	adsManager.destroy();
+	mainContainer.style.display = 'none';
+	adwrap.style.display = 'none';
+	skipBtn.style.display = 'none';
+	
+	//Start Mixpanel
+	mixpanel.track('AD Failure', {
+		
+		'Game Name': "Flip Bottle",
+		'Ad Media Type': "Video"
+  		
+	});
+	//End Mixpanel
+}
+
+function onContentPauseRequested() {
+  videoContent.pause();
+  // This function is where you should setup UI for showing ads (e.g.
+  // display ad timer countdown, disable seeking etc.)
+  // setupUIForAds();
+}
+
+function onContentResumeRequested() {
+  closeFailedAds();
+	console.log("Couldnt Play Ad");
+  // This function is where you should ensure that your UI is ready
+  // to play content. It is the responsibility of the Publisher to
+  // implement this function when necessary.
+  // setupUIForContent();
+
+}
+
+function adBreakReadyHandler(adEvent) {
+  // Here we can get any necessary data about the ad.
+  console.log(adEvent.getAdData());
+
+  // Once we're ready to play ads. To skip this ad break, simply return
+  // from this handler without calling adsManager.start().
+  adsManager.start();
+}
+
+function contentEnded() {
+  // Our content video has ended, notify the AdsLoader so we can play
+  // any post-rolls.
+  adsLoader.contentComplete();
+	
+}
+End Video Ads Functions */
+	
+// Wire UI element references and UI event listeners.
+init();
+</script>
+	
+<!-- **********************************************  End Video AD ********************************************** -->			
+	
+	
+	<noscript>
+		<div id="notSupportedWrap">
+			<h2 id="notSupportedTitle">This content requires JavaScript</h2>
+			<p class="notSupportedMessage">JavaScript appears to be disabled. Please enable it to view this content.</p>
+		</div>
+	</noscript>
+	<script src="scripts/supportcheck.js"></script>
+	<script src="scripts/offlineclient.js" type="module"></script>
+	<script src="scripts/main.js" type="module"></script>
+	<script src="scripts/register-sw.js" type="module"></script>
+
+</body>
+</html>
