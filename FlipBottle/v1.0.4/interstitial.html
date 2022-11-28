@@ -166,9 +166,9 @@
 </script>
 	
  				
-			</head>
+</head>
 			
-			<body style="width: 100vw; height: 100vh" onload="refreshinterSlot();">
+			<body style="width: 100vw; height: 100vh; overflow: hidden;" onload="refreshinterSlot(); setgptdiv();">
 		
 				<div id="adContainer" style="display: block;">
 			
@@ -181,6 +181,16 @@
 			
 		</div>
 		<button id="skip" class="skip" style='display: block;' onclick="parent.closeAds();">Skip Ads ></button>
+				<script>
+					var gptdiv = = document.getElementById('div-gpt-ad-1669353828671-0');
+					var h = window.innerHeight;
+					var w = window.innerWidth;
+					function setgptdiv() {
+						gpt.style.height = h;
+						gpt.style.width = w;
+						
+					}
+				</script>
 				
 </body>
 			
