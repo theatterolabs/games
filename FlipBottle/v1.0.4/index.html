@@ -236,7 +236,7 @@ function skipAds() {
 	
 function closeAds() {
 	refreshfooterSlot();
-	mainContainer.style.display = 'block';
+	mainContainer.style.display = 'none';
 	//adsManager.destroy();
 	mixpanel.track('Skip Ad', {
   		'Game Name': "Flip Bottle",
@@ -251,7 +251,7 @@ function closeAds() {
 	
 	
 function closeFailedAds() {
-	
+	refreshfooterSlot();
 	mainContainer.style.display = 'none';
 	//adsManager.destroy();
 	mixpanel.track('Ad Failure', {
@@ -265,7 +265,8 @@ function closeFailedAds() {
 
 	
 function requestAds() {
-	mainContainer.style.display = 'none';
+	footerAD.style.display = 'none';
+	mainContainer.style.display = 'block';
 	splashScreen.style.display = 'none';
 	//skipBtn.style.display = 'none';
 	
