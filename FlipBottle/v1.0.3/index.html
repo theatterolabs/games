@@ -56,8 +56,9 @@
 	
 	googletag.cmd.push(function() {
 	footerSlot = googletag.defineSlot('/21665149170/Zee5_Games_Sticky_320x50', [320, 50], 'div-gpt-ad-1668419977060-0').addService(googletag.pubads());
-	interSlot = googletag.defineSlot('/21665149170/Zee5_Games_Interstitial', [[768, 1024], [336, 280], [300, 250], [320, 480], [480, 640]], 'div-gpt-ad-1669353828671-0').addService(googletag.pubads());
-	 
+//	interSlot = googletag.defineSlot('/21665149170/Zee5_Games_Interstitial', [[768, 1024], [336, 280], [300, 250], [320, 480], [480, 640]], 'div-gpt-ad-1669353828671-0').addService(googletag.pubads());
+
+	interSlot = googletag.defineSlot('/21665149170/Zee5_Games_GameStartVideo', [[480, 640], [640, 480]], 'div-gpt-ad-1668772665406-0').addService(googletag.pubads());
 		
 	<!-- Begin AdEvent Listeners -->	
 	  // This listener will be called when an impression is considered viewable.
@@ -240,12 +241,24 @@
 		
 		<div id="adContainer" style="display: block;">
 			
-			<!-- /21665149170/Zee5_Games_Interstitial -->
+			
+			
+			<!-- /21665149170/Zee5_Games_GameStartVideo -->
+			<div id='div-gpt-ad-1668772665406-0' style='min-width: 480px; min-height: 480px;'>
+  				<script>
+    					googletag.cmd.push(function() { googletag.display('div-gpt-ad-1668772665406-0'); });
+  				</script>
+			</div>
+			
+			
+			
+			
+			<!-- /21665149170/Zee5_Games_Interstitial 
 			<div id='div-gpt-ad-1669353828671-0' class='div-gpt-ad-1669353828671-0' style='min-width: 300px; min-height: 250px;'>
   			<script>
     			googletag.cmd.push(function() { googletag.display('div-gpt-ad-1669353828671-0'); });
   			</script>
-			</div>	
+			</div>	-->
 			
 		</div>
 		<button id="skip" class="skip" style='display: block;'>Skip Ads ></button>
