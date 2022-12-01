@@ -37,7 +37,7 @@
 
     mixpanel.init('28ad1bd3f9fbcda7356c70835a0b4d96');
     mixpanel.track('Screen View', {
-  'Game Name': "DunkShot",
+  'Game Name': "Slam Dunk",
   'Page Name': "Game Landing Page"
 });
 
@@ -69,7 +69,7 @@
 			//Start Mixpanel
 			mixpanel.track('Ad View', {
 		
-				'Game Name': "DunkShot",
+				'Game Name': "Slam Dunk",
 				'Ad Media Type': "Footer"
 			
   		
@@ -95,7 +95,7 @@
 			//Start Mixpanel
 			mixpanel.track('Ad Initialized', {
 		
-				'Game Name': "DunkShot",
+				'Game Name': "Slam Dunk",
 				'Ad Media Type': "Footer"
 			
   		
@@ -117,7 +117,7 @@
 			//Start Mixpanel
 			mixpanel.track('Ad Request', {
 		
-				'Game Name': "DunkShot",
+				'Game Name': "Slam Dunk",
 				'Ad Media Type': "Footer"
 			});
 			//End Mixpanel
@@ -135,7 +135,7 @@
 			//Start Mixpanel
 			mixpanel.track('Ad Response', {
 		
-				'Game Name': "DunkShot",
+				'Game Name': "Slam Dunk",
 				'Ad Media Type': "Footer"
 			});
 			//End Mixpanel
@@ -163,7 +163,7 @@
 	
 </head> 
  
-<body onload="setup();"> 
+<body> 
 	<div id="fb-root"></div>
 	
 	<!-- ********************************************** Game Splash Screen Iframe ********************************************** -->
@@ -234,6 +234,7 @@ function skipAds() {
 */
 	
 function closeAds() {
+	footerAD.style.display = 'block';
 	refreshfooterSlot();
 	mainContainer.style.display = 'none';
 	//adsManager.destroy();
