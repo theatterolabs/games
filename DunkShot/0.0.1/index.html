@@ -251,6 +251,7 @@ function closeAds() {
 	
 	
 function closeFailedAds() {
+	footerAD.style.display = 'block';
 	refreshfooterSlot();
 	mainContainer.style.display = 'none';
 	//adsManager.destroy();
@@ -261,6 +262,13 @@ function closeFailedAds() {
 	});
 	
 
+}
+	
+function closeEmptyInterstitialAds() {
+	footerAD.style.display = 'block';
+	refreshfooterSlot();
+	mainContainer.style.display = 'none';
+	
 }
 
 	
