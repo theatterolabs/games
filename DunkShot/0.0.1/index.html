@@ -237,6 +237,7 @@ function closeAds() {
 	footerAD.style.display = 'block';
 	refreshfooterSlot();
 	mainContainer.style.display = 'none';
+	mainContainer.src= 'about:blank';
 	//adsManager.destroy();
 	mixpanel.track('Skip Ad', {
   		'Game Name': "Flip Bottle",
@@ -254,6 +255,7 @@ function closeFailedAds() {
 	footerAD.style.display = 'block';
 	refreshfooterSlot();
 	mainContainer.style.display = 'none';
+	mainContainer.src= 'about:blank';
 	//adsManager.destroy();
 	mixpanel.track('Ad Failure', {
   		'Game Name': "Flip Bottle",
@@ -268,6 +270,7 @@ function closeEmptyInterstitialAds() {
 	footerAD.style.display = 'block';
 	refreshfooterSlot();
 	mainContainer.style.display = 'none';
+	mainContainer.src= 'about:blank';
 	
 }
 
@@ -281,11 +284,6 @@ function requestAds() {
 	
 }
 	
-function requestNextAds() {
-	footerAD.style.display = 'none';
-	mainContainer.style.display = 'block';
-	
-}	
 
 
 	
