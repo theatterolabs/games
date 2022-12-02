@@ -89,7 +89,19 @@
         googletag.pubads().addEventListener('slotRenderEnded', function(event) {
 		
 		
+		if (event.isEmpty == true) {
+				console.log("Footer Ad Slot Empty");
+				//Start Mixpanel
+				mixpanel.track('Ad Failure', {
 		
+					'Game Name': "Slam Dunk",
+					'Ad Media Type': "Footer",
+					'Failure Reason': "Ad Slot Empty"
+			
+  		
+				});
+				//End Mixpanel
+		} else if (event.isEmpty == false) {
 		
         		console.log("Footer Ad Initialized");
 			//Start Mixpanel
@@ -101,7 +113,7 @@
   		
 			});
 			//End Mixpanel
-		
+		}
 		
 	
         });
