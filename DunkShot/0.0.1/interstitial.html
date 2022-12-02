@@ -97,7 +97,21 @@
         googletag.pubads().addEventListener('slotRenderEnded', function(event) {
 		
 		
-			console.log(event);
+			if (event.isEmpty == true) {
+				console.log("Ad Slot Empty");
+				parent.closeEmptyInterstitialAds();
+				
+				mixpanel.track('Ad Failure', {
+		
+				'Game Name': "Slam Dunk",
+				'Ad Media Type': "Interstitial",
+				'Failure Reason': "Ad Slot Empty"
+			
+  		
+			});
+			//End Mixpanel
+			} else if (event.isEmpty == false) {
+				
 			console.log("Interstitial Ad Initialized");
 			
 			//Start Mixpanel
@@ -109,6 +123,7 @@
   		
 			});
 			//End Mixpanel
+			}
 		
 		
 	
