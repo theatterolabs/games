@@ -58,13 +58,28 @@
 
 
 /* **********************************************  Begin Game Screen Footer Ad ********************************************** */
-.gamescreen-footer {
+.gamescreen-footer-bottom {
 	position: absolute;
 	width: 320px;
 	height: 50px;
 	z-index: 999999010;
 	overflow: visible;
 	bottom: 0px;
+	left: 50%;
+  	transform: translate(-50%, 0%);
+	
+	
+	
+	
+}
+	
+.gamescreen-footer-top {
+	position: absolute;
+	width: 320px;
+	height: 50px;
+	z-index: 999999010;
+	overflow: visible;
+	top: 0px;
 	left: 50%;
   	transform: translate(-50%, 0%);
 	
@@ -265,7 +280,7 @@
 	
 	    
     <!-- ********************************************** Game Splash Screen Iframe ********************************************** -->
-<iframe src="./splash.html" class="fg-click2play" id="fg-click2play" style="transition: opacity 1s ease 0s; opacity: 1;" width="100%" height="100%" frameBorder="0">
+<!-- <iframe src="./splash.html" class="fg-click2play" id="fg-click2play" style="transition: opacity 1s ease 0s; opacity: 1;" width="100%" height="100%" frameBorder="0"> -->
 	
 	
 </iframe>
@@ -286,7 +301,7 @@
 	
 	
 <!-- ********************************************** Begin Game Footer AD ********************************************** -->	
-	 <div id="gamescreen-footer" class="gamescreen-footer" style='display: block;' onclick="bannerClick();"> 
+	 <div id="gamescreen-footer" class="gamescreen-footer-top" style='display: block;'> 
 		<!-- Begin Footer Ad -->
 		<div id='div-gpt-ad-1668419977060-0' class="div-gpt-ad-1668419977060-0" style='min-width: 320px; min-height: 50px;'>
   		<script>
@@ -309,9 +324,10 @@ var adsLoader;
 var adDisplayContainer;
 var playButton;
 var videoContent;
-var splashScreen = document.getElementById('fg-click2play');
 var mainContainer = document.getElementById('mainContainer');
 var footerAD = document.getElementById('gamescreen-footer');
+var skipCount = 0;
+var emptyAdCount = 0;	
 
 
 	
@@ -333,15 +349,35 @@ function skipAds() {
 */
 	
 function closeAds() {
+	if (skipCount == 0) {
 	refreshfooterSlot();
+	footerAD.classList.add('gamescreen-footer-bottom');
+	footerAD.classList.remove('gamescreen-footer-top');
+	footerAD.style.display = 'block';
 	mainContainer.style.display = 'none';
 	mainContainer.src= 'about:blank';
+	
+	skipCount++;
 	//adsManager.destroy();
 	mixpanel.track('Skip Ad', {
   		'Game Name': "Bunny Quest",
 		'Ad Media Type': "Interstitial"
   		
 	});
+	
+	} else {
+		
+		mainContainer.style.display = 'none';
+		mainContainer.src= 'about:blank';
+		//adsManager.destroy();
+		mixpanel.track('Skip Ad', {
+  			'Game Name': "Bunny Quest",
+			'Ad Media Type': "Interstitial"
+  		
+		});
+	
+	
+	}
 	
 	
 	
@@ -351,6 +387,9 @@ function closeAds() {
 	
 function closeFailedAds() {
 	refreshfooterSlot();
+	footerAD.classList.add('gamescreen-footer-bottom');
+	footerAD.classList.remove('gamescreen-footer-top');
+	footerAD.style.display = 'block';
 	mainContainer.style.display = 'none';
 	mainContainer.src= 'about:blank';
 	//adsManager.destroy();
@@ -363,20 +402,33 @@ function closeFailedAds() {
 
 }
 	
-function closeEmptyInterstitialAds() {
-	
+	function closeEmptyInterstitialAds() {
+		if (emptyAdCount == 0) {
+			
+	refreshfooterSlot();
+	footerAD.classList.add('gamescreen-footer-bottom');
+	footerAD.classList.remove('gamescreen-footer-top');
+	footerAD.style.display = 'block';
 	mainContainer.style.display = 'none';
 	mainContainer.src= 'about:blank';
+	emptyAdCount++;
+			
+		} else {
+			
+			mainContainer.style.display = 'none';
+			mainContainer.src= 'about:blank';
+
+		}
 	
-}
+} 
 
 	
 function requestAds() {
 	footerAD.style.display = 'none';
 	mainContainer.src= './interstitial.html';
 	mainContainer.style.display = 'block';
-	splashScreen.style.display = 'none';
-	//skipBtn.style.display = 'none';
+	
+	
 	
 }
 
