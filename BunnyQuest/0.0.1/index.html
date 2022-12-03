@@ -353,7 +353,7 @@ function closeAds() {
 	refreshfooterSlot();
 	footerAD.classList.add('gamescreen-footer-bottom');
 	footerAD.classList.remove('gamescreen-footer-top');
-	footerAD.style.display = 'block';
+	footerAD.style.display = 'none';
 	mainContainer.style.display = 'none';
 	mainContainer.src= 'about:blank';
 	
@@ -366,7 +366,7 @@ function closeAds() {
 	});
 	
 	} else {
-		
+		footerAD.style.display = 'none';
 		mainContainer.style.display = 'none';
 		mainContainer.src= 'about:blank';
 		//adsManager.destroy();
@@ -389,7 +389,7 @@ function closeFailedAds() {
 	refreshfooterSlot();
 	footerAD.classList.add('gamescreen-footer-bottom');
 	footerAD.classList.remove('gamescreen-footer-top');
-	footerAD.style.display = 'block';
+	footerAD.style.display = 'none';
 	mainContainer.style.display = 'none';
 	mainContainer.src= 'about:blank';
 	//adsManager.destroy();
@@ -408,13 +408,13 @@ function closeFailedAds() {
 	refreshfooterSlot();
 	footerAD.classList.add('gamescreen-footer-bottom');
 	footerAD.classList.remove('gamescreen-footer-top');
-	footerAD.style.display = 'block';
+	footerAD.style.display = 'none';
 	mainContainer.style.display = 'none';
 	mainContainer.src= 'about:blank';
 	emptyAdCount++;
 			
 		} else {
-			
+			footerAD.style.display = 'none';
 			mainContainer.style.display = 'none';
 			mainContainer.src= 'about:blank';
 
