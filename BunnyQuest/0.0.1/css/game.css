@@ -1,3 +1,11 @@
+html, body {
+	
+	background: #000;
+	overflow: hidden;
+	
+}
+
+
 #game {
 	z-index: 10;
 	position: relative;
@@ -88,11 +96,14 @@
 /* **********************************************  Begin Video / Interstitial Ads ********************************************** */
 
 #mainContainer {
-  	position: relative;
+  	position: absolute;
+  	top: 0;
+  	left: 0;
   	height: 100vh;
 	z-index: 999999012;
 	width: 100%;
 	height: 100%;
+	background: rgba(0,0,0,1);
 
 }
 /* **********************************************  End Video / Interstitial Ads ********************************************** */
