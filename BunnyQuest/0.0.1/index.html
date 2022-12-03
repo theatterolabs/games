@@ -259,23 +259,11 @@
 <!--  ********************************************** End Google Footer Splash Screen Ad  ********************************************** -->    
 
 </head>
-<body style="background-color: #102b07" onload="setup();">
-	  <div id="wrongRotation">
-        <img src="assets/img/rotate_screen.png" alt=""/>
-    </div>
-
-    <div id="game">
-
-
-        <script src="js/game.js"></script>
-        
-    </div>
-
-    <div class="font_preload" style="opacity: 0">
-        <span style="font-family: 'gameFont', Arial, sans-serif;"></span>
-    </div>
 	
-    
+	
+<body style="background-color: #102b07" onload="setup();">
+	
+	    
     <!-- ********************************************** Game Splash Screen Iframe ********************************************** -->
 <iframe src="./splash.html" class="fg-click2play" id="fg-click2play" style="transition: opacity 1s ease 0s; opacity: 1;" width="100%" height="100%" frameBorder="0">
 	
@@ -350,7 +338,7 @@ function closeAds() {
 	mainContainer.src= 'about:blank';
 	//adsManager.destroy();
 	mixpanel.track('Skip Ad', {
-  		'Game Name': "Flip Bottle",
+  		'Game Name': "Bunny Quest",
 		'Ad Media Type': "Interstitial"
   		
 	});
@@ -367,7 +355,7 @@ function closeFailedAds() {
 	mainContainer.src= 'about:blank';
 	//adsManager.destroy();
 	mixpanel.track('Ad Failure', {
-  		'Game Name': "Flip Bottle",
+  		'Game Name': "Bunny Quest",
 		'Ad Media Type': "Video"
   		
 	});
@@ -684,6 +672,26 @@ End Video Ads Functions */
 </script>
 	
 <!-- **********************************************  End Video AD ********************************************** -->	
+	
+	
+	
+	
+	  <div id="wrongRotation">
+        <img src="assets/img/rotate_screen.png" alt=""/>
+    </div>
+
+    <div id="game">
+
+
+        <script src="js/game.js"></script>
+        
+    </div>
+
+    <div class="font_preload" style="opacity: 0">
+        <span style="font-family: 'gameFont', Arial, sans-serif;"></span>
+    </div>
+	
+
 
 
 
