@@ -46,19 +46,20 @@ html, body {
 /* ********************************************** Begin Splash Screen **********************************************  */
 
 .fg-click2play {
-  transition: opacity 1s ease 0s;
-  opacity: 1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 100%;
-  text-align: center;
-  z-index: 999999000;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  font-weight: 400;
+  	transition: opacity 1s ease 0s;
+  	opacity: 1;
+ 	position: absolute;
+  	top: 0;
+  	left: 0;
+  	width: 100vw;
+ 	height: 100vh;
+  	text-align: center;
+  	z-index: 999999000;
+  	display: flex;
+	align-items: center;
+  	cursor: pointer;
+  	font-weight: 400;
+	overflow: hidden;
   	
 }
 
