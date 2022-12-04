@@ -6134,7 +6134,7 @@ function CCreditsPanel() {
 var LOCALSTORAGE_LAST_LEVEL = "last_level",
     LOCALSTORAGE_SCORE = "scores",
     LOCALSTORAGE_STARS = "stars",
-    s_iLastLevel = 10,
+    s_iLastLevel = 60,
     s_aScore = [],
     s_aStars = [];
 
@@ -6161,7 +6161,7 @@ function CLocalStorage(b) {
         return c
     };
     this.resetAllData = function() {
-        s_iLastLevel = 10;
+        s_iLastLevel = 60;
         s_aScore = [];
         for (var a = 0; a < NUM_LEVELS; a++) s_aScore[a] = 0;
         s_aStars = [];
