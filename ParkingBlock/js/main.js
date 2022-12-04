@@ -6134,7 +6134,7 @@ function CCreditsPanel() {
 var LOCALSTORAGE_LAST_LEVEL = "last_level",
     LOCALSTORAGE_SCORE = "scores",
     LOCALSTORAGE_STARS = "stars",
-    s_iLastLevel = 60,
+    s_iLastLevel = 1,
     s_aScore = [],
     s_aStars = [];
 
