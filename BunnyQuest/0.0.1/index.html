@@ -335,6 +335,7 @@ var emptyAdCount = 0;
 
 function setup() {
 	refreshfooterSlot();
+	game.gameResumed();
 	//mainContainer.style.display = 'none';
 	
 	
@@ -356,6 +357,7 @@ function closeAds() {
 	footerAD.style.display = 'none';
 	mainContainer.style.display = 'none';
 	mainContainer.src= 'about:blank';
+	game.gameResumed();	
 	
 	skipCount++;
 	//adsManager.destroy();
@@ -369,6 +371,7 @@ function closeAds() {
 		footerAD.style.display = 'none';
 		mainContainer.style.display = 'none';
 		mainContainer.src= 'about:blank';
+		game.gameResumed();
 		//adsManager.destroy();
 		mixpanel.track('Skip Ad', {
   			'Game Name': "Bunny Quest",
@@ -392,6 +395,7 @@ function closeFailedAds() {
 	footerAD.style.display = 'none';
 	mainContainer.style.display = 'none';
 	mainContainer.src= 'about:blank';
+	game.gameResumed();
 	//adsManager.destroy();
 	mixpanel.track('Ad Failure', {
   		'Game Name': "Bunny Quest",
@@ -411,12 +415,14 @@ function closeFailedAds() {
 	footerAD.style.display = 'none';
 	mainContainer.style.display = 'none';
 	mainContainer.src= 'about:blank';
+	game.gameResumed();
 	emptyAdCount++;
 			
 		} else {
 			footerAD.style.display = 'none';
 			mainContainer.style.display = 'none';
 			mainContainer.src= 'about:blank';
+			game.gameResumed();
 
 		}
 	
