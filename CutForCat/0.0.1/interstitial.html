@@ -27,6 +27,45 @@
   			z-index: 999999014;
   
 		}
+		.flex-container {
+			border: 2px solid white;
+  			padding: 0;
+			margin: 0;
+  			list-style: none;
+  			width: 120px;
+  			align-items: center;
+  			justify-content: center;
+			bottom: 50px;
+  			right: 1vw;
+  			-ms-box-orient: horizontal;
+  			display: -webkit-box;
+  			display: -moz-box;
+  			display: -ms-flexbox;
+  			display: -moz-flex;
+  			display: -webkit-flex;
+  			display: flex;
+  			background-color: rgba(0, 0, 0, 0.4);
+   			padding-top: 5px;
+  			padding-right: 5px;
+  			padding-bottom: 5px;
+  			padding-left: 5px;
+
+		}
+
+
+		.row { 
+  
+			-webkit-flex-direction: row; 
+  
+			flex-direction: row;
+  
+			font-size: 14px;
+  
+			font-family: Arial, Helvetica, sans-serif;
+  
+			color: white;
+
+		}
 		
 		
 		
@@ -62,6 +101,7 @@
 	// GPT slots
 	
 	var interSlot;
+	
 	
 	googletag.cmd.push(function() {
 	interSlot = googletag.defineSlot('/21665149170/Zee5_Games_Interstitial', [[768, 1024], [336, 280], [300, 250], [320, 480], [480, 640]], 'div-gpt-ad-1669353828671-0').addService(googletag.pubads());
@@ -100,7 +140,7 @@
 	
 			if (event.isEmpty == true) {
 				console.log("Interstitial Ad Slot Empty");
-				//parent.closeEmptyInterstitialAds();
+				parent.closeEmptyInterstitialAds();
 				
 				mixpanel.track('Ad Failure', {
 		
@@ -182,6 +222,7 @@
 		
 		googletag.cmd.push(function() { googletag.pubads().refresh([interSlot]); });
 		console.log("Interstitial Slot Refreshed");
+		
 			
 	}
 </script>
@@ -189,7 +230,7 @@
  				
 </head>
 			
-			<body style="width: 100vw; height: 100vh; overflow: hidden;" onload="refreshinterSlot();">
+<body style="width: 100vw; height: 100vh; overflow: hidden;" onload="refreshinterSlot(); timer();">
 		
 				<div id="adContainer" style="display: block;">
 			
@@ -201,10 +242,43 @@
 				</div>	
 			
 		</div>
-		<button id="skip" class="skip" style='display: block;' onclick="parent.closeAds();">Skip Ads ></button>
+		<button id="skip" class="skip" style='display: none;' onclick="parent.closeAds();">Skip Ads ></button>
+		
+		<div id="countdown" class="flex-container row" style="display: flex;">
+
+			<span id="SkipIn">Skip Ads In&nbsp; </span>
+			<span id="count_num">5</span>
+		</div>
 				 
-			
-				
+	<script>
+		
+		var skip = document.getElementById('skip');
+		var countdown = document.getElementById('countdown');
+		var count_num = document.getElementById('count_num');
+		
+		
+		var timer = setInterval(function(){
+			count_num.html(function(i,html){
+   
+				if(parseInt(html)>1) {
+   					return parseInt(html)-1;
+					skip.style.display = 'none';
+					countdown.style.display = 'flex';
+   					
+				} else {
+   
+					clearTimeout(timer);
+					skip.style.display = 'block';
+					countdown.style.display = 'none';
+   
+				}
+ 
+			});
+
+		},1000);
+		
+	</script>
+
 				
 </body>
 			
