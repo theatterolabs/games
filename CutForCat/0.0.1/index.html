@@ -162,7 +162,7 @@
     	googletag.enableServices();
   });
 	
-	var refreshfooterSlot = function() {
+	window.refreshfooterSlot = function() {
 		googletag.cmd.push(function() { googletag.pubads().refresh([footerSlot]); });
 		console.log("Footer Slot Refreshed");
 		
@@ -214,7 +214,7 @@ var adDisplayContainer;
 var playButton;
 var videoContent;
 var mainContainer = document.getElementById('mainContainer');
-var footerAD = document.getElementById('gamescreen-footer');
+window.footerAD = document.getElementById('gamescreen-footer');
 
 
 function setup() {
@@ -262,7 +262,7 @@ function closeEmptyInterstitialAds() {
 }
 
 	
-function requestAds() {
+window.requestAds = function() {
 	footerAD.style.display = 'none';
 	mainContainer.src= './interstitial.html';
 	mainContainer.style.display = 'block';
