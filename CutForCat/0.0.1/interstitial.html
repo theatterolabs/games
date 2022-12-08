@@ -98,10 +98,6 @@
 	// GPT slots
 	
 	var interSlot;
-	var skip = document.getElementById('skip');
-	var countdown = document.getElementById('countdown');
-	var count_num = document.getElementById('count_num');
-	
 	
 	googletag.cmd.push(function() {
 	interSlot = googletag.defineSlot('/21665149170/Zee5_Games_Interstitial', [[768, 1024], [336, 280], [300, 250], [320, 480], [480, 640]], 'div-gpt-ad-1669353828671-0').addService(googletag.pubads());
@@ -230,11 +226,11 @@
 
       					if (parseInt(html) > 1) {
         					return parseInt(html) - 1;
-						$("skip").attr("style", "display:none");
+						$("#skip").attr("style", "display:none");
 						$("#countdown").attr("style", "display:flex");
       					} else {
         					clearTimeout(timer);
-						$("skip").attr("style", "display:block");
+						$("#skip").attr("style", "display:block");
 						$("#countdown").attr("style", "display:none");
 
       					}
