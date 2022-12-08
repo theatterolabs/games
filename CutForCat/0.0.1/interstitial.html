@@ -29,6 +29,7 @@
 		}
 		.flex-container {
 			border: 2px solid white;
+			position: absolute;
   			padding: 0;
 			margin: 0;
   			list-style: none;
@@ -218,6 +219,7 @@
 		
 		googletag.cmd.push(function() { googletag.pubads().refresh([interSlot]); });
 		console.log("Interstitial Slot Refreshed");
+		 timer();
 		
 			
 	}
@@ -226,7 +228,7 @@
  				
 </head>
 			
-<body style="width: 100vw; height: 100vh; overflow: hidden;" onload="refreshinterSlot(); timer();">
+<body style="width: 100vw; height: 100vh; overflow: hidden;" onload="refreshinterSlot();">
 		
 				<div id="adContainer" style="display: block;">
 			
