@@ -100,7 +100,7 @@
 	
 			if (event.isEmpty == true) {
 				console.log("Interstitial Ad Slot Empty");
-				//parent.closeEmptyInterstitialAds();
+				parent.closeEmptyInterstitialAds();
 				
 				mixpanel.track('Ad Failure', {
 		
@@ -182,6 +182,28 @@
 		
 		googletag.cmd.push(function() { googletag.pubads().refresh([interSlot]); });
 		console.log("Interstitial Slot Refreshed");
+		
+				$(function() {
+  			var timer = setInterval(function() {
+    				$("#count_num").html(function(i, html) {
+
+      					if (parseInt(html) > 1) {
+        					return parseInt(html) - 1;
+						$("#skip").attr("style", "display:none");
+						$("#countdown").attr("style", "display:flex");
+      					} else {
+        					clearTimeout(timer);
+						$("#skip").attr("style", "display:block");
+						$("#countdown").attr("style", "display:none");
+
+      					}
+    				});
+
+  			}, 1000);
+
+
+
+		});
 			
 	}
 </script>
@@ -201,7 +223,12 @@
 				</div>	
 			
 		</div>
-		<button id="skip" class="skip" style='display: block;' onclick="parent.closeAds();">Skip Ads ></button>
+		<button id="skip" class="skip" style='display: none;' onclick="parent.closeAds();">Skip Ads ></button>
+		<div id="countdown" class="flex-container row" style="display: flex;">
+
+			<span id="SkipIn">Skip Ads In&nbsp; </span>
+			<span id="count_num">5</span>
+		</div>				
 				 
 			
 				
