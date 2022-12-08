@@ -104,7 +104,7 @@
     }
 };
 
-var footerADs = document.getElementById('gamescreen-footer');
+
 'use strict'; {
     window.DOMElementHandler = class DOMElementHandler extends self.DOMHandler {
         constructor(iRuntime, componentId) {
