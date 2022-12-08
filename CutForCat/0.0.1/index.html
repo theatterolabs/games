@@ -41,10 +41,10 @@
   </script>
 	
 <!-- ********************************************** END MIX PANEL *****************************************-->		
+	
+	
+<!--  ********************************************** Begin Footer Ad  ********************************************** -->
 <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>	
-	
-<!--  ********************************************** Begin Google Footer Splash Screen Ad  ********************************************** -->
-	
 <script>
 		
 	window.googletag = window.googletag || {cmd: []};
@@ -171,17 +171,10 @@
 
 </script>
 	
-<!--  ********************************************** End Google Footer Splash Screen Ad  ********************************************** -->	
+<!--  ********************************************** End Footer Ad  ********************************************** -->	
 
 </head>
 <body onload="setup();">
-	<!-- ********************************************** Game Splash Screen Iframe ********************************************** -->
-<iframe src="./splash.html" class="fg-click2play" id="fg-click2play" style="transition: opacity 1s ease 0s; opacity: 1;" width="100%" height="100%" frameBorder="0">
-	
-	
-</iframe>
-<!-- ********************************************** End Of Game Splash Screen Iframe ********************************************** -->
-	
 
 	
 <!-- ********************************************** Begin Zee5_Games_Interstitial Iframe ********************************************** -->
@@ -197,7 +190,7 @@
 	
 	
 <!-- ********************************************** Begin Game Footer AD ********************************************** -->	
-	 <div id="gamescreen-footer" class="gamescreen-footer" style='display: block;' onclick="bannerClick();"> 
+	 <div id="gamescreen-footer" class="gamescreen-footer" style='display: block;'> 
 		<!-- Begin Footer Ad -->
 		<div id='div-gpt-ad-1668419977060-0' class="div-gpt-ad-1668419977060-0" style='min-width: 320px; min-height: 50px;'>
   		<script>
@@ -212,7 +205,7 @@
 	
 
 	
-<!-- **********************************************  Begin Interstitial AD ********************************************** -->		
+<!-- **********************************************  Begin Ad Logic ********************************************** -->		
 <script src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>	
 <script>	
 var adsManager;
@@ -220,13 +213,9 @@ var adsLoader;
 var adDisplayContainer;
 var playButton;
 var videoContent;
-var splashScreen = document.getElementById('fg-click2play');
 var mainContainer = document.getElementById('mainContainer');
 var footerAD = document.getElementById('gamescreen-footer');
 
-
-	
-		
 
 function setup() {
 	
@@ -234,13 +223,6 @@ function setup() {
 	
 }
 
-	
-
-/*	
-function skipAds() {
-	setTimeout(function(){ skipBtn.style.display = 'block';}, 1000);
-}
-*/
 	
 function closeAds() {
 	refreshfooterSlot();
@@ -285,13 +267,12 @@ function requestAds() {
 	footerAD.style.display = 'none';
 	mainContainer.src= './interstitial.html';
 	mainContainer.style.display = 'block';
-	splashScreen.style.display = 'none';
-	//skipBtn.style.display = 'none';
+	
 	
 }
 
 </script>
-<!-- **********************************************  End Interstitial AD ********************************************** -->		
+<!-- **********************************************  End Ad Logic ********************************************** -->		
 <div id="fb-root"></div>
 
 	<noscript>
