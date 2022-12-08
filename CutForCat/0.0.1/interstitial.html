@@ -224,6 +224,28 @@
 		googletag.cmd.push(function() { googletag.pubads().refresh([interSlot]); });
 		console.log("Interstitial Slot Refreshed");
 		
+		$(function() {
+  			var timer = setInterval(function() {
+    				$("#count_num").html(function(i, html) {
+
+      					if (parseInt(html) > 1) {
+        					return parseInt(html) - 1;
+						$("skip").attr("style", "display:none");
+						$("#countdown").attr("style", "display:flex");
+      					} else {
+        					clearTimeout(timer);
+						$("skip").attr("style", "display:block");
+						$("#countdown").attr("style", "display:none");
+
+      					}
+    				});
+
+  			}, 1000);
+
+
+
+		});
+		
 		
 			
 	}
@@ -254,27 +276,7 @@
 				 
 	<script>
 		
-	$(window).load(function() {
-  			var timer = setInterval(function() {
-    				$("#count_num").html(function(i, html) {
-
-      					if (parseInt(html) > 1) {
-        					return parseInt(html) - 1;
-						$("skip").attr("style", "display:none");
-						$("#countdown").attr("style", "display:flex");
-      					} else {
-        					clearTimeout(timer);
-						$("skip").attr("style", "display:block");
-						$("#countdown").attr("style", "display:none");
-
-      					}
-    				});
-
-  			}, 1000);
-
-
-
-		});
+		
 		
 		
 		
