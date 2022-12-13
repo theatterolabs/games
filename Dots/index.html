@@ -144,8 +144,6 @@
 </style>	
 	
 
-<script src="jquery-3.4.1.min.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" crossorigin="anonymous"></script>
 	
 	
@@ -442,7 +440,7 @@ var mainContainer = document.getElementById('mainContainer');
 var footerAD = document.getElementById('gamescreen-footer');
 var skip = document.getElementById('skip');
 var countdown = document.getElementById('countdown');
-var myTimer = setInterval(footerInterval, 15000);	
+//var myTimer = setInterval(footerInterval, 15000);	
 
 
 /*	
@@ -478,8 +476,8 @@ function requestAds() {
 	skip.style.display = 'none';
 	footerAD.style.display = 'none';
    	refreshinterSlot();
-	clearInterval(myTimer);
-	myTimer = 0;
+	//clearInterval(myTimer);
+	//myTimer = 0;
 	mainContainer.style.display = 'block';
 	var skipTimer = setInterval(skipInterval, 1000);
 	function skipInterval() {
@@ -507,23 +505,16 @@ function requestAds() {
 }
 
 	
-	
+/*	
 function footerInterval() {
 	footerAD.style.display = 'block';
    refreshfooterSlot();
- }
+ } */
 	
 <!-- **********************************************  End Interstitial AD ********************************************** -->		
 	
 	
-	// Issue a warning if trying to preview an exported project on disk.
-	(function(){
-		// Check for running exported on file protocol
-		if (window.location.protocol.substr(0, 4) === "file")
-		{
-			alert("Exported games won't work until you upload them. (When running on the file:/// protocol, browsers block many features from working for security reasons.)");
-		}
-	})();
+
 </script>
 	
 	<!-- The canvas must be inside a div called c2canvasdiv -->
