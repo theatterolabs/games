@@ -440,7 +440,7 @@ var mainContainer = document.getElementById('mainContainer');
 var footerAD = document.getElementById('gamescreen-footer');
 var skip = document.getElementById('skip');
 var countdown = document.getElementById('countdown');
-//var myTimer = setInterval(footerInterval, 15000);	
+var myTimer = setInterval(footerInterval, 15000);	
 
 
 /*	
@@ -470,14 +470,22 @@ function closeEmptyInterstitialAds() {
 }
 	
 
+function endFooterLoop() {
+	clearInterval(myTimer);
+	myTimer = 0;
+}
+	
+function beginFooterLoop() {
+	myTimer = setInterval(footerInterval, 15000);
+}
 	
 function requestAds() {
 	countdown.style.display = 'flex';
 	skip.style.display = 'none';
 	footerAD.style.display = 'none';
    	refreshinterSlot();
-	//clearInterval(myTimer);
-	//myTimer = 0;
+	clearInterval(myTimer);
+	myTimer = 0;
 	mainContainer.style.display = 'block';
 	var skipTimer = setInterval(skipInterval, 1000);
 	function skipInterval() {
@@ -505,11 +513,11 @@ function requestAds() {
 }
 
 	
-/*	
+	
 function footerInterval() {
-	footerAD.style.display = 'block';
+	
    refreshfooterSlot();
- } */
+ } 
 	
 <!-- **********************************************  End Interstitial AD ********************************************** -->		
 	
