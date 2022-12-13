@@ -452,9 +452,8 @@ function skipAds() {
 */
 	
 function closeAds() {
-		myTimer = setInterval(footerInterval, 15000);	
+		
 		skip.style.display = 'none';
-		footerAD.style.display = 'block';
 		mainContainer.style.display = 'none';
 		mixpanel.track('Skip Ad', {
   			'Game Name': "Dots Puzzle",
@@ -468,8 +467,6 @@ function closeAds() {
 	
 function closeEmptyInterstitialAds() {
 	skip.style.display = 'none';
-	footerAD.style.display = 'block';
-	myTimer = setInterval(footerInterval, 15000);
 	mainContainer.style.display = 'none';
 	
 }
@@ -512,6 +509,7 @@ function requestAds() {
 	
 	
 function footerInterval() {
+	footerAD.style.display = 'block';
    refreshfooterSlot();
  }
 	
