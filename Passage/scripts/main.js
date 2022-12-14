@@ -2228,6 +2228,7 @@
             })
         }
         async _Play(e) {
+            console.log("From Main.js:" + e);
             const originalUrl = e["originalUrl"];
             const url = e["url"];
             const type = e["type"];
