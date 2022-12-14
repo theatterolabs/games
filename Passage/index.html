@@ -96,7 +96,7 @@
 
     mixpanel.init('28ad1bd3f9fbcda7356c70835a0b4d96');
     mixpanel.track('Screen View', {
-  'Game Name': "Dots Puzzle",
+  'Game Name': "Passage",
   'Page Name': "Game Landing Page"
 });
 
@@ -135,7 +135,7 @@
             //Start Mixpanel
             mixpanel.track('Ad View', {
 				
-               'Game Name': "Dots Puzzle",
+               'Game Name': "Passage",
                'Ad Media Type': "Footer"
                
             });
@@ -150,7 +150,7 @@
             mixpanel.track('Ad View', {
 		
 				
-               'Game Name': "Dots Puzzle",
+               'Game Name': "Passage",
                'Ad Media Type': "Interstitial"
                
             });
@@ -178,7 +178,7 @@
 			         	//Start Mixpanel
 			        	 mixpanel.track('Ad Failure', {
 		
-				         	'Game Name': "Dots Puzzle",
+				         	'Game Name': "Passage",
 				         	'Ad Media Type': "Footer",
 					 	'Failure Reason': "Ad Slot Empty"
 			
@@ -190,7 +190,7 @@
 			         	//Start Mixpanel
 			         	mixpanel.track('Ad Initialized', {
 		
-				         	'Game Name': "Dots Puzzle",
+				         	'Game Name': "Passage",
 				         	'Ad Media Type': "Footer"
 			
   		
@@ -202,11 +202,11 @@
 		      } else if (interSlot === event.slot){
                   		if (event.isEmpty == true) {
 				         console.log("Interstitial Ad Slot Empty");
-				         closeEmptyInterstitialAds();
+				         //closeEmptyInterstitialAds();
 				         //Start Mixpanel
 				         mixpanel.track('Ad Failure', {
 		
-				            'Game Name': "Dots Puzzle",
+				            'Game Name': "Passage",
 				            'Ad Media Type': "Interstitial",
 				            'Failure Reason': "Ad Slot Empty"
 			
@@ -219,7 +219,7 @@
 			            //Start Mixpanel
 			            mixpanel.track('Ad Initialized', {
 		
-				            'Game Name': "Dots Puzzle",
+				            'Game Name': "Passage",
 				            'Ad Media Type': "Interstitial"
 			
 			            });
@@ -242,7 +242,7 @@
 			//Start Mixpanel
 			mixpanel.track('Ad Request', {
 		
-				'Game Name': "Dots Puzzle",
+				'Game Name': "Passage",
 				'Ad Media Type': "Footer"
 			});
 			//End Mixpanel
@@ -253,7 +253,7 @@
 			//Start Mixpanel
 			mixpanel.track('Ad Request', {
 		
-				'Game Name': "Dots Puzzle",
+				'Game Name': "Passage",
 				'Ad Media Type': "Interstitial"
 			});
 			//End Mixpanel
@@ -271,7 +271,7 @@
 			//Start Mixpanel
 			mixpanel.track('Ad Response', {
 		
-				'Game Name': "Dots Puzzle",
+				'Game Name': "Passage",
 				'Ad Media Type': "Footer"
 			});
 			//End Mixpanel
@@ -282,7 +282,7 @@
 			//Start Mixpanel
 			mixpanel.track('Ad Response', {
 		
-				'Game Name': "Dots Puzzle",
+				'Game Name': "Passage",
 				'Ad Media Type': "Interstitial"
 			});
 			//End Mixpanel
@@ -361,6 +361,9 @@ var adsLoader;
 var adDisplayContainer;
 var mainContainer = document.getElementById('mainContainer');
 var footerAD = document.getElementById('gamescreen-footer');
+function closeEmptyInterstitialAds() {
+	mainContainer.style.display = 'none';
+}	
 
 </script>
     <script src="../c2runtime_data.js"></script>
