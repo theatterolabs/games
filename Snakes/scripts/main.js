@@ -2070,7 +2070,9 @@ var increHandler = 0;
             })
         }
         async _Play(e) {
-          if (e.url === "media/fail_.mp3" || e.url === "media/fail_.m4a" || e.url === "media/fail_.ogg") {
+            console.log(e);
+            
+         /* if (e.url === "media/fail_.mp3" || e.url === "media/fail_.m4a" || e.url === "media/fail_.ogg") {
               
               if (increHandler < 2) { 
                     
@@ -2094,7 +2096,7 @@ var increHandler = 0;
                   
                 }   
                 
-            }
+            }*/
             const originalUrl = e["originalUrl"];
             const url = e["url"];
             const type = e["type"];
