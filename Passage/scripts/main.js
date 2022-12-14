@@ -2229,9 +2229,19 @@
         }
         async _Play(e) {
             if (e.url === "media/music.ogg" || e.url === "media/music.m4a") {
+                
                 console.log("Game Started");
-            } else if (e.url === "media/die.ogg" || e.url === "media/die.m4a") {
+                footerAD.style.display = 'block';
+                mainContainer.style.display = 'none';
+                refreshfooterSlot();
+                
+            } else if (e.url === "media/die.ogg" || e.url === "media/die.m4a" || e.url === "media/win.m4a" || e.url === "media/win.m4a") {
+                
                 console.log("Game Ended");
+                footerAD.style.display = 'none';
+                mainContainer.style.display = 'block';
+                refreshinterSlot();
+                
             }
             const originalUrl = e["originalUrl"];
             const url = e["url"];
