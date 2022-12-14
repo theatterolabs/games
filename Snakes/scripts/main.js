@@ -1,3 +1,5 @@
+var increHandler = 0;
+
 'use strict'; {
     window.DOMHandler = class DOMHandler {
         constructor(iRuntime, componentId) {
@@ -2069,10 +2071,28 @@
         }
         async _Play(e) {
           if (e.url === "media/fail_.mp3" || e.url === "media/fail_.m4a" || e.url === "media/fail_.ogg") {
+              
+              if (increHandler < 2) { 
+                    
+                    incre();
+                    function incre(){
+                        increHandler++;
+                        console.log("Game Ended");
+                        footerAD.style.display = 'block';
+                        refreshfooterSlot();
+                        console.log(increHandler);
+                    }
                 
-                console.log("Game Ended");
-                footerAD.style.display = 'block';
-                refreshfooterSlot();
+                } else { 
+                    
+                    decre();
+                    function decre(){
+                        increHandler = 0;
+                        requestAds();
+                        console.log(increHandler);
+                    }
+                  
+                }   
                 
             }
             const originalUrl = e["originalUrl"];
