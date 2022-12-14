@@ -2221,6 +2221,7 @@
             if (instStates.length === 0 && this._analysers.size === 0) this._StopTicking()
         }
         PostTrigger(type, tag, aiid) {
+            console.log(type, tag, aiid)
             this.PostToRuntime("trigger", {
                 "type": type,
                 "tag": tag,
@@ -2228,7 +2229,7 @@
             })
         }
         async _Play(e) {
-            if (e.url === "media/music.ogg" || e.url === "media/music.m4a") {
+           /* if (e.url === "media/music.ogg" || e.url === "media/music.m4a") {
                 
                 console.log("Game Started");
                 footerAD.style.display = 'block';
@@ -2242,7 +2243,7 @@
                 mainContainer.style.display = 'block';
                 refreshinterSlot();
                 
-            }
+            } */
             const originalUrl = e["originalUrl"];
             const url = e["url"];
             const type = e["type"];
