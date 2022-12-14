@@ -206,7 +206,7 @@
 		      } else if (interSlot === event.slot){
                   		if (event.isEmpty == true) {
 				         console.log("Interstitial Ad Slot Empty");
-				         //closeEmptyInterstitialAds();
+				         closeEmptyInterstitialAds();
 				         //Start Mixpanel
 				         mixpanel.track('Ad Failure', {
 		
@@ -326,7 +326,7 @@
 		<div id="adContainer" style="display: block;">
 			
 				<!-- /21665149170/Zee5_Games_Interstitial -->
-				<div id='div-gpt-ad-1669353828671-0' class='div-gpt-ad-1669353828671-0' style="width: 300px; height: 250px;">
+				<div id='div-gpt-ad-1669353828671-0' class='div-gpt-ad-1669353828671-0' style="min-width: 320px; min-height: 250px;">
   					<script>
     					googletag.cmd.push(function() { googletag.display('div-gpt-ad-1669353828671-0'); });
   					</script>
