@@ -2228,7 +2228,11 @@
             })
         }
         async _Play(e) {
-            console.log(e.url);
+            if (e.url === "media/music.ogg" || e.url === "media/music.m4a") {
+                console.log("Game Started");
+            } else if (e.url === "media/die.ogg" || e.url === "media/die.m4a") {
+                console.log("Game Ended");
+            }
             const originalUrl = e["originalUrl"];
             const url = e["url"];
             const type = e["type"];
