@@ -2144,6 +2144,7 @@
                 } else if (this._lastAudioInstance && !this._lastAudioInstance.HasEnded()) yield this._lastAudioInstance
         }
         async _GetAudioBuffer(originalUrl, url, type, isMusic, dontCreate) {
+            console.log("get audio buffer" + originalUrl + "url:" + url);
             for (const ab of this._audioBuffers)
                 if (ab.GetUrl() ===
                     url) {
@@ -2157,6 +2158,7 @@
             return ret
         }
         async _GetAudioInstance(originalUrl, url, type, tag, isMusic) {
+            console.log("get audio instance" + originalUrl + "url:" + url);
             for (const ai of this._audioInstances)
                 if (ai.GetUrl() === url && (ai.CanBeRecycled() || isMusic)) {
                     ai.SetTag(tag);
@@ -2221,7 +2223,6 @@
             if (instStates.length === 0 && this._analysers.size === 0) this._StopTicking()
         }
         PostTrigger(type, tag, aiid) {
-            console.log(type, tag, aiid)
             this.PostToRuntime("trigger", {
                 "type": type,
                 "tag": tag,
