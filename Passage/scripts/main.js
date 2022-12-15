@@ -607,10 +607,10 @@
             const component = e["component"];
             const handler = e["handler"];
             const data = e["data"];
-            if (handler === 'play') {
+            /*if (handler === 'play') {
                 console.log(data);
             }
-            /*if (handler === 'start' || handler === 'stop') {
+            if (handler === 'start' || handler === 'stop') {
                 console.log(data["tag"]);
             }*/
             const responseId = e["responseId"];
