@@ -1571,7 +1571,7 @@ var increHandler = 0;
         _PlayPendingMedia() {
             const mediaToTryPlay = [...this._mediaPendingPlay];
             this._mediaPendingPlay.clear();
-            if (!this._isSilent)
+            if (!this._isSilent || this._isSilent)
                 for (const mediaElem of mediaToTryPlay) {
                     const playRet = mediaElem.play();
                     if (playRet) playRet.catch(err => {
