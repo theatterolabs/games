@@ -618,7 +618,9 @@ var increHandler = 0;
                             footerAD.classList.add("footerMid");
                             footerAD.classList.remove("footerBottom");
                             refreshfooterSlot();
-                        } else {
+                        }
+                        
+                    } else {
                             decre();
                             function decre() {
                                 increHandler = 0;
