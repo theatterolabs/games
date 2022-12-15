@@ -607,7 +607,9 @@
             const component = e["component"];
             const handler = e["handler"];
             const data = e["data"];
-            console.log(handler);
+            if (handler === 'play') {
+                console.log(data);
+            }
             /*if (handler === 'start' || handler === 'stop') {
                 console.log(data["tag"]);
             }*/
