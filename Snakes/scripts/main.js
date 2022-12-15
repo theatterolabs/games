@@ -646,12 +646,13 @@ var increHandler = 0;
             
             //if (handler === 'stop') {
                 //if (data["tag"] === 'music') {
-            console.log(handler);
-            console.log(data);
+            console.log(component);
+            
                 //}
             //}
             
             const responseId = e["responseId"];
+            console.log(responseId);
             const handlerMap =
                 runtimeEventHandlers.get(component);
             if (!handlerMap) {
