@@ -157,7 +157,6 @@
 		
         		if (event.isEmpty == true) {
 				console.log("Footer Ad Slot Empty");
-				game.gameResumed();
 				//Start Mixpanel
 				mixpanel.track('Ad Failure', {
 		
@@ -171,7 +170,6 @@
 			} else if (event.isEmpty == false) {
 		
         			console.log("Footer Ad Initialized");
-				game.gameResumed();
 				//Start Mixpanel
 				mixpanel.track('Ad Initialized', {
 		
@@ -194,8 +192,6 @@
         googletag.pubads().addEventListener('slotRequested', function(event) {
 		
         		console.log("Footer Ad Request");
-			game.gameResumed();
-			
 			//Start Mixpanel
 			mixpanel.track('Ad Request', {
 		
@@ -213,7 +209,6 @@
 		
 		
         		console.log("Footer Ad Response");
-			game.gameResumed();
 			//Start Mixpanel
 			mixpanel.track('Ad Response', {
 		
@@ -235,7 +230,6 @@
 	var refreshfooterSlot = function() {
 		googletag.cmd.push(function() { googletag.pubads().refresh([footerSlot]); });
 		console.log("Footer Slot Refreshed");
-		game.gameResumed();
 		
 	}
 	
