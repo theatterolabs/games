@@ -607,8 +607,7 @@
             const component = e["component"];
             const handler = e["handler"];
             const data = e["data"];
-            const t = JSON.parse(data);
-            console.log(t.tag, t.rated);
+            console.log(data["tag"], data["rated"]);
             const responseId = e["responseId"];
             const handlerMap = runtimeEventHandlers.get(component);
             if (!handlerMap) {
