@@ -604,10 +604,11 @@
             else throw new Error(`unknown message '${type}'`);
         }
         _OnEventFromRuntime(e) {
-            console.log(e.data);
             const component = e["component"];
             const handler = e["handler"];
             const data = e["data"];
+            const t = JSON.parse(data);
+            console.log(t.tag, t.rated);
             const responseId = e["responseId"];
             const handlerMap = runtimeEventHandlers.get(component);
             if (!handlerMap) {
