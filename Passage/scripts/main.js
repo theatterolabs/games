@@ -628,7 +628,7 @@ var increHandler = 0;
                                 footerAD.classList.add("footerMid");
                                 footerAD.classList.remove("footerBottom");
                                 console.log("Game Ended");
-                                setTimeout(function() { requestAds(); }, 2000);
+                                setTimeout(function() { requestAds(); }, 1500);
                             }
                     }
                 }
