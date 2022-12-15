@@ -226,6 +226,13 @@
 
 </head>
 <body>
+<!-- ********************************************** Game Splash Screen Iframe ********************************************** -->
+<iframe src="./splash.html" class="fg-click2play" id="fg-click2play" style="transition: opacity 1s ease 0s; opacity: 1;" width="100%" height="100%" frameBorder="0">
+	
+	
+</iframe>
+<!-- ********************************************** End Of Game Splash Screen Iframe ********************************************** -->
+	
 <!-- ********************************************** Begin Zee5_Games_Interstitial Iframe ********************************************** -->
 	
 <iframe src="about:blank" id="mainContainer" class="mainContainer" style="display: none;" width="100%" height="100%" frameBorder="0">
@@ -258,11 +265,18 @@
 <script>	
 var mainContainer = document.getElementById('mainContainer');
 var footerAD = document.getElementById('gamescreen-footer');
+var splashScreen = document.getElementById('fg-click2play');
+	
+function setup() {
+	footerAD.style.display = 'block';
+	refreshfooterSlot();
+}	
 	
 function requestAds() {
 	footerAD.style.display = 'none';
 	mainContainer.src= './interstitial.html';
-	mainContainer.style.display = 'block';	
+	mainContainer.style.display = 'block';
+	splashScreen.style.display = 'none';
 	
 }
 
