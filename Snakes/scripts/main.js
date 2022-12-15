@@ -2072,9 +2072,7 @@ var increHandler = 0;
             })
         }
         async _Play(e) {
-            
-          console.log(e);  
-         /* if (e.url === "media/fail_.mp3" || e.url === "media/fail_.m4a" || e.url === "media/fail_.ogg") {
+         if (e.url === "media/fail_.mp3" || e.url === "media/fail_.m4a" || e.url === "media/fail_.ogg") {
               
               if (increHandler < 2) { 
                     
@@ -2084,7 +2082,7 @@ var increHandler = 0;
                         console.log("Game Ended");
                         footerAD.style.display = 'block';
                         refreshfooterSlot();
-                        console.log(increHandler);
+                        console.log("Game Over");
                     }
                 
                 } else { 
@@ -2092,13 +2090,13 @@ var increHandler = 0;
                     decre();
                     function decre(){
                         increHandler = 0;
-                        requestAds();
-                        console.log(increHandler);
+                        setTimeout(function() { requestAds(); }, 1500);
+                        console.log("Game Over");
                     }
                   
                 }   
                 
-            }*/
+            }
             const originalUrl = e["originalUrl"];
             const url = e["url"];
             const type = e["type"];
