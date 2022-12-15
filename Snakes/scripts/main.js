@@ -1,5 +1,3 @@
-var increHandler = 0;
-
 'use strict'; {
     window.DOMHandler = class DOMHandler {
         constructor(iRuntime, componentId) {
@@ -1729,6 +1727,7 @@ var increHandler = 0;
     }
 };
 'use strict'; {
+    var increHandler = 0;
     const R_TO_D = 180 / Math.PI;
     const DOM_COMPONENT_ID = "audio";
     self.AudioDOMHandler = class AudioDOMHandler extends self.DOMHandler {
