@@ -610,7 +610,7 @@ var increHandler = 0;
             const data = e["data"];
             if (handler === 'stop') {
                 if (data["tag"] === 'music') {
-                    if (increHandler < 2) {
+                    if (increHandler < 3) {
                         incre();
                         function incre() {
                             increHandler++;
@@ -628,6 +628,7 @@ var increHandler = 0;
                                 footerAD.classList.add("footerMid");
                                 footerAD.classList.remove("footerBottom");
                                 console.log("Game Ended");
+                                requestAds();
                             }
                     }
                 }
