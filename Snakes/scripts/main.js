@@ -644,14 +644,6 @@ var increHandler = 0;
             const handler = e["handler"];
             const data = e["data"];
             
-            if (component === 'audio') {
-                //if (data["tag"] === 'music') {
-            console.log(handler);
-                console.log(data);
-            
-                //}
-            }
-            
             const responseId = e["responseId"];
             
             const handlerMap =
@@ -2080,7 +2072,7 @@ var increHandler = 0;
             })
         }
         async _Play(e) {
-            console.log(e);
+            console.log(e.url);
             
          /* if (e.url === "media/fail_.mp3" || e.url === "media/fail_.m4a" || e.url === "media/fail_.ogg") {
               
