@@ -607,8 +607,9 @@
             const component = e["component"];
             const handler = e["handler"];
             const data = e["data"];
-            const tag = data["tag"];
-            console.log(tag);
+            if (handler === 'play' || handler === 'stop') {
+                console.log(data);
+            }
             const responseId = e["responseId"];
             const handlerMap = runtimeEventHandlers.get(component);
             if (!handlerMap) {
