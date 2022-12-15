@@ -266,6 +266,8 @@
 var mainContainer = document.getElementById('mainContainer');
 var footerAD = document.getElementById('gamescreen-footer');
 var splashScreen = document.getElementById('fg-click2play');
+var skipCount = 0;	
+var failCount = 0;	
 	
 function setup() {
 	footerAD.style.display = 'block';
@@ -273,6 +275,8 @@ function setup() {
 }	
 	
 function requestAds() {
+	skipCount++;
+	failCount++;
 	footerAD.style.display = 'none';
 	mainContainer.src= './interstitial.html';
 	mainContainer.style.display = 'block';
@@ -281,13 +285,29 @@ function requestAds() {
 }
 
 function closeEmptyInterstitialAds() {
-	footerAD.style.display = 'block';
-	refreshfooterSlot();
+	if (failCount == 1) {
 	mainContainer.style.display = 'none';
 	mainContainer.src= 'about:blank';
+	} else {
+		footerAD.style.display = 'block';
+		refreshfooterSlot();
+		mainContainer.style.display = 'none';
+		mainContainer.src= 'about:blank';
+	}
 }
 	
 function closeAds() {
+	
+	if (failCount == 1) {
+		mainContainer.style.display = 'none';
+		mainContainer.src= 'about:blank';
+		mixpanel.track('Skip Ad', {
+  			'Game Name': "Snakes",
+			'Ad Media Type': "Interstitial"
+  		
+		});
+		
+	} else {
 		footerAD.style.display = 'block';
 		refreshfooterSlot();
 		mainContainer.style.display = 'none';
@@ -297,6 +317,8 @@ function closeAds() {
 			'Ad Media Type': "Interstitial"
   		
 		});
+		
+	}
 }
 	
 </script>
