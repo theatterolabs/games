@@ -1735,9 +1735,10 @@
             super(iRuntime, DOM_COMPONENT_ID);
             this._audioContext = null;
             this._destinationNode = null;
-            this._hasUnblocked = false;
+            this._hasUnblocked = true;
             this._hasAttachedUnblockEvents = false;
-            this._unblockFunc = () => this._UnblockAudioContext();
+            //this._unblockFunc = () => this._UnblockAudioContext();
+            this._UnblockAudioContext();
             this._audioBuffers = [];
             this._audioInstances = [];
             this._lastAudioInstance = null;
