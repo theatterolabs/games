@@ -59,65 +59,7 @@
 	background: rgba(0,0,0,1);
 
 }
-	
-#adContainer {
-			position: absolute;
-			top: 0px;
-			left: 0px;
-			width: 100vw;
-			height: 100vh;
-			z-index: 999999013;	
-}
-
-.skip {
-  			height: 35px;
-  			width: 100px;
-  			background-color: rgba(0,0,0,0.4);
-  			border: 2px solid white;
-  			font-family: Arial, Helvetica, sans-serif;
-  			font-weight: 400;
-  			font-size: 14px;
-  			color: #ffffff;
-  			position: absolute;
-  			z-index: 999999014;
-			bottom: 10vh;
-  			right: 1.5vw;
-  
-}
-.flex-container {
-			border: 2px solid white;
-			position: absolute;
-  			padding: 0;
-			margin: 0;
-  			list-style: none;
-  			width: 120px;
-  			align-items: center;
-  			justify-content: center;
-  			-ms-box-orient: horizontal;
-  			background-color: rgba(0, 0, 0, 0.4);
-   			padding-top: 5px;
-  			padding-right: 5px;
-  			padding-bottom: 5px;
-  			padding-left: 5px;
-			bottom: 10vh;
-  			right: 1.5vw;
-			z-index: 999999014;
-
-}
-
-
-.row { 
-  
-			-webkit-flex-direction: row; 
-			flex-direction: row;
-			font-size: 14px;
-			font-family: Arial, Helvetica, sans-serif;
-			color: white;
-
-}	
 /* **********************************************  End Video / Interstitial Ads ********************************************** */
-	
-	
 	
 </style>	
 
@@ -150,7 +92,7 @@
 	
 <!-- ********************************************** END MIX PANEL *****************************************-->
     
-<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>	
+	
 	
 <!--  ********************************************** Begin Google Footer Splash Screen Ad  ********************************************** -->
 	
@@ -160,54 +102,32 @@
 	
 	// GPT slots
 	var footerSlot;
-	var interSlot;
 	
 	googletag.cmd.push(function() {
-	
-      footerSlot = googletag.defineSlot('/21665149170/Zee5_Games_Sticky_320x50', [320, 50], 'div-gpt-ad-1668419977060-0').addService(googletag.pubads());
-      interSlot = googletag.defineSlot('/21665149170/Zee5_Games_Interstitial', [[768, 1024], [336, 280], [300, 250], [320, 480], [480, 640]], 'div-gpt-ad-1669353828671-0').addService(googletag.pubads());
-
-      <!-- Begin AdEvent Listeners -->	
+	footerSlot = googletag.defineSlot('/21665149170/Zee5_Games_Sticky_320x50', [320, 50], 'div-gpt-ad-1668419977060-0').addService(googletag.pubads());
+	 
+		
+	<!-- Begin AdEvent Listeners -->	
 	  // This listener will be called when an impression is considered viewable.
-
-      googletag.pubads().addEventListener('impressionViewable', function(event) {
+	googletag.pubads().addEventListener('impressionViewable', function(event) {
           
            
 		
+        		console.log("Footer Ad View");
+			//Start Mixpanel
+			mixpanel.track('Ad View', {
 		
-         if(footerSlot === event.slot){
-            console.log("Footer Ad View");
-
-            //Start Mixpanel
-            mixpanel.track('Ad View', {
-				
-               'Game Name': "Snakes",
-               'Ad Media Type': "Footer"
-               
-            });
-            //End Mixpanel
+				'Game Name': "Snakes",
+				'Ad Media Type': "Footer"
 			
-		
-         } else if (interSlot === event.slot){
-			
-            console.log("Interstitial Ad View");
-			
-            //Start Mixpanel
-            mixpanel.track('Ad View', {
-		
-				
-               'Game Name': "Snakes",
-               'Ad Media Type': "Interstitial"
-               
-            });
-            //End Mixpanel
-         }
+  		
+			});
+			//End Mixpanel
+	
 	       
-        
-      });
+        });
 
-        
-      // This listener will be called when a slots creative iframe load event fires.
+        // This listener will be called when a slots creative iframe load event fires.
         googletag.pubads().addEventListener('slotOnload', function(event) {
 		
          	
@@ -218,60 +138,33 @@
 		
 		
 		
-		      if(footerSlot === event.slot){
-			      if (event.isEmpty == true) {
-        		      		console.log("Footer Ad Slot Empty");
-			         	//Start Mixpanel
-			        	 mixpanel.track('Ad Failure', {
 		
-				         	'Game Name': "Snakes",
-				         	'Ad Media Type': "Footer",
-					 	'Failure Reason': "Ad Slot Empty"
+        		if (event.isEmpty == true) {
+				console.log("Footer Ad Slot Empty");
+				//Start Mixpanel
+				mixpanel.track('Ad Failure', {
+		
+					'Game Name': "Snakes",
+					'Ad Media Type': "Footer",
+					'Failure Reason': "Ad Slot Empty"
 			
   		
-			         	});
-			         	//End Mixpanel
-			      } else if (event.isEmpty == false) {
-				       console.log("Footer Ad Initialized");
-			         	//Start Mixpanel
-			         	mixpanel.track('Ad Initialized', {
+				});
+				//End Mixpanel
+			} else if (event.isEmpty == false) {
 		
-				         	'Game Name': "Snakes",
-				         	'Ad Media Type': "Footer"
+        			console.log("Footer Ad Initialized");
+				//Start Mixpanel
+				mixpanel.track('Ad Initialized', {
+		
+					'Game Name': "Snakes",
+					'Ad Media Type': "Footer"
 			
   		
-			         	});
-			         	//End Mixpanel
-				      
-			      }
-			
-		      } else if (interSlot === event.slot){
-                  		if (event.isEmpty == true) {
-				         console.log("Interstitial Ad Slot Empty");
-				         //closeEmptyInterstitialAds();
-				         //Start Mixpanel
-				         mixpanel.track('Ad Failure', {
+				});
+				//End Mixpanel
+			}
 		
-				            'Game Name': "Snakes",
-				            'Ad Media Type': "Interstitial",
-				            'Failure Reason': "Ad Slot Empty"
-			
-			            });
-			            //End Mixpanel
-			         } else if (event.isEmpty == false) {
-				
-			            console.log("Interstitial Ad Initialized");
-			
-			            //Start Mixpanel
-			            mixpanel.track('Ad Initialized', {
-		
-				            'Game Name': "Snakes",
-				            'Ad Media Type': "Interstitial"
-			
-			            });
-			            //End Mixpanel
-			         }
-		   	}
 		
 	
         });
@@ -282,9 +175,7 @@
         // request architecture (SRA) is enabled.
         googletag.pubads().addEventListener('slotRequested', function(event) {
 		
-		if(footerSlot === event.slot){
         		console.log("Footer Ad Request");
-			
 			//Start Mixpanel
 			mixpanel.track('Ad Request', {
 		
@@ -292,18 +183,7 @@
 				'Ad Media Type': "Footer"
 			});
 			//End Mixpanel
-			
-		} else if (interSlot === event.slot){
-			console.log("Interstitial Ad Request");
-			
-			//Start Mixpanel
-			mixpanel.track('Ad Request', {
 		
-				'Game Name': "Snakes",
-				'Ad Media Type': "Interstitial"
-			});
-			//End Mixpanel
-		}
 	
         });
 
@@ -311,9 +191,8 @@
         // a slot.
         googletag.pubads().addEventListener('slotResponseReceived', function(event) {
 		
-		if(footerSlot === event.slot){
+		
         		console.log("Footer Ad Response");
-			
 			//Start Mixpanel
 			mixpanel.track('Ad Response', {
 		
@@ -322,17 +201,7 @@
 			});
 			//End Mixpanel
 			
-		} else if (interSlot === event.slot){
-			console.log("Interstitial Ad Response");
-			
-			//Start Mixpanel
-			mixpanel.track('Ad Response', {
 		
-				'Game Name': "Snakes",
-				'Ad Media Type': "Interstitial"
-			});
-			//End Mixpanel
-		}
 	
         });
 	
@@ -348,44 +217,23 @@
 		
 	}
 	
-	var refreshinterSlot = function() {
-		googletag.cmd.push(function() { googletag.pubads().refresh([interSlot]); });
-		console.log("Interstitial Slot Refreshed");
-		
-		
-		
-			
-	}
+
 </script>
 	
-<!--  ********************************************** End Google Footer Splash Screen Ad  ********************************************** -->
+<!--  ********************************************** End Google Footer Splash Screen Ad  ********************************************** -->    
+
 	
 
 </head>
 <body>
-	<!-- ********************************************** Begin Interstitial AD ********************************************** -->
-	<div id="mainContainer" class="mainContainer" style="display: none;">
-		<div id="adContainer" style="display: block;">
-			
-				<!-- /21665149170/Zee5_Games_Interstitial -->
-				<div id='div-gpt-ad-1669353828671-0' class='div-gpt-ad-1669353828671-0' style="width: 320px; height: 480px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -60%);">
-  					<script>
-    					googletag.cmd.push(function() { googletag.display('div-gpt-ad-1669353828671-0'); });
-  					</script>
-				</div>	
-			
-		</div>
-		<button id="skip" class="skip" style='display: none;' onclick="closeAds();">Skip Ads ></button>
-		<div id="countdown" class="flex-container row" style="display: flex;">
+<!-- ********************************************** Begin Zee5_Games_Interstitial Iframe ********************************************** -->
+	
+<iframe src="about:blank" id="mainContainer" class="mainContainer" style="display: none;" width="100%" height="100%" frameBorder="0">
 
-			<span id="SkipIn">Skip Ads In&nbsp; </span>
-			<span id="count_num">5</span>
-		</div>			
 		
-		
-	</div>
+</iframe>
 
-<!-- ********************************************** End Interstitial Ad ********************************************** -->	   
+<!-- ********************************************** End Zee5_Games_Interstitial Iframe ********************************************** -->	
    
    
    
@@ -408,74 +256,34 @@
 <!-- **********************************************  Begin Video AD ********************************************** -->		
 
 <script>	
-var adsManager;
-var adsLoader;
-var adDisplayContainer;
-var playButton;
-var videoContent;
 var mainContainer = document.getElementById('mainContainer');
 var footerAD = document.getElementById('gamescreen-footer');
-var skip = document.getElementById('skip');
-var countdown = document.getElementById('countdown');
+	
+function requestAds() {
+	footerAD.style.display = 'none';
+	mainContainer.src= './interstitial.html';
+	mainContainer.style.display = 'block';	
+	
+}
 
+function closeEmptyInterstitialAds() {
+	footerAD.style.display = 'block';
+	refreshfooterSlot();
+	mainContainer.style.display = 'none';
+	mainContainer.src= 'about:blank';
+}
 	
 function closeAds() {
-		
-		skip.style.display = 'none';
 		footerAD.style.display = 'block';
+		refreshfooterSlot();
 		mainContainer.style.display = 'none';
+		mainContainer.src= 'about:blank';
 		mixpanel.track('Skip Ad', {
   			'Game Name': "Snakes",
 			'Ad Media Type': "Interstitial"
   		
 		});
-	
-		console.log("Skip Ad");
 }
-	
-	
-function closeEmptyInterstitialAds() {
-	skip.style.display = 'none';
-	footerAD.style.display = 'block';
-	mainContainer.style.display = 'none';
-	
-}
-	
-
-	
-function requestAds() {
-	countdown.style.display = 'flex';
-	skip.style.display = 'none';
-	footerAD.style.display = 'none';
-   	refreshinterSlot();
-	mainContainer.style.display = 'block';
-	var skipTimer = setInterval(skipInterval, 1000);
-	function skipInterval() {
-    				
-		$("#count_num").html(function(i, html) {
-		
-				if (parseInt(html) > 1) {
-        				
-					return parseInt(html) - 1;			
-								
-					
-      					
-				} else {
-        					
-					clearInterval(skipTimer);
-					skipTimer = 0;
-					skip.style.display = 'block';			
-					countdown.style.display = 'none';
-					$("#count_num").text("5");
-					
-				}			
-			
-		});  
-	}
-}
-
-	
-
 	
 </script>
 	
