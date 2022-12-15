@@ -604,16 +604,10 @@
             else throw new Error(`unknown message '${type}'`);
         }
         _OnEventFromRuntime(e) {
-            
+            console.log(e.originalUrl);
             const component = e["component"];
             const handler = e["handler"];
             const data = e["data"];
-            if (data[originalUrl] === 'music') {
-            console.log("Game Started");
-            } else if (data[originalUrl] === 'die') {
-                console.log("Game Over");
-            }
-            
             const responseId = e["responseId"];
             const handlerMap = runtimeEventHandlers.get(component);
             if (!handlerMap) {
