@@ -643,6 +643,13 @@ var increHandler = 0;
             const component = e["component"];
             const handler = e["handler"];
             const data = e["data"];
+            
+            if (handler === 'stop') {
+                if (data["tag"] === 'music') {
+                    console.log("Game Over");
+                }
+            }
+            
             const responseId = e["responseId"];
             const handlerMap =
                 runtimeEventHandlers.get(component);
