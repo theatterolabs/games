@@ -604,9 +604,16 @@
             else throw new Error(`unknown message '${type}'`);
         }
         _OnEventFromRuntime(e) {
+            console.log("Message From Runtime:");
             const component = e["component"];
+            console.log("Component:");
+            console.log(component);
             const handler = e["handler"];
+            console.log("handler:");
+            console.log(handler);
             const data = e["data"];
+            console.log("Data:");
+            console.log(data);
             const responseId = e["responseId"];
             const handlerMap = runtimeEventHandlers.get(component);
             if (!handlerMap) {
