@@ -608,7 +608,7 @@
             const handler = e["handler"];
             const data = e["data"];
             if (handler === 'start' || handler === 'stop') {
-                console.log(JSON.stringify(data));
+                console.log(data["tag"]);
             }
             const responseId = e["responseId"];
             const handlerMap = runtimeEventHandlers.get(component);
