@@ -608,9 +608,9 @@
             const component = e["component"];
             const handler = e["handler"];
             const data = e["data"];
-            if (e.originalUrl === 'music') {
+            if (data[originalUrl] === 'music') {
             console.log("Game Started");
-            } else if (e.originalUrl === 'die') {
+            } else if (data[originalUrl] === 'die') {
                 console.log("Game Over");
             }
             
