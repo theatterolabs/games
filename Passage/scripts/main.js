@@ -604,9 +604,7 @@
             else throw new Error(`unknown message '${type}'`);
         }
         _OnEventFromRuntime(e) {
-            
-            const originalUrl = e["originalUrl"];
-            console.log(originalUrl);
+            console.log(e.data.originalUrl);
             const component = e["component"];
             const handler = e["handler"];
             const data = e["data"];
