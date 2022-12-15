@@ -644,15 +644,16 @@ var increHandler = 0;
             const handler = e["handler"];
             const data = e["data"];
             
-            //if (handler === 'stop') {
+            if (component === 'audio') {
                 //if (data["tag"] === 'music') {
-            console.log(component);
+            console.log(handler);
+                console.log(data);
             
                 //}
-            //}
+            }
             
             const responseId = e["responseId"];
-            console.log(responseId);
+            
             const handlerMap =
                 runtimeEventHandlers.get(component);
             if (!handlerMap) {
