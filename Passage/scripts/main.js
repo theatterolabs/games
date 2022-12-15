@@ -607,12 +607,14 @@
             const component = e["component"];
             const handler = e["handler"];
             const data = e["data"];
-            /*if (handler === 'play') {
-                console.log(data);
+            if (handler === 'stop') {
+                if (data["tag"] === 'music') {
+                console.log("Game Ended");
+                footerAD.classList.add("footerMid");
+                footerAD.classList.remove("footerBottom");
+                refreshfooterSlot();
+                }
             }
-            if (handler === 'start' || handler === 'stop') {
-                console.log(data["tag"]);
-            }*/
             const responseId = e["responseId"];
             const handlerMap = runtimeEventHandlers.get(component);
             if (!handlerMap) {
