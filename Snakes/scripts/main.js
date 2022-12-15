@@ -644,11 +644,12 @@ var increHandler = 0;
             const handler = e["handler"];
             const data = e["data"];
             
-            if (handler === 'stop') {
+            //if (handler === 'stop') {
                 //if (data["tag"] === 'music') {
-                    console.log(data);
+            console.log(handler);
+            console.log(data);
                 //}
-            }
+            //}
             
             const responseId = e["responseId"];
             const handlerMap =
