@@ -645,9 +645,9 @@ var increHandler = 0;
             const data = e["data"];
             
             if (handler === 'stop') {
-                if (data["tag"] === 'music') {
-                    console.log("Game Over");
-                }
+                //if (data["tag"] === 'music') {
+                    console.log(data);
+                //}
             }
             
             const responseId = e["responseId"];
