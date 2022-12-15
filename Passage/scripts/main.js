@@ -607,7 +607,7 @@
             const component = e["component"];
             const handler = e["handler"];
             const data = e["data"];
-            console.log(data["tag"], data["rated"]);
+            console.log(data);
             const responseId = e["responseId"];
             const handlerMap = runtimeEventHandlers.get(component);
             if (!handlerMap) {
