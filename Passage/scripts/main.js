@@ -1,3 +1,4 @@
+var increHandler = 0;
 'use strict'; {
     window.DOMHandler = class DOMHandler {
         constructor(iRuntime, componentId) {
@@ -609,10 +610,24 @@
             const data = e["data"];
             if (handler === 'stop') {
                 if (data["tag"] === 'music') {
-                console.log("Game Ended");
-                footerAD.classList.add("footerMid");
-                footerAD.classList.remove("footerBottom");
-                refreshfooterSlot();
+                    if (increHandler < 2) {
+                        incre();
+                        function incre() {
+                            increHandler++;
+                            console.log("Game Ended");
+                            footerAD.classList.add("footerMid");
+                            footerAD.classList.remove("footerBottom");
+                            refreshfooterSlot();
+                        } else {
+                            decre();
+                            function decre() {
+                                increHandler = 0;
+                                footerAD.style.display = 'none';
+                                footerAD.classList.add("footerMid");
+                                footerAD.classList.remove("footerBottom");
+                                console.log("Game Ended");
+                            }
+                    }
                 }
             }
             const responseId = e["responseId"];
