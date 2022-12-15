@@ -610,7 +610,7 @@ var increHandler = 0;
             const data = e["data"];
             if (handler === 'stop') {
                 if (data["tag"] === 'music') {
-                    if (increHandler < 3) {
+                    if (increHandler < 2) {
                         incre();
                         function incre() {
                             increHandler++;
