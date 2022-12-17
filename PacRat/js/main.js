@@ -7560,7 +7560,7 @@ function CGame(iLevel, iScore, iLives) {
 	this.onConfirmExit = function() {
 		this.unload();
 
-		$(s_oMain).trigger("show_interlevel_ad");
+		//$(s_oMain).trigger("show_interlevel_ad");
 		$(s_oMain).trigger("end_session");
 
 		s_oMain.gotoMenu();
@@ -7937,7 +7937,7 @@ function CEndPanel() {
 	};
 
 	this._onRestart = function() {
-		$(s_oMain).trigger("show_interlevel_ad");
+		//$(s_oMain).trigger("show_interlevel_ad");
 
 		_iEventToLaunch = ON_RESTART;
 
@@ -10018,7 +10018,7 @@ function CNextLevelPanel() {
 
 	this.show = function(iLevel, iTotScore, iLevelScore) {
 		playSound("win_level", 1, false);
-
+		console.log("Game Win");
 		_oLevelClearedText.refreshText(sprintf(TEXT_CLEARED, iLevel));
 		_oLevelScoreText.refreshText(sprintf(TEXT_LEVEL_SCORE, iLevelScore));
 		_oTotScoreText.refreshText(sprintf(TEXT_TOT_SCORE, iTotScore));
@@ -10063,7 +10063,7 @@ function CNextLevelPanel() {
 	};
 
 	this._onRestart = function() {
-		$(s_oMain).trigger("show_interlevel_ad");
+		//$(s_oMain).trigger("show_interlevel_ad");
 
 		_iEventToLaunch = ON_RESTART;
 
@@ -10071,7 +10071,7 @@ function CNextLevelPanel() {
 	};
 
 	this._onContinue = function() {
-		$(s_oMain).trigger("show_interlevel_ad");
+		//$(s_oMain).trigger("show_interlevel_ad");
 
 		_iEventToLaunch = ON_NEXT;
 
@@ -10176,7 +10176,7 @@ function CWinPanel() {
 
 	this.show = function(iTotScore) {
 		$(s_oMain).trigger("share_event", iTotScore);
-		console.log("Game Win");
+		
 		playSound("win_level", 1, false);
 
 		_oTotScoreText.refreshText(sprintf(TEXT_TOT_SCORE, iTotScore));
@@ -10220,7 +10220,7 @@ function CWinPanel() {
 	};
 
 	this._onRestart = function() {
-		$(s_oMain).trigger("show_interlevel_ad");
+		//$(s_oMain).trigger("show_interlevel_ad");
 
 		_iEventToLaunch = ON_RESTART;
 
