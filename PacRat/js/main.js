@@ -7789,7 +7789,7 @@ function CInterface() {
 var s_oInterface = null;
 
 function CEndPanel() {
-	console.log("Game Over");
+	
 	var _iStartY;
 	var _iEventToLaunch;
 	var _aCbCompleted;
@@ -7893,7 +7893,7 @@ function CEndPanel() {
 
 	this.show = function(iTotScore, iLevelScore) {
 		playSound("game_over", 1, false);
-
+		console.log("Game Over");
 		_oLevelClearedText.refreshText(TEXT_GAME_OVER);
 		_oLevelScoreText.refreshText(sprintf(TEXT_LEVEL_SCORE, iLevelScore));
 		_oTotScoreText.refreshText(sprintf(TEXT_TOT_SCORE, iTotScore));
@@ -10082,7 +10082,7 @@ function CNextLevelPanel() {
 }
 
 function CWinPanel() {
-	console.log("Game Win");
+	
 	var _iStartY;
 	var _iEventToLaunch;
 	var _aCbCompleted;
@@ -10176,7 +10176,7 @@ function CWinPanel() {
 
 	this.show = function(iTotScore) {
 		$(s_oMain).trigger("share_event", iTotScore);
-
+		console.log("Game Win");
 		playSound("win_level", 1, false);
 
 		_oTotScoreText.refreshText(sprintf(TEXT_TOT_SCORE, iTotScore));
