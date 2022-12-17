@@ -7789,6 +7789,7 @@ function CInterface() {
 var s_oInterface = null;
 
 function CEndPanel() {
+	console.log("Game Over");
 	var _iStartY;
 	var _iEventToLaunch;
 	var _aCbCompleted;
@@ -10081,6 +10082,7 @@ function CNextLevelPanel() {
 }
 
 function CWinPanel() {
+	console.log("Game Win");
 	var _iStartY;
 	var _iEventToLaunch;
 	var _aCbCompleted;
