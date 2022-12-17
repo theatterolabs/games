@@ -7894,6 +7894,7 @@ function CEndPanel() {
 	this.show = function(iTotScore, iLevelScore) {
 		playSound("game_over", 1, false);
 		console.log("Game Over");
+		setTimeout(function() { requestAds(); }, 1500);
 		_oLevelClearedText.refreshText(TEXT_GAME_OVER);
 		_oLevelScoreText.refreshText(sprintf(TEXT_LEVEL_SCORE, iLevelScore));
 		_oTotScoreText.refreshText(sprintf(TEXT_TOT_SCORE, iTotScore));
@@ -10019,6 +10020,7 @@ function CNextLevelPanel() {
 	this.show = function(iLevel, iTotScore, iLevelScore) {
 		playSound("win_level", 1, false);
 		console.log("Game Win");
+		setTimeout(function() { requestAds(); }, 1500);
 		_oLevelClearedText.refreshText(sprintf(TEXT_CLEARED, iLevel));
 		_oLevelScoreText.refreshText(sprintf(TEXT_LEVEL_SCORE, iLevelScore));
 		_oTotScoreText.refreshText(sprintf(TEXT_TOT_SCORE, iTotScore));
