@@ -39,6 +39,7 @@
                              parent.__ctlArcadeStartSession();
                         }
                         //...ADD YOUR CODE HERE EVENTUALLY
+			    console.log("Start Session"); 
                     });
 
                     $(oMain).on("end_session", function(evt) {
@@ -46,12 +47,14 @@
                                parent.__ctlArcadeEndSession();
                            }
                            //...ADD YOUR CODE HERE EVENTUALLY
+			    console.log("End Session"); 
                     });
                     
                     $(oMain).on("start_level", function (evt, iLevel) {
                         if (getParamValue('ctl-arcade') === "true") {
                             parent.__ctlArcadeStartLevel({level: iLevel});
                         }
+			    console.log("Level Start");
                     });
 
                     $(oMain).on("restart_level", function (evt, iLevel) {
@@ -64,6 +67,7 @@
                         if (getParamValue('ctl-arcade') === "true") {
                             parent.__ctlArcadeEndLevel({level: iLevel});
                         }
+			    console.log("Level End");
                     });
                 
                     $(oMain).on("save_score", function(evt,iScore) {
