@@ -22,10 +22,46 @@
   			font-size: 14px;
   			color: #ffffff;
   			position: absolute;
-  			bottom: 50px;
-  			right: 1vw;
   			z-index: 999999014;
+			bottom: 10vh;
+  			right: 1.5vw;
   
+		}
+		.flex-container {
+			border: 2px solid white;
+			position: absolute;
+  			padding: 0;
+			margin: 0;
+  			list-style: none;
+  			width: 120px;
+  			align-items: center;
+  			justify-content: center;
+  			-ms-box-orient: horizontal;
+  			display: -webkit-box;
+  			display: -moz-box;
+  			display: -ms-flexbox;
+  			display: -moz-flex;
+  			display: -webkit-flex;
+  			display: flex;
+  			background-color: rgba(0, 0, 0, 0.4);
+   			padding-top: 5px;
+  			padding-right: 5px;
+  			padding-bottom: 5px;
+  			padding-left: 5px;
+			bottom: 10vh;
+  			right: 1.5vw;
+
+		}
+
+
+		.row { 
+  
+			-webkit-flex-direction: row; 
+			flex-direction: row;
+			font-size: 14px;
+			font-family: Arial, Helvetica, sans-serif;
+			color: white;
+
 		}
 		
 		
@@ -182,6 +218,28 @@
 		
 		googletag.cmd.push(function() { googletag.pubads().refresh([interSlot]); });
 		console.log("Interstitial Slot Refreshed");
+		
+				$(function() {
+  			var timer = setInterval(function() {
+    				$("#count_num").html(function(i, html) {
+
+      					if (parseInt(html) > 1) {
+        					return parseInt(html) - 1;
+						$("#skip").attr("style", "display:none");
+						$("#countdown").attr("style", "display:flex");
+      					} else {
+        					clearTimeout(timer);
+						$("#skip").attr("style", "display:block");
+						$("#countdown").attr("style", "display:none");
+
+      					}
+    				});
+
+  			}, 1000);
+
+
+
+		});
 			
 	}
 </script>
@@ -201,7 +259,12 @@
 				</div>	
 			
 		</div>
-		<button id="skip" class="skip" style='display: block;' onclick="parent.closeAds();">Skip Ads ></button>
+		<button id="skip" class="skip" style='display: none;' onclick="parent.closeAds();">Skip Ads ></button>
+		<div id="countdown" class="flex-container row" style="display: flex;">
+
+			<span id="SkipIn">Skip Ads In&nbsp; </span>
+			<span id="count_num">5</span>
+		</div>				
 				 
 			
 				
