@@ -374,7 +374,7 @@
 	
 	
 	<script>
-		var adsManager;
+var adsManager;
 var adsLoader;
 var adDisplayContainer;
 var playButton;
@@ -428,10 +428,12 @@ function footerInterval() {
  }
 		
 function footerTop() {
-	footerAD.classList.remove('gamescreen-footer-top');
+	footerAD.classList.remove('gamescreen-footer-bottom');
+	footerAD.classList.add('gamescreen-footer-top');
 }
 		
 function footerBottom() {
+	footerAD.classList.remove('gamescreen-footer-top');
 	footerAD.classList.add('gamescreen-footer-bottom');
 }
 	</script>
