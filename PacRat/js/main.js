@@ -5556,7 +5556,7 @@ function CMain(oData) {
 		if (seekAndDestroy()) {
 			_oPreloader = new CPreloader();
 		} else {
-			window.location.href = 'http://www.atterolabs.com'
+			window.location.href = ''
 		}
 
 	};
@@ -8011,7 +8011,7 @@ function CCreditsPanel() {
 			iX - iWidth / 2, iY - iHeight / 2, iWidth, iHeight,
 			36, "center", "#ffb557", FONT, 1,
 			2, 2,
-			"WWW.ATTEROLABS.COM",
+			"",
 			true, true, false,
 			false);
 
@@ -8047,7 +8047,7 @@ function CCreditsPanel() {
 	};
 
 	this._onLogoButRelease = function() {
-		window.open("https://www.atterolabs.com");
+		window.open("");
 	};
 
 	this._init();
