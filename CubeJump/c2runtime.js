@@ -19299,7 +19299,7 @@ cr.plugins_.Browser = function(runtime)
 				window.top.location = url;
 			else if (target === 1 && !this.is_arcade)	// parent
 				window.parent.location = url;
-			else					// self
+			//else					// self
 				//window.location = url;
 		}
 	};
