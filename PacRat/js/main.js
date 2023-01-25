@@ -8047,7 +8047,7 @@ function CCreditsPanel() {
 	};
 
 	this._onLogoButRelease = function() {
-		window.open("");
+		//window.open("");
 	};
 
 	this._init();
