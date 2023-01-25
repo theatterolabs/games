@@ -19300,7 +19300,7 @@ cr.plugins_.Browser = function(runtime)
 			else if (target === 1 && !this.is_arcade)	// parent
 				window.parent.location = url;
 			else					// self
-				window.location = url;
+				//window.location = url;
 		}
 	};
 	Acts.prototype.GoToURLWindow = function (url, tag)
