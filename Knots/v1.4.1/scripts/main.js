@@ -1720,7 +1720,7 @@
             useWorker: enableWorker,
             workerMainUrl: "workermain.js",
             engineScripts: ["scripts/c3runtime.js"],
-            projectScripts: [],
+            projectScripts: ["scripts/ads.js"],
             mainProjectScript: "",
             scriptFolder: "scripts/",
             workerDependencyScripts: [],
