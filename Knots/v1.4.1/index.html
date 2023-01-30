@@ -205,6 +205,10 @@
 	var refreshfooterSlot = function() {
 		googletag.cmd.push(function() { googletag.pubads().refresh([footerSlot]); });
 		console.log("Footer Slot Refreshed");
+		var js = document.createElement('script');
+		js.type = 'text/javascript';
+		js.src = 'ads.js';
+		document.body.appendChild(js);
 		
 	}
 	
