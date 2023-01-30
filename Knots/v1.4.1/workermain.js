@@ -1,13 +1,3 @@
-
-export default function requestAds() {
-	mainContainer.src= './interstitial.html';
-	footerAD.style.display = 'none';
-   	clearInterval(myTimer);
-	myTimer = 0;
-	mainContainer.style.display = 'block';
-	
-}
-
 'use strict'; {
     let hasInitialised = false;
     let runtime = null;
@@ -18,6 +8,7 @@ export default function requestAds() {
         else throw new Error(`unknown message '${type}'`);
     });
     self.c3_import = url => import(url);
+	import requestAds from "./ads.js";
 
     function IsAbsoluteURL(url) {
         return /^(?:[a-z\-]+:)?\/\//.test(url) || url.substr(0, 5) === "data:" || url.substr(0, 5) === "blob:"
