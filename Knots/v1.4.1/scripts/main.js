@@ -32,7 +32,7 @@ function closeEmptyInterstitialAds() {
 	
 
 	
-globalThis.requestAds = function() {
+window.requestAds = function() {
 	mainContainer.src= './interstitial.html';
 	footerAD.style.display = 'none';
    	clearInterval(myTimer);
