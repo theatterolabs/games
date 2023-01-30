@@ -256,9 +256,9 @@ var adsLoader;
 var adDisplayContainer;
 var playButton;
 var videoContent;
-var footerAD = document.getElementById('gamescreen-footer');
-var mainContainer = document.getElementById('mainContainer');
-var myTimer = setInterval(footerInterval, 20000);		
+window.footerAD = document.getElementById('gamescreen-footer');
+window.mainContainer = document.getElementById('mainContainer');
+window.myTimer = setInterval(footerInterval, 20000);		
 
 function closeAds() {
 		myTimer = setInterval(footerInterval, 20000);	
