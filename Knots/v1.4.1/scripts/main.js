@@ -1,4 +1,3 @@
-import requestAds from "../ads.js";
 
 'use strict'; {
     window.DOMHandler = class DOMHandler {
