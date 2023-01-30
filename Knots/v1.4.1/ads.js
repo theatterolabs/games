@@ -45,4 +45,3 @@ function footerInterval() {
    refreshfooterSlot();
  }
 
-export {requestAds};
