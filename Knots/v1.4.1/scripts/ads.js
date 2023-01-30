@@ -1,6 +1,6 @@
 import { mainContainer } from "./varmain.js";
 import { footerAD } from "./varfooter.js";
-import { myTimer}  from "./vartimer.js";
+import { myTimer }  from "./vartimer.js";
 
 export function requestAds() {
 	
