@@ -1,6 +1,6 @@
 import requestAds from "../ads.js";
 
-window.requestAdsMain = function() {
+export default function requestAdsMain() {
 requestAds();
     
 }
