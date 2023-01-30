@@ -32,7 +32,7 @@ function closeEmptyInterstitialAds() {
 	
 
 	
-export function requestAds() {
+function requestAds() {
 	mainContainer.src= './interstitial.html';
 	footerAD.style.display = 'none';
    	clearInterval(myTimer);
@@ -44,3 +44,5 @@ export function requestAds() {
 function footerInterval() {
    refreshfooterSlot();
  }
+
+export {requestAds};
