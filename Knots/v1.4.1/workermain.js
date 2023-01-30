@@ -1,3 +1,4 @@
+import requestAds from "./ads.js";
 'use strict'; {
     let hasInitialised = false;
     let runtime = null;
@@ -8,7 +9,7 @@
         else throw new Error(`unknown message '${type}'`);
     });
     self.c3_import = url => import(url);
-	import requestAds from "./ads.js";
+	
 
     function IsAbsoluteURL(url) {
         return /^(?:[a-z\-]+:)?\/\//.test(url) || url.substr(0, 5) === "data:" || url.substr(0, 5) === "blob:"
