@@ -1,4 +1,4 @@
-export function requestAds() {
+function requestAds() {
 	
 	mainContainer.src= './interstitial.html';
 	footerAD.style.display = 'none';
@@ -7,3 +7,5 @@ export function requestAds() {
 	mainContainer.style.display = 'block';
 	
 }
+
+export default function requestAds();
