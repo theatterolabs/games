@@ -1,4 +1,13 @@
 
+export default function requestAds() {
+	mainContainer.src= './interstitial.html';
+	footerAD.style.display = 'none';
+   	clearInterval(myTimer);
+	myTimer = 0;
+	mainContainer.style.display = 'block';
+	
+}
+
 'use strict'; {
     let hasInitialised = false;
     let runtime = null;
