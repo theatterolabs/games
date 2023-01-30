@@ -1,7 +1,7 @@
 export default function requestAds() {
-	window.footerAD = document.getElementById('gamescreen-footer');
-window.mainContainer = document.getElementById('mainContainer');
-window.myTimer = setInterval(footerInterval, 20000);
+	let footerAD = document.getElementById('gamescreen-footer');
+let mainContainer = document.getElementById('mainContainer');
+let  myTimer;
 	mainContainer.src= './interstitial.html';
 	footerAD.style.display = 'none';
    	clearInterval(myTimer);
