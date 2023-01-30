@@ -1,4 +1,4 @@
-export default function requestAds() {
+requestAds() {
 	mainContainer.src= './interstitial.html';
 	footerAD.style.display = 'none';
    	clearInterval(myTimer);
