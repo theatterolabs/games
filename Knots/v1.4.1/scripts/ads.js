@@ -1,6 +1,6 @@
-export let mainContainer = document.getElementById('mainContainer');
-export let footerAD = document.getElementById('gamescreen-footer');
-export let myTimer = setInterval(footerInterval, 20000);
+import mainContainer from "./var.js";
+import footerAD from "./var.js";
+import myTimer from "./var.js";
 
 export function requestAds() {
 	
