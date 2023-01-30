@@ -1,4 +1,9 @@
+import requestAds from "../ads.js";
 
+window.requestAdsMain = function() {
+requestAds();
+    
+}
 'use strict'; {
     window.DOMHandler = class DOMHandler {
         constructor(iRuntime, componentId) {
