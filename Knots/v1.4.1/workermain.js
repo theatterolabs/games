@@ -1,4 +1,3 @@
-import requestAds from "./ads.js";
 'use strict'; {
     let hasInitialised = false;
     let runtime = null;
