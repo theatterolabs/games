@@ -277,13 +277,15 @@
                         parent.__ctlArcadeStartSession();
                     }
                     console.log("Session Started");
+			showFooter();
                 });
 
                 $(oMain).on("end_session", function (evt) {
                     if (getParamValue('ctl-arcade') === "true") {
                         parent.__ctlArcadeEndSession();
                     }
-                    console.log("Session Ended");                    
+                    console.log("Session Ended");
+			hideFooter();
                 });
 
                 $(oMain).on("start_level", function (evt, iLevel) {
@@ -304,6 +306,7 @@
                         parent.__ctlArcadeEndLevel({level: iLevel});
                     }
                     console.log("Level Ended");
+			setTimeout(function() { requestAds(); }, 2000);
                 });
 
                 $(oMain).on("save_score", function (evt, iScore, szMode) {
