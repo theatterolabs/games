@@ -285,7 +285,8 @@ Game.prototype.create = function() {
         RetryCount++;
         } else {
         RetryCount = 0;
-            requestAds();
+            setTimeout(function() { requestAds(); }, 3000);
+            
         }
             
         
