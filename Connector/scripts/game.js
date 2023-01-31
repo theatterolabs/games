@@ -279,7 +279,8 @@ Game.prototype.create = function() {
             b++
         }, 200);
         game_data.coin += a.length;
-        game_data.cur_level++
+        game_data.cur_level++;
+        console.log("Level Ended")
     }
 
     function K() {
