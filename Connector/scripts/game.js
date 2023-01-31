@@ -1,3 +1,4 @@
+var RetryCount = 0;
 var $jscomp = $jscomp || {};
 $jscomp.scope = {};
 $jscomp.arrayIteratorImpl = function(a) {
@@ -280,7 +281,14 @@ Game.prototype.create = function() {
         }, 200);
         game_data.coin += a.length;
         game_data.cur_level++;
-        console.log("Level Ended")
+        if (RetryCount < 2) {
+        RetryCount++;
+        } else {
+        RetryCount = 0;
+            requestAds();
+        }
+            
+        
     }
 
     function K() {
