@@ -278,6 +278,7 @@
                     }
                     console.log("Session Started");
 			showFooter();
+			refreshfooterSlot();
                 });
 
                 $(oMain).on("end_session", function (evt) {
@@ -306,7 +307,7 @@
                         parent.__ctlArcadeEndLevel({level: iLevel});
                     }
                     console.log("Level Ended");
-			setTimeout(function() { requestAds(); }, 2000);
+			setTimeout(function() { requestAds(); }, 1200);
                 });
 
                 $(oMain).on("save_score", function (evt, iScore, szMode) {
