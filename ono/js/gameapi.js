@@ -2807,6 +2807,7 @@ fg_api.prototype.getWindowSize = function() {
 
 
 fg_api.prototype.gameStarted = function() {
+	console.log("Game Started");
 	var self = this;
 	
 	self.log("Received gameStarted signal");
@@ -2825,6 +2826,7 @@ fg_api.prototype.gameResumed = function() {
 };
 
 fg_api.prototype.gameOver = function() {
+	console.log("Game Over");
 	var self = this;
 	
 	self.ads.showAd(function() {
