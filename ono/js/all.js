@@ -21255,6 +21255,7 @@ function() {
                 U.apply()
             }
     }, uno_Deck.initializeDeck = function() {
+        console.log("Game Started");
         if (null == uno_Deck.allCards) {
             for (var e = 0, t = 0; t < 2;)
                 for (var n = (t++, 0); n < 4;)
@@ -21554,6 +21555,7 @@ function() {
             return t
         },
         getScore: function() {
+            console.log("Game Over");
             var e = 0;
             switch (this.getType()) {
                 case 0:
