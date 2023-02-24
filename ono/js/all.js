@@ -1,3 +1,4 @@
+var retry = 0;
 window.famobi_logoBase64 = "";
 var iOSjs = new function() {
     this.init = function() {
@@ -21256,6 +21257,11 @@ function() {
             }
     }, uno_Deck.initializeDeck = function() {
         console.log("Game Started");
+        footer.style.display = 'none';
+        retry++;
+        if (retry > 1) {
+            requestAds();
+        }
         if (null == uno_Deck.allCards) {
             for (var e = 0, t = 0; t < 2;)
                 for (var n = (t++, 0); n < 4;)
@@ -21556,6 +21562,8 @@ function() {
         },
         getScore: function() {
             console.log("Game Over");
+            footer.style.display = 'block';
+            refreshfooterSlot();
             var e = 0;
             switch (this.getType()) {
                 case 0:
