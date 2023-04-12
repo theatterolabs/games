@@ -1,0 +1,251 @@
+
+game.png
+size: 2048, 2048
+format: RGBA8888
+filter: MipMapLinearLinear, Linear
+repeat: none
+CloseBtn
+  rotate: false
+  xy: 516, 1192
+  size: 287, 287
+  orig: 287, 287
+  offset: 0, 0
+  index: -1
+CloseBtnDown
+  rotate: false
+  xy: 2, 168
+  size: 288, 283
+  orig: 288, 283
+  offset: 0, 0
+  index: -1
+EndFlag
+  rotate: false
+  xy: 1579, 1247
+  size: 128, 240
+  orig: 128, 240
+  offset: 0, 0
+  index: -1
+GameTitle
+  rotate: false
+  xy: 2, 1481
+  size: 906, 520
+  orig: 906, 520
+  offset: 0, 0
+  index: -1
+HandStart
+  rotate: false
+  xy: 1938, 1873
+  size: 91, 128
+  orig: 91, 128
+  offset: 0, 0
+  index: -1
+HelpBtn
+  rotate: false
+  xy: 808, 385
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+HelpBtnDown
+  rotate: false
+  xy: 886, 538
+  size: 135, 135
+  orig: 135, 135
+  offset: 0, 0
+  index: -1
+HomeBtn
+  rotate: false
+  xy: 808, 255
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+HomeBtnDown
+  rotate: false
+  xy: 1709, 1259
+  size: 135, 135
+  orig: 135, 135
+  offset: 0, 0
+  index: -1
+LevelBtn
+  rotate: false
+  xy: 938, 408
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+LevelBtnDown
+  rotate: false
+  xy: 1846, 1259
+  size: 135, 135
+  orig: 135, 135
+  offset: 0, 0
+  index: -1
+LevelSelector
+  rotate: false
+  xy: 516, 675
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+LevelSelectorEmpty
+  rotate: false
+  xy: 516, 933
+  size: 257, 257
+  orig: 257, 257
+  offset: 0, 0
+  index: -1
+NextBtn
+  rotate: false
+  xy: 503, 8
+  size: 181, 81
+  orig: 181, 81
+  offset: 0, 0
+  index: -1
+NextBtnDown
+  rotate: false
+  xy: 550, 173
+  size: 188, 82
+  orig: 188, 82
+  offset: 0, 0
+  index: -1
+Particle
+  rotate: false
+  xy: 516, 481
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+PlayBtn
+  rotate: false
+  xy: 2, 2
+  size: 362, 164
+  orig: 362, 164
+  offset: 0, 0
+  index: -1
+PlayBtnDown
+  rotate: false
+  xy: 516, 515
+  size: 368, 158
+  orig: 368, 158
+  offset: 0, 0
+  index: -1
+ReplayBtn
+  rotate: false
+  xy: 805, 1140
+  size: 181, 81
+  orig: 181, 81
+  offset: 0, 0
+  index: -1
+ReplayBtnDown
+  rotate: false
+  xy: 503, 91
+  size: 188, 80
+  orig: 188, 80
+  offset: 0, 0
+  index: -1
+RestartBtn
+  rotate: false
+  xy: 938, 278
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+RestartBtnDown
+  rotate: false
+  xy: 366, 58
+  size: 135, 135
+  orig: 135, 135
+  offset: 0, 0
+  index: -1
+StartBtn
+  rotate: false
+  xy: 775, 1056
+  size: 181, 82
+  orig: 181, 82
+  offset: 0, 0
+  index: -1
+StartBtnDown
+  rotate: false
+  xy: 775, 972
+  size: 181, 82
+  orig: 181, 82
+  offset: 0, 0
+  index: -1
+Timer
+  rotate: false
+  xy: 1709, 1396
+  size: 250, 91
+  orig: 250, 91
+  offset: 0, 0
+  index: -1
+arrow
+  rotate: false
+  xy: 292, 195
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+bg0
+  rotate: false
+  xy: 2, 967
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+bg1
+  rotate: false
+  xy: 910, 1489
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+bg2
+  rotate: false
+  xy: 2, 453
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+bg3
+  rotate: false
+  xy: 1424, 1489
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+cell-0
+  rotate: false
+  xy: 550, 257
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+cell-1
+  rotate: false
+  xy: 774, 675
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+cell-2
+  rotate: false
+  xy: 805, 1223
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+cell-3
+  rotate: false
+  xy: 1063, 1231
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+cell-4
+  rotate: false
+  xy: 1321, 1231
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
