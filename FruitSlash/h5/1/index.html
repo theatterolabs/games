@@ -409,9 +409,15 @@ function requestAds() {
 	//mainContainer.style.display = 'block';
 	adBreak({
         type: 'next',  // ad shows at start of next level
-        name: 'restart-game',
-        //beforeAd: () => { this.disableButtons(); },  // You may also want to mute the game's sound.
-        //afterAd: () => { this.enableButtons(); },    // resume the game flow.
+        //name: 'restart-game',
+        beforeAd: () => { 
+		console.log("H5 Ad Starting"); 
+	},  // You may also want to mute the game's sound.
+        afterAd: () => {
+		console.log("H5 Ad Done");
+		footerAD.style.display = 'block';
+		myTimer = setInterval(footerInterval, 15000);
+	},    // resume the game flow.
       });
 	
 }
